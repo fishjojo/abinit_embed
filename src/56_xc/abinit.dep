@@ -1,0 +1,35 @@
+#Dependencies (inside the directory) of the directory ./src/56_xc
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_56_xc.$(MODEXT) \
+	m_dfpt_mkvxc.$(MODEXT) \
+	m_electronpositron.$(MODEXT) \
+	m_gammapositron.$(MODEXT) \
+	m_kxc.$(MODEXT) \
+	m_mkcore.$(MODEXT) \
+	m_rhotoxc.$(MODEXT) \
+	m_xc_vdw.$(MODEXT) \
+	m_xcdata.$(MODEXT) \
+	m_xchybrid.$(MODEXT) \
+	m_xctk.$(MODEXT) 
+
+m_dfpt_mkvxc.$(OBJEXT): m_xctk.$(OBJEXT) 
+
+m_electronpositron.$(OBJEXT): m_xctk.$(OBJEXT) 
+
+m_gammapositron.$(OBJEXT): m_electronpositron.$(OBJEXT) m_xctk.$(OBJEXT) 
+
+m_kxc.$(OBJEXT): m_dfpt_mkvxc.$(OBJEXT) m_rhotoxc.$(OBJEXT) m_xcdata.$(OBJEXT) 
+
+m_rhotoxc.$(OBJEXT): m_electronpositron.$(OBJEXT) m_xc_vdw.$(OBJEXT) m_xcdata.$(OBJEXT) m_xctk.$(OBJEXT) 
+
+m_xchybrid.$(OBJEXT): m_mkcore.$(OBJEXT) m_rhotoxc.$(OBJEXT) m_xcdata.$(OBJEXT) 

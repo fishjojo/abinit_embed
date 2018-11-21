@@ -1,0 +1,34 @@
+#Dependencies (inside the directory) of the directory ./src/66_wfs
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_66_wfs.$(MODEXT) \
+	m_bandfft_kpt.$(MODEXT) \
+	m_cgcprj.$(MODEXT) \
+	m_chebfi.$(MODEXT) \
+	m_esymm.$(MODEXT) \
+	m_fock_getghc.$(MODEXT) \
+	m_getgh1c.$(MODEXT) \
+	m_getgh2c.$(MODEXT) \
+	m_getghc.$(MODEXT) \
+	m_invovl.$(MODEXT) \
+	m_prep_kgb.$(MODEXT) \
+	m_rayleigh_ritz.$(MODEXT) 
+
+m_chebfi.$(OBJEXT): m_bandfft_kpt.$(OBJEXT) m_getghc.$(OBJEXT) m_invovl.$(OBJEXT) m_prep_kgb.$(OBJEXT) m_rayleigh_ritz.$(OBJEXT) 
+
+m_fock_getghc.$(OBJEXT): m_bandfft_kpt.$(OBJEXT) 
+
+m_getghc.$(OBJEXT): m_bandfft_kpt.$(OBJEXT) m_fock_getghc.$(OBJEXT) 
+
+m_invovl.$(OBJEXT): m_bandfft_kpt.$(OBJEXT) m_prep_kgb.$(OBJEXT) 
+
+m_prep_kgb.$(OBJEXT): m_bandfft_kpt.$(OBJEXT) m_getghc.$(OBJEXT) 

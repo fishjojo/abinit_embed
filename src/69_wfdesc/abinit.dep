@@ -1,0 +1,19 @@
+#Dependencies (inside the directory) of the directory ./src/69_wfdesc
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_69_wfdesc.$(MODEXT) \
+	m_io_kss.$(MODEXT) \
+	m_oscillators.$(MODEXT) \
+	m_wfd.$(MODEXT) \
+	m_wfd_optic.$(MODEXT) 
+
+m_wfd_optic.$(OBJEXT): m_wfd.$(OBJEXT) 

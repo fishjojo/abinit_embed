@@ -1,0 +1,67 @@
+#Dependencies (inside the directory) of the directory ./src/78_effpot
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_78_effpot.$(MODEXT) \
+	m_anharmonics_terms.$(MODEXT) \
+	m_compute_anharmonics.$(MODEXT) \
+	m_dynmaic_array.$(MODEXT) \
+	m_effective_potential.$(MODEXT) \
+	m_effective_potential_file.$(MODEXT) \
+	m_effpot_mpi.$(MODEXT) \
+	m_fit_data.$(MODEXT) \
+	m_fit_polynomial_coeff.$(MODEXT) \
+	m_generate_training_set.$(MODEXT) \
+	m_harmonics_terms.$(MODEXT) \
+	m_init10.$(MODEXT) \
+	m_mathfuncs.$(MODEXT) \
+	m_multibinit_dataset.$(MODEXT) \
+	m_polynomial_coeff.$(MODEXT) \
+	m_polynomial_conf.$(MODEXT) \
+	m_polynomial_term.$(MODEXT) \
+	m_random_xoroshiro128plus.$(MODEXT) \
+	m_sparse_matrix.$(MODEXT) \
+	m_spin_hist.$(MODEXT) \
+	m_spin_model.$(MODEXT) \
+	m_spin_model_primitive.$(MODEXT) \
+	m_spin_mover.$(MODEXT) \
+	m_spin_ncfile.$(MODEXT) \
+	m_spin_reciprocal.$(MODEXT) \
+	m_spin_terms.$(MODEXT) \
+	m_spin_terms_funcs.$(MODEXT) 
+
+m_anharmonics_terms.$(OBJEXT): m_polynomial_coeff.$(OBJEXT) 
+
+m_compute_anharmonics.$(OBJEXT): m_anharmonics_terms.$(OBJEXT) m_effective_potential.$(OBJEXT) m_effective_potential_file.$(OBJEXT) m_multibinit_dataset.$(OBJEXT) 
+
+m_effective_potential.$(OBJEXT): m_anharmonics_terms.$(OBJEXT) m_effpot_mpi.$(OBJEXT) m_harmonics_terms.$(OBJEXT) m_multibinit_dataset.$(OBJEXT) m_polynomial_coeff.$(OBJEXT) m_polynomial_conf.$(OBJEXT) 
+
+m_effective_potential_file.$(OBJEXT): m_anharmonics_terms.$(OBJEXT) m_effective_potential.$(OBJEXT) m_harmonics_terms.$(OBJEXT) m_multibinit_dataset.$(OBJEXT) m_polynomial_coeff.$(OBJEXT) m_polynomial_term.$(OBJEXT) 
+
+m_fit_data.$(OBJEXT): m_effective_potential.$(OBJEXT) 
+
+m_fit_polynomial_coeff.$(OBJEXT): m_effective_potential.$(OBJEXT) m_effective_potential_file.$(OBJEXT) m_fit_data.$(OBJEXT) m_polynomial_coeff.$(OBJEXT) 
+
+m_mathfuncs.$(OBJEXT): m_random_xoroshiro128plus.$(OBJEXT) 
+
+m_polynomial_coeff.$(OBJEXT): m_polynomial_term.$(OBJEXT) 
+
+m_spin_model.$(OBJEXT): m_multibinit_dataset.$(OBJEXT) m_spin_hist.$(OBJEXT) m_spin_model_primitive.$(OBJEXT) m_spin_mover.$(OBJEXT) m_spin_ncfile.$(OBJEXT) m_spin_terms.$(OBJEXT) 
+
+m_spin_model_primitive.$(OBJEXT): m_dynarray.$(OBJEXT) m_mathfuncs.$(OBJEXT) m_spin_terms.$(OBJEXT) 
+
+m_spin_mover.$(OBJEXT): m_spin_hist.$(OBJEXT) m_spin_ncfile.$(OBJEXT) m_spin_terms.$(OBJEXT) 
+
+m_spin_ncfile.$(OBJEXT): m_multibinit_dataset.$(OBJEXT) m_spin_hist.$(OBJEXT) m_spin_model_primitive.$(OBJEXT) m_spin_terms.$(OBJEXT) 
+
+m_spin_terms.$(OBJEXT): m_mathfuncs.$(OBJEXT) m_random_xoroshiro128plus.$(OBJEXT) m_sparse_matrix.$(OBJEXT) m_spin_terms_funcs.$(OBJEXT) 
+
+m_spin_terms_funcs.$(OBJEXT): m_mathfuncs.$(OBJEXT) 

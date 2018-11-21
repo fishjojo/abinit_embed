@@ -1,0 +1,62 @@
+#Dependencies (inside the directory) of the directory ./src/77_ddb
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	defs_elphon.$(MODEXT) \
+	interfaces_77_ddb.$(MODEXT) \
+	m_a2ftr.$(MODEXT) \
+	m_anaddb_dataset.$(MODEXT) \
+	m_atprj.$(MODEXT) \
+	m_band2eps_dataset.$(MODEXT) \
+	m_ddb_diel.$(MODEXT) \
+	m_ddb_elast.$(MODEXT) \
+	m_ddb_internalstr.$(MODEXT) \
+	m_ddb_interpolate.$(MODEXT) \
+	m_ddb_piezo.$(MODEXT) \
+	m_eliashberg_1d.$(MODEXT) \
+	m_elphon.$(MODEXT) \
+	m_epweights.$(MODEXT) \
+	m_gruneisen.$(MODEXT) \
+	m_harmonic_thermo.$(MODEXT) \
+	m_ifc.$(MODEXT) \
+	m_iogkk.$(MODEXT) \
+	m_phonons.$(MODEXT) \
+	m_primcell_ddb_info.$(MODEXT) \
+	m_raman.$(MODEXT) \
+	m_relaxpol.$(MODEXT) \
+	m_sortph.$(MODEXT) \
+	m_thmeig.$(MODEXT) 
+
+m_a2ftr.$(OBJEXT): defs_elphon.$(OBJEXT) m_epweights.$(OBJEXT) m_ifc.$(OBJEXT) 
+
+m_ddb_diel.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) 
+
+m_ddb_elast.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) 
+
+m_ddb_interpolate.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) m_ifc.$(OBJEXT) 
+
+m_ddb_piezo.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) 
+
+m_eliashberg_1d.$(OBJEXT): defs_elphon.$(OBJEXT) 
+
+m_elphon.$(OBJEXT): defs_elphon.$(OBJEXT) m_a2ftr.$(OBJEXT) m_anaddb_dataset.$(OBJEXT) m_eliashberg_1d.$(OBJEXT) m_epweights.$(OBJEXT) m_ifc.$(OBJEXT) m_iogkk.$(OBJEXT) 
+
+m_epweights.$(OBJEXT): defs_elphon.$(OBJEXT) 
+
+m_gruneisen.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) m_ifc.$(OBJEXT) 
+
+m_harmonic_thermo.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) m_ifc.$(OBJEXT) m_sortph.$(OBJEXT) 
+
+m_iogkk.$(OBJEXT): defs_elphon.$(OBJEXT) m_ifc.$(OBJEXT) 
+
+m_phonons.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) m_atprj.$(OBJEXT) m_ifc.$(OBJEXT) m_sortph.$(OBJEXT) 
+
+m_thmeig.$(OBJEXT): m_anaddb_dataset.$(OBJEXT) 

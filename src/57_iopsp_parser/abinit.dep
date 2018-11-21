@@ -1,0 +1,25 @@
+#Dependencies (inside the directory) of the directory ./src/57_iopsp_parser
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	flib_pwscf.$(MODEXT) \
+	funct_pwscf.$(MODEXT) \
+	interfaces_57_iopsp_parser.$(MODEXT) \
+	m_pspheads.$(MODEXT) \
+	m_psxml2ab.$(MODEXT) \
+	m_read_upf_pwscf.$(MODEXT) \
+	pseudo_pwscf.$(MODEXT) 
+
+functionals_pwscf.$(OBJEXT): flib_pwscf.$(OBJEXT) 
+
+m_pspheads.$(OBJEXT): functionals_pwscf.$(OBJEXT) m_pseudo_pwscf.$(OBJEXT) m_psxml2ab.$(OBJEXT) m_read_upf_pwscf.$(OBJEXT) 
+
+m_read_upf_pwscf.$(OBJEXT): flib_pwscf.$(OBJEXT) m_pseudo_pwscf.$(OBJEXT) 

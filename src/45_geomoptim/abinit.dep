@@ -1,0 +1,105 @@
+#Dependencies (inside the directory) of the directory ./src/45_geomoptim
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_45_geomoptim.$(MODEXT) \
+	m_abihist.$(MODEXT) \
+	m_abiimages.$(MODEXT) \
+	m_abimover.$(MODEXT) \
+	m_bfgs.$(MODEXT) \
+	m_ga.$(MODEXT) \
+	m_hmc.$(MODEXT) \
+	m_lbfgs.$(MODEXT) \
+	m_m1geo.$(MODEXT) \
+	m_mep.$(MODEXT) \
+	m_pimd.$(MODEXT) \
+	m_pimd_langevin.$(MODEXT) \
+	m_pimd_nosehoover.$(MODEXT) \
+	m_pred_bfgs.$(MODEXT) \
+	m_pred_delocint.$(MODEXT) \
+	m_pred_diisrelax.$(MODEXT) \
+	m_pred_fire.$(MODEXT) \
+	m_pred_hmc.$(MODEXT) \
+	m_pred_isokinetic.$(MODEXT) \
+	m_pred_isothermal.$(MODEXT) \
+	m_pred_langevin.$(MODEXT) \
+	m_pred_moldyn.$(MODEXT) \
+	m_pred_nose.$(MODEXT) \
+	m_pred_simple.$(MODEXT) \
+	m_pred_srkhna14.$(MODEXT) \
+	m_pred_steepdesc.$(MODEXT) \
+	m_pred_velverlet.$(MODEXT) \
+	m_pred_verlet.$(MODEXT) \
+	m_predict_neb.$(MODEXT) \
+	m_predict_pimd.$(MODEXT) \
+	m_predict_steepest.$(MODEXT) \
+	m_predict_string.$(MODEXT) \
+	m_predtk.$(MODEXT) \
+	m_use_ga.$(MODEXT) \
+	m_xfpack.$(MODEXT) 
+
+m_abiimages.$(OBJEXT): m_abihist.$(OBJEXT) 
+
+m_bfgs.$(OBJEXT): m_abimover.$(OBJEXT) 
+
+m_hmc.$(OBJEXT): m_abimover.$(OBJEXT) 
+
+m_m1geo.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_mep.$(OBJEXT): m_bfgs.$(OBJEXT) 
+
+m_pimd_langevin.$(OBJEXT): m_pimd.$(OBJEXT) 
+
+m_pimd_nosehoover.$(OBJEXT): m_pimd.$(OBJEXT) 
+
+m_pred_bfgs.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_bfgs.$(OBJEXT) m_lbfgs.$(OBJEXT) m_xfpack.$(OBJEXT) 
+
+m_pred_delocint.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_bfgs.$(OBJEXT) m_xfpack.$(OBJEXT) 
+
+m_pred_diisrelax.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_bfgs.$(OBJEXT) 
+
+m_pred_fire.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_xfpack.$(OBJEXT) 
+
+m_pred_hmc.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_hmc.$(OBJEXT) m_pred_velverlet.$(OBJEXT) 
+
+m_pred_isokinetic.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_pred_isothermal.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_pred_langevin.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_pred_moldyn.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_predtk.$(OBJEXT) 
+
+m_pred_nose.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_pred_simple.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_pred_srkna14.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_pred_steepdesc.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_predtk.$(OBJEXT) 
+
+m_pred_velverlet.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) 
+
+m_pred_verlet.$(OBJEXT): m_abihist.$(OBJEXT) m_abimover.$(OBJEXT) m_xfpack.$(OBJEXT) 
+
+m_predict_neb.$(OBJEXT): m_mep.$(OBJEXT) 
+
+m_predict_pimd.$(OBJEXT): m_pimd.$(OBJEXT) m_pimd_langevin.$(OBJEXT) m_pimd_nosehoover.$(OBJEXT) 
+
+m_predict_steepest.$(OBJEXT): m_mep.$(OBJEXT) 
+
+m_predict_string.$(OBJEXT): m_mep.$(OBJEXT) 
+
+m_predtk.$(OBJEXT): m_abimover.$(OBJEXT) 
+
+m_use_ga.$(OBJEXT): m_ga.$(OBJEXT) 
+
+m_xfpack.$(OBJEXT): m_abimover.$(OBJEXT) m_bfgs.$(OBJEXT) 

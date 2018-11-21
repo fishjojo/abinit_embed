@@ -1,0 +1,831 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+10	m_gwls_sternheimer.F90	/^ 10 format(A)$/;"	l	subroutine:gwls_sternheimer	file:
+110	m_gstateimg.F90	/^   110 continue$/;"	l	subroutine:gstateimg	file:
+12	m_gwls_sternheimer.F90	/^ 12 format(A,I6)$/;"	l	subroutine:gwls_sternheimer	file:
+14	m_gwls_sternheimer.F90	/^ 14 format(A,ES24.16,A,F16.8,A)$/;"	l	subroutine:gwls_sternheimer	file:
+ABINIT_BINARY_PACKAGE	Makefile	/^ABINIT_BINARY_PACKAGE = abinit-8.10.2_x86_64_linux_intel18.0$/;"	m
+ABINIT_TARGET	Makefile	/^ABINIT_TARGET = x86_64_linux_intel18.0$/;"	m
+ABINIT_VERSION	Makefile	/^ABINIT_VERSION = 8.10.2$/;"	m
+ABINIT_VERSION_BASE	Makefile	/^ABINIT_VERSION_BASE = 8.10$/;"	m
+ABINIT_VERSION_BUILD	Makefile	/^ABINIT_VERSION_BUILD = 20181031$/;"	m
+ABINIT_VERSION_MAJOR	Makefile	/^ABINIT_VERSION_MAJOR = 8$/;"	m
+ABINIT_VERSION_MICRO	Makefile	/^ABINIT_VERSION_MICRO = 2$/;"	m
+ABINIT_VERSION_MINOR	Makefile	/^ABINIT_VERSION_MINOR = 10$/;"	m
+ABI_CPPFLAGS	Makefile	/^ABI_CPPFLAGS =     $/;"	m
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/tigress\/xingz\/abinit-8.10.2\/config\/gnu\/missing aclocal-1.13$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+AMTAR	Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AM_CFLAGS	Makefile	/^AM_CFLAGS =     $/;"	m
+AM_CPPFLAGS	Makefile	/^AM_CPPFLAGS = \\$/;"	m
+AM_DEFAULT_VERBOSITY	Makefile	/^AM_DEFAULT_VERBOSITY = 1$/;"	m
+AM_FCFLAGS	Makefile	/^AM_FCFLAGS =      -free -module $(abinit_moddir) -O3$/;"	m
+AM_V_AR	Makefile	/^AM_V_AR = $(am__v_AR_$(V))$/;"	m
+AM_V_FCLD	Makefile	/^AM_V_FCLD = $(am__v_FCLD_$(V))$/;"	m
+AM_V_GEN	Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
+AM_V_P	Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
+AM_V_PPFC	Makefile	/^AM_V_PPFC = $(am__v_PPFC_$(V))$/;"	m
+AM_V_at	Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
+AR	Makefile	/^AR = ar$/;"	m
+ARFLAGS	Makefile	/^ARFLAGS =      rc$/;"	m
+ARFLAGS_64BITS	Makefile	/^ARFLAGS_64BITS = $/;"	m
+ARFLAGS_CMD	Makefile	/^ARFLAGS_CMD = rc$/;"	m
+ARFLAGS_DEBUG	Makefile	/^ARFLAGS_DEBUG = $/;"	m
+ARFLAGS_EXTRA	Makefile	/^ARFLAGS_EXTRA = $/;"	m
+ARFLAGS_HINTS	Makefile	/^ARFLAGS_HINTS = $/;"	m
+ARFLAGS_OPTIM	Makefile	/^ARFLAGS_OPTIM = $/;"	m
+ATOMPAW_BIN	Makefile	/^ATOMPAW_BIN = $/;"	m
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/tigress\/xingz\/abinit-8.10.2\/config\/gnu\/missing autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/tigress\/xingz\/abinit-8.10.2\/config\/gnu\/missing autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/tigress\/xingz\/abinit-8.10.2\/config\/gnu\/missing automake-1.13$/;"	m
+AWK	Makefile	/^AWK = gawk$/;"	m
+BAZAAR	Makefile	/^BAZAAR = $/;"	m
+BOURNE_SHELL	Makefile	/^BOURNE_SHELL = \/usr\/bin\/sh$/;"	m
+CC	Makefile	/^CC = mpiicc$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CC_LDFLAGS	Makefile	/^CC_LDFLAGS =    -static-libgcc -static-intel $/;"	m
+CC_LDFLAGS_64BITS	Makefile	/^CC_LDFLAGS_64BITS = $/;"	m
+CC_LDFLAGS_DEBUG	Makefile	/^CC_LDFLAGS_DEBUG = $/;"	m
+CC_LDFLAGS_EXTRA	Makefile	/^CC_LDFLAGS_EXTRA = $/;"	m
+CC_LDFLAGS_GPU	Makefile	/^CC_LDFLAGS_GPU = $/;"	m
+CC_LDFLAGS_HINTS	Makefile	/^CC_LDFLAGS_HINTS = -static-libgcc -static-intel$/;"	m
+CC_LDFLAGS_OPTIM	Makefile	/^CC_LDFLAGS_OPTIM = $/;"	m
+CC_LIBS	Makefile	/^CC_LIBS =     $/;"	m
+CC_LIBS_64BITS	Makefile	/^CC_LIBS_64BITS = $/;"	m
+CC_LIBS_DEBUG	Makefile	/^CC_LIBS_DEBUG = $/;"	m
+CC_LIBS_EXTRA	Makefile	/^CC_LIBS_EXTRA = $/;"	m
+CC_LIBS_GPU	Makefile	/^CC_LIBS_GPU = $/;"	m
+CC_LIBS_HINTS	Makefile	/^CC_LIBS_HINTS = $/;"	m
+CC_LIBS_OPTIM	Makefile	/^CC_LIBS_OPTIM = $/;"	m
+CFLAGS	Makefile	/^CFLAGS =  -g -O2 -vec-report0 $/;"	m
+CFLAGS_64BITS	Makefile	/^CFLAGS_64BITS = $/;"	m
+CFLAGS_DEBUG	Makefile	/^CFLAGS_DEBUG = -g$/;"	m
+CFLAGS_EXTRA	Makefile	/^CFLAGS_EXTRA = $/;"	m
+CFLAGS_GPU	Makefile	/^CFLAGS_GPU = $/;"	m
+CFLAGS_HINTS	Makefile	/^CFLAGS_HINTS = -vec-report0$/;"	m
+CFLAGS_OPTIM	Makefile	/^CFLAGS_OPTIM = -O2$/;"	m
+CLEANFILES	Makefile	/^CLEANFILES = m_argparse_cpp.f90 m_bethe_salpeter_cpp.f90 \\$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_HEADER	Makefile	/^CONFIG_HEADER = $(top_builddir)\/config.h$/;"	m
+CPP	Makefile	/^CPP = mpiicc -E$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CPPFLAGS_64BITS	Makefile	/^CPPFLAGS_64BITS = $/;"	m
+CPPFLAGS_DEBUG	Makefile	/^CPPFLAGS_DEBUG = $/;"	m
+CPPFLAGS_EXTRA	Makefile	/^CPPFLAGS_EXTRA = $/;"	m
+CPPFLAGS_GPU	Makefile	/^CPPFLAGS_GPU = $/;"	m
+CPPFLAGS_HINTS	Makefile	/^CPPFLAGS_HINTS = $/;"	m
+CPPFLAGS_HINTS_EXT	Makefile	/^CPPFLAGS_HINTS_EXT = -P -std=c99$/;"	m
+CPPFLAGS_OPTIM	Makefile	/^CPPFLAGS_OPTIM = $/;"	m
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CXX	Makefile	/^CXX = mpiicpc$/;"	m
+CXXDEPMODE	Makefile	/^CXXDEPMODE = depmode=gcc3$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS =  -g -O2 -mtune=native -march=native  $/;"	m
+CXXFLAGS_64BITS	Makefile	/^CXXFLAGS_64BITS = $/;"	m
+CXXFLAGS_DEBUG	Makefile	/^CXXFLAGS_DEBUG = -g$/;"	m
+CXXFLAGS_EXTRA	Makefile	/^CXXFLAGS_EXTRA = $/;"	m
+CXXFLAGS_GPU	Makefile	/^CXXFLAGS_GPU = $/;"	m
+CXXFLAGS_HINTS	Makefile	/^CXXFLAGS_HINTS = $/;"	m
+CXXFLAGS_OPTIM	Makefile	/^CXXFLAGS_OPTIM = -O2 -mtune=native -march=native$/;"	m
+CXX_LDFLAGS	Makefile	/^CXX_LDFLAGS =     $/;"	m
+CXX_LDFLAGS_64BITS	Makefile	/^CXX_LDFLAGS_64BITS = $/;"	m
+CXX_LDFLAGS_DEBUG	Makefile	/^CXX_LDFLAGS_DEBUG = $/;"	m
+CXX_LDFLAGS_EXTRA	Makefile	/^CXX_LDFLAGS_EXTRA = $/;"	m
+CXX_LDFLAGS_GPU	Makefile	/^CXX_LDFLAGS_GPU = $/;"	m
+CXX_LDFLAGS_HINTS	Makefile	/^CXX_LDFLAGS_HINTS = $/;"	m
+CXX_LDFLAGS_OPTIM	Makefile	/^CXX_LDFLAGS_OPTIM = $/;"	m
+CXX_LIBS	Makefile	/^CXX_LIBS =     $/;"	m
+CXX_LIBS_64BITS	Makefile	/^CXX_LIBS_64BITS = $/;"	m
+CXX_LIBS_DEBUG	Makefile	/^CXX_LIBS_DEBUG = $/;"	m
+CXX_LIBS_EXTRA	Makefile	/^CXX_LIBS_EXTRA = $/;"	m
+CXX_LIBS_GPU	Makefile	/^CXX_LIBS_GPU = $/;"	m
+CXX_LIBS_HINTS	Makefile	/^CXX_LIBS_HINTS = $/;"	m
+CXX_LIBS_OPTIM	Makefile	/^CXX_LIBS_OPTIM = $/;"	m
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
+DEFAULT_INCLUDES	Makefile	/^DEFAULT_INCLUDES = -I. -I$(top_builddir)$/;"	m
+DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.in $(srcdir)\/Makefile.am README$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES = $(lib95_drive_a_SOURCES)$/;"	m
+ECHO_C	Makefile	/^ECHO_C = $/;"	m
+ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
+EGREP	Makefile	/^EGREP = \/usr\/bin\/grep -E$/;"	m
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+EXTRA_DIST	Makefile	/^EXTRA_DIST = abinit.src abinit.dep _95_drive_$/;"	m
+F77	Makefile	/^F77 = mpiifort$/;"	m
+FC	Makefile	/^FC = mpiifort$/;"	m
+FCFLAGS	Makefile	/^FCFLAGS =  -g -extend-source -noaltparam -nofpscomp  $/;"	m
+FCFLAGS_64BITS	Makefile	/^FCFLAGS_64BITS = $/;"	m
+FCFLAGS_DEBUG	Makefile	/^FCFLAGS_DEBUG = -g$/;"	m
+FCFLAGS_EXTRA	Makefile	/^FCFLAGS_EXTRA = $/;"	m
+FCFLAGS_F90	Makefile	/^FCFLAGS_F90 = $/;"	m
+FCFLAGS_FIXEDFORM	Makefile	/^FCFLAGS_FIXEDFORM = -fixed$/;"	m
+FCFLAGS_FREEFORM	Makefile	/^FCFLAGS_FREEFORM = -free$/;"	m
+FCFLAGS_HINTS	Makefile	/^FCFLAGS_HINTS = -extend-source -noaltparam -nofpscomp$/;"	m
+FCFLAGS_MODDIR	Makefile	/^FCFLAGS_MODDIR = -module $(abinit_moddir)$/;"	m
+FCFLAGS_OPENMP	Makefile	/^FCFLAGS_OPENMP = $/;"	m
+FCFLAGS_OPTIM	Makefile	/^FCFLAGS_OPTIM = -O3$/;"	m
+FCLD	Makefile	/^FCLD = $(FC)$/;"	m
+FCLIBS	Makefile	/^FCLIBS =  -L\/usr\/local\/boost\/1.55.0\/lib64 -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib\/release_mt -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib -L\/usr\/local\/intel\/lib64\/intel-mpi -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/tbb\/lib\/intel64\/gcc4.7 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mkl\/lib\/intel64 -L\/usr\/local\/intel\/lib64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64_lin -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/..\/lib64 -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/..\/lib64\/ -L\/usr\/local\/boost\/1.55.0\/lib64\/..\/lib64 -L\/usr\/local\/boost\/1.55.0\/lib64\/..\/lib64\/ -L\/usr\/local\/intel\/lib64\/..\/lib64 -L\/usr\/local\/intel\/lib64\/..\/lib64\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/..\/lib64 -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/..\/lib64\/ -L\/lib\/..\/lib64 -L\/lib\/..\/lib64\/ -L\/usr\/lib\/..\/lib64 -L\/usr\/lib\/..\/lib64\/ -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/ -L\/usr\/local\/boost\/1.55.0\/lib64\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib\/ -L\/usr\/local\/intel\/lib64\/intel-mpi\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/tbb\/lib\/intel64\/gcc4.7\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mkl\/lib\/intel64\/ -L\/usr\/local\/intel\/lib64\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/ -L\/lib64 -L\/lib\/ -L\/usr\/lib64 -L\/usr\/lib -lmpifort -lmpi -lmpigi -ldl -lrt -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -lirc -lirc_s$/;"	m
+FCLINK	Makefile	/^FCLINK = $(FCLD) $(AM_FCFLAGS) $(FCFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o \\$/;"	m
+FC_LDFLAGS	Makefile	/^FC_LDFLAGS =    -static-intel -static-libgcc $/;"	m
+FC_LDFLAGS_64BITS	Makefile	/^FC_LDFLAGS_64BITS = $/;"	m
+FC_LDFLAGS_DEBUG	Makefile	/^FC_LDFLAGS_DEBUG = $/;"	m
+FC_LDFLAGS_EXTRA	Makefile	/^FC_LDFLAGS_EXTRA = $/;"	m
+FC_LDFLAGS_HINTS	Makefile	/^FC_LDFLAGS_HINTS = -static-intel -static-libgcc$/;"	m
+FC_LDFLAGS_OPTIM	Makefile	/^FC_LDFLAGS_OPTIM = $/;"	m
+FC_LIBS	Makefile	/^FC_LIBS =       -L\/usr\/local\/boost\/1.55.0\/lib64 -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib\/release_mt -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib -L\/usr\/local\/intel\/lib64\/intel-mpi -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/tbb\/lib\/intel64\/gcc4.7 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mkl\/lib\/intel64 -L\/usr\/local\/intel\/lib64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64_lin -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/..\/lib64 -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/..\/lib64\/ -L\/usr\/local\/boost\/1.55.0\/lib64\/..\/lib64 -L\/usr\/local\/boost\/1.55.0\/lib64\/..\/lib64\/ -L\/usr\/local\/intel\/lib64\/..\/lib64 -L\/usr\/local\/intel\/lib64\/..\/lib64\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/..\/lib64 -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/..\/lib64\/ -L\/lib\/..\/lib64 -L\/lib\/..\/lib64\/ -L\/usr\/lib\/..\/lib64 -L\/usr\/lib\/..\/lib64\/ -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/ -L\/usr\/local\/boost\/1.55.0\/lib64\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib\/ -L\/usr\/local\/intel\/lib64\/intel-mpi\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/tbb\/lib\/intel64\/gcc4.7\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mkl\/lib\/intel64\/ -L\/usr\/local\/intel\/lib64\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/ -L\/lib64 -L\/lib\/ -L\/usr\/lib64 -L\/usr\/lib -lmpifort -lmpi -lmpigi -ldl -lrt -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -lirc -lirc_s$/;"	m
+FC_LIBS_64BITS	Makefile	/^FC_LIBS_64BITS = $/;"	m
+FC_LIBS_DEBUG	Makefile	/^FC_LIBS_DEBUG = $/;"	m
+FC_LIBS_EXTRA	Makefile	/^FC_LIBS_EXTRA = $/;"	m
+FC_LIBS_HINTS	Makefile	/^FC_LIBS_HINTS = $/;"	m
+FC_LIBS_OPTIM	Makefile	/^FC_LIBS_OPTIM = $/;"	m
+FC_NOWRAP	Makefile	/^FC_NOWRAP = mpiifort$/;"	m
+FFLAGS	Makefile	/^FFLAGS =  -g -extend-source -noaltparam -nofpscomp  $/;"	m
+FPP	Makefile	/^FPP = $/;"	m
+FPPFLAGS	Makefile	/^FPPFLAGS =     $/;"	m
+FPPFLAGS_DEBUG	Makefile	/^FPPFLAGS_DEBUG = $/;"	m
+FPPFLAGS_EXTRA	Makefile	/^FPPFLAGS_EXTRA = $/;"	m
+FPPFLAGS_HINTS	Makefile	/^FPPFLAGS_HINTS = $/;"	m
+FPPFLAGS_OPTIM	Makefile	/^FPPFLAGS_OPTIM = $/;"	m
+GRAPHATOM_BIN	Makefile	/^GRAPHATOM_BIN = $/;"	m
+GREP	Makefile	/^GREP = \/usr\/bin\/grep$/;"	m
+GSL_CONFIG	Makefile	/^GSL_CONFIG = $/;"	m
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS =    -static-intel -static-libgcc $/;"	m
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBRARIES	Makefile	/^LIBRARIES = $(noinst_LIBRARIES)$/;"	m
+LIBS	Makefile	/^LIBS =       -L\/usr\/local\/boost\/1.55.0\/lib64 -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib\/release_mt -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib -L\/usr\/local\/intel\/lib64\/intel-mpi -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/tbb\/lib\/intel64\/gcc4.7 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mkl\/lib\/intel64 -L\/usr\/local\/intel\/lib64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64_lin -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/..\/lib64 -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/..\/lib64\/ -L\/usr\/local\/boost\/1.55.0\/lib64\/..\/lib64 -L\/usr\/local\/boost\/1.55.0\/lib64\/..\/lib64\/ -L\/usr\/local\/intel\/lib64\/..\/lib64 -L\/usr\/local\/intel\/lib64\/..\/lib64\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/..\/lib64 -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/..\/lib64\/ -L\/lib\/..\/lib64 -L\/lib\/..\/lib64\/ -L\/usr\/lib\/..\/lib64 -L\/usr\/lib\/..\/lib64\/ -L\/usr\/local\/fftw\/intel-16.0\/3.3.4\/lib64\/ -L\/usr\/local\/boost\/1.55.0\/lib64\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/lib\/ -L\/usr\/local\/intel\/lib64\/intel-mpi\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/tbb\/lib\/intel64\/gcc4.7\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/compiler\/lib\/intel64\/ -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mkl\/lib\/intel64\/ -L\/usr\/local\/intel\/lib64\/ -L\/tigress\/xingz\/gcc\/lib\/gcc\/x86_64-pc-linux-gnu\/6.3.0\/..\/..\/..\/ -L\/lib64 -L\/lib\/ -L\/usr\/lib64 -L\/usr\/lib -lmpifort -lmpi -lmpigi -ldl -lrt -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -lirc -lirc_s $/;"	m
+LN_S	Makefile	/^LN_S = ln -s$/;"	m
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+LTXFLAGS	Makefile	/^LTXFLAGS = $/;"	m
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/tigress\/xingz\/abinit-8.10.2\/config\/gnu\/missing makeinfo$/;"	m
+MDFLAGS	Makefile	/^MDFLAGS = $/;"	m
+MKDIR_P	Makefile	/^MKDIR_P = \/usr\/bin\/mkdir -p$/;"	m
+MODEXT	Makefile	/^MODEXT = mod$/;"	m
+MPI_2PROCS	Makefile	/^MPI_2PROCS = -np 2$/;"	m
+MPI_RUNNER	Makefile	/^MPI_RUNNER = $/;"	m
+MV	Makefile	/^MV = \/usr\/bin\/mv$/;"	m
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NVCC	Makefile	/^NVCC = $/;"	m
+NVCC_CFLAGS	Makefile	/^NVCC_CFLAGS = $/;"	m
+NVCC_CPPFLAGS	Makefile	/^NVCC_CPPFLAGS = $/;"	m
+NVCC_LDFLAGS	Makefile	/^NVCC_LDFLAGS = $/;"	m
+NVCC_LIBS	Makefile	/^NVCC_LIBS = $/;"	m
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
+PACKAGE	Makefile	/^PACKAGE = abinit$/;"	m
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = https:\/\/bugs.launchpad.net\/abinit\/$/;"	m
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = ABINIT$/;"	m
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = ABINIT 8.10.2$/;"	m
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = abinit$/;"	m
+PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 8.10.2$/;"	m
+PATCH	Makefile	/^PATCH = patch$/;"	m
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
+PDFFLAGS	Makefile	/^PDFFLAGS = $/;"	m
+PERL	Makefile	/^PERL = \/usr\/bin\/perl$/;"	m
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+PPFCCOMPILE	Makefile	/^PPFCCOMPILE = $(FC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \\$/;"	m
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+PYFLAGS	Makefile	/^PYFLAGS = $/;"	m
+PYTHON	Makefile	/^PYTHON = python$/;"	m
+PYTHON_CPPFLAGS	Makefile	/^PYTHON_CPPFLAGS = -I\/usr\/licensed\/anaconda\/5.0.1\/include\/python2.7 -I\/home\/xingz\/.local\/lib\/python2.7\/site-packages\/numpy\/core\/include$/;"	m
+RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
+REALPATH	Makefile	/^REALPATH = true$/;"	m
+RM	Makefile	/^RM = \/usr\/bin\/rm$/;"	m
+SED	Makefile	/^SED = \/usr\/bin\/sed$/;"	m
+SERIAL_RUNNER	Makefile	/^SERIAL_RUNNER = $/;"	m
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
+SOURCES	Makefile	/^SOURCES = $(lib95_drive_a_SOURCES)$/;"	m
+STRIP	Makefile	/^STRIP = $/;"	m
+TAR	Makefile	/^TAR = tar$/;"	m
+TRUE_CPP	Makefile	/^TRUE_CPP = cpp$/;"	m
+VERSION	Makefile	/^VERSION = 8.10.2$/;"	m
+W90CHK2CHK_X_BIN	Makefile	/^W90CHK2CHK_X_BIN = $/;"	m
+WANNIER90_X_BIN	Makefile	/^WANNIER90_X_BIN = $/;"	m
+XPP	Makefile	/^XPP = $/;"	m
+XPPFLAGS	Makefile	/^XPPFLAGS =     $/;"	m
+XPPFLAGS_DEBUG	Makefile	/^XPPFLAGS_DEBUG = $/;"	m
+XPPFLAGS_EXTRA	Makefile	/^XPPFLAGS_EXTRA = $/;"	m
+XPPFLAGS_OPTIM	Makefile	/^XPPFLAGS_OPTIM = $/;"	m
+abi_ac_distcheck	Makefile	/^abi_ac_distcheck = $/;"	m
+abi_ac_version	Makefile	/^abi_ac_version = 026900$/;"	m
+abi_am_version	Makefile	/^abi_am_version = 011304$/;"	m
+abi_cc_path	Makefile	/^abi_cc_path = \/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/bin\/mpiicc$/;"	m
+abi_cc_vendor	Makefile	/^abi_cc_vendor = intel$/;"	m
+abi_cc_version	Makefile	/^abi_cc_version = 18.0$/;"	m
+abi_cpp_path	Makefile	/^abi_cpp_path = $/;"	m
+abi_cpu_64bits	Makefile	/^abi_cpu_64bits = yes$/;"	m
+abi_cpu_bits	Makefile	/^abi_cpu_bits = 64$/;"	m
+abi_cpu_model	Makefile	/^abi_cpu_model = xeon$/;"	m
+abi_cpu_platform	Makefile	/^abi_cpu_platform = unknown$/;"	m
+abi_cpu_spec	Makefile	/^abi_cpu_spec = intel_xeon$/;"	m
+abi_cpu_vendor	Makefile	/^abi_cpu_vendor = intel$/;"	m
+abi_cxx_path	Makefile	/^abi_cxx_path = \/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/bin\/mpiicpc$/;"	m
+abi_cxx_vendor	Makefile	/^abi_cxx_vendor = gnu$/;"	m
+abi_cxx_version	Makefile	/^abi_cxx_version = 18.0$/;"	m
+abi_extra_incs	Makefile	/^abi_extra_incs = $/;"	m
+abi_fc_path	Makefile	/^abi_fc_path = \/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mpi\/intel64\/bin\/mpiifort$/;"	m
+abi_fc_vendor	Makefile	/^abi_fc_vendor = intel$/;"	m
+abi_fc_version	Makefile	/^abi_fc_version = 18.0$/;"	m
+abi_fc_wrap	Makefile	/^abi_fc_wrap = no$/;"	m
+abi_fpp_path	Makefile	/^abi_fpp_path = $/;"	m
+abi_lt_version	Makefile	/^abi_lt_version = 020406$/;"	m
+abi_m4_version	Makefile	/^abi_m4_version = 010416$/;"	m
+abi_sys_spec	Makefile	/^abi_sys_spec = linux-x86_64$/;"	m
+abimem_level	m_argparse.F90	/^   integer :: abimem_level=/;"	k	type:args_t
+abinit_bindir	Makefile	/^abinit_bindir = \/tigress\/xingz\/abinit-8.10.2\/bin$/;"	m
+abinit_builddir	Makefile	/^abinit_builddir = \/tigress\/xingz\/abinit-8.10.2$/;"	m
+abinit_chkdir	Makefile	/^abinit_chkdir = \/tigress\/xingz\/abinit-8.10.2\/share\/abinit\/tests$/;"	m
+abinit_datdir	Makefile	/^abinit_datdir = \/tigress\/xingz\/abinit-8.10.2\/share\/abinit$/;"	m
+abinit_docdir	Makefile	/^abinit_docdir = \/tigress\/xingz\/abinit-8.10.2\/doc\/abinit$/;"	m
+abinit_incdir	Makefile	/^abinit_incdir = \/tigress\/xingz\/abinit-8.10.2\/include$/;"	m
+abinit_libdir	Makefile	/^abinit_libdir = \/tigress\/xingz\/abinit-8.10.2\/lib$/;"	m
+abinit_mandir	Makefile	/^abinit_mandir = \/tigress\/xingz\/abinit-8.10.2\/share\/man$/;"	m
+abinit_moddir	Makefile	/^abinit_moddir = \/tigress\/xingz\/abinit-8.10.2\/src\/mods$/;"	m
+abinit_prefix	Makefile	/^abinit_prefix = \/tigress\/xingz\/abinit-8.10.2$/;"	m
+abinit_srcdir	Makefile	/^abinit_srcdir = \/tigress\/xingz\/abinit-8.10.2$/;"	m
+abinit_tardir	Makefile	/^abinit_tardir = \/home\/xingz\/.abinit\/tarballs$/;"	m
+abs_builddir	Makefile	/^abs_builddir = \/tigress\/xingz\/abinit-8.10.2\/src\/95_drive$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/tigress\/xingz\/abinit-8.10.2\/src\/95_drive$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/tigress\/xingz\/abinit-8.10.2$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/tigress\/xingz\/abinit-8.10.2$/;"	m
+ac_ct_CC	Makefile	/^ac_ct_CC = mpiicc$/;"	m
+ac_ct_CXX	Makefile	/^ac_ct_CXX = $/;"	m
+ac_ct_FC	Makefile	/^ac_ct_FC = $/;"	m
+am__aclocal_m4_deps	Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/config\/m4\/arch-gpu.m4 \\$/;"	m
+am__can_run_installinfo	Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__define_uniq_tagged_files	Makefile	/^am__define_uniq_tagged_files = \\$/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__is_gnu_make	Makefile	/^am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__make_dryrun	Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_running_with_option	Makefile	/^am__make_running_with_option = \\$/;"	m
+am__objects_1	Makefile	/^am__objects_1 = m_argparse.$(OBJEXT) m_bethe_salpeter.$(OBJEXT) \\$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am__tagged_files	Makefile	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)$/;"	m
+am__tar	Makefile	/^am__tar = tar --format=ustar -chf - "$$tardir"$/;"	m
+am__uniquify_input	Makefile	/^am__uniquify_input = $(AWK) '\\$/;"	m
+am__untar	Makefile	/^am__untar = tar -xf -$/;"	m
+am__v_AR_	Makefile	/^am__v_AR_ = $(am__v_AR_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_AR_0	Makefile	/^am__v_AR_0 = @echo "  AR      " $@;$/;"	m
+am__v_AR_1	Makefile	/^am__v_AR_1 = $/;"	m
+am__v_FCLD_	Makefile	/^am__v_FCLD_ = $(am__v_FCLD_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_FCLD_0	Makefile	/^am__v_FCLD_0 = @echo "  FCLD    " $@;$/;"	m
+am__v_FCLD_1	Makefile	/^am__v_FCLD_1 = $/;"	m
+am__v_GEN_	Makefile	/^am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_GEN_0	Makefile	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_1	Makefile	/^am__v_GEN_1 = $/;"	m
+am__v_PPFC_	Makefile	/^am__v_PPFC_ = $(am__v_PPFC_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_PPFC_0	Makefile	/^am__v_PPFC_0 = @echo "  PPFC    " $@;$/;"	m
+am__v_PPFC_1	Makefile	/^am__v_PPFC_1 = $/;"	m
+am__v_P_	Makefile	/^am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_P_0	Makefile	/^am__v_P_0 = false$/;"	m
+am__v_P_1	Makefile	/^am__v_P_1 = :$/;"	m
+am__v_at_	Makefile	/^am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_at_0	Makefile	/^am__v_at_0 = @$/;"	m
+am__v_at_1	Makefile	/^am__v_at_1 = $/;"	m
+am_lib95_drive_a_OBJECTS	Makefile	/^am_lib95_drive_a_OBJECTS = $(am__objects_1)$/;"	m
+args_parser	m_argparse.F90	/^type(args_t) function args_parser(/;"	f	module:m_argparse
+args_print	m_argparse.F90	/^subroutine args_print(/;"	s	module:m_argparse
+args_t	m_argparse.F90	/^ type,public :: args_t$/;"	t	module:m_argparse
+begins_with	m_argparse.F90	/^pure logical function begins_with(/;"	f	module:m_argparse
+bethe_salpeter	m_bethe_salpeter.F90	/^subroutine bethe_salpeter(/;"	s	module:m_bethe_salpeter
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+build	Makefile	/^build = x86_64-unknown-linux-gnu$/;"	m
+build_alias	Makefile	/^build_alias = $/;"	m
+build_cpu	Makefile	/^build_cpu = x86_64$/;"	m
+build_os	Makefile	/^build_os = linux-gnu$/;"	m
+build_triplet	Makefile	/^build_triplet = x86_64-unknown-linux-gnu$/;"	m
+build_vendor	Makefile	/^build_vendor = unknown$/;"	m
+builddir	Makefile	/^builddir = .$/;"	m
+bzr_branch	Makefile	/^bzr_branch = $/;"	m
+bzr_clean	Makefile	/^bzr_clean = $/;"	m
+bzr_revno	Makefile	/^bzr_revno = $/;"	m
+calc_rpa_functional	m_screening_driver.F90	/^subroutine calc_rpa_functional(/;"	s	module:m_screening_driver
+can2sub	m_dmfet.F90	/^   complex(dpc),pointer :: can2sub(/;"	k	type:dmfet_type
+cc_info_string	Makefile	/^cc_info_string = Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.222 Build 20180410$/;"	m
+cg	m_dmfet.F90	/^   real(dp), pointer :: cg(/;"	k	type:dmfet_type
+chi0_bksmask	m_screening_driver.F90	/^subroutine chi0_bksmask(/;"	s	module:m_screening_driver
+clnup1	m_gstate.F90	/^subroutine clnup1(/;"	s	module:m_gstate
+clnup2	m_gstate.F90	/^subroutine clnup2(/;"	s	module:m_gstate
+cmdline	m_argparse.F90	/^   character(len=500) :: cmdline=/;"	k	type:args_t
+crystal	m_dmfet.F90	/^   type(crystal_/;"	k	type:dmfet_type
+cxx_info_string	Makefile	/^cxx_info_string = icpc (ICC) 18.0.3 20180410$/;"	m
+datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
+datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+dfpt_dyfro	m_respfn_driver.F90	/^subroutine dfpt_dyfro(/;"	s	module:m_respfn_driver
+dfpt_dyout	m_respfn_driver.F90	/^subroutine dfpt_dyout(/;"	s	module:m_respfn_driver
+dfpt_dyxc1	m_respfn_driver.F90	/^subroutine dfpt_dyxc1(/;"	s	module:m_respfn_driver
+dfpt_gatherdy	m_respfn_driver.F90	/^subroutine dfpt_gatherdy(/;"	s	module:m_respfn_driver
+dfpt_init_mag1	m_dfpt_looppert.F90	/^subroutine dfpt_init_mag1(/;"	s	module:m_dfpt_loopert
+dfpt_looppert	m_dfpt_looppert.F90	/^subroutine dfpt_looppert(/;"	s	module:m_dfpt_loopert
+dfpt_prtene	m_dfpt_looppert.F90	/^subroutine dfpt_prtene(/;"	s	module:m_dfpt_loopert
+dfptnl_loop	m_dfptnl_loop.F90	/^subroutine dfptnl_loop(/;"	s	module:m_dfptnl_loop
+dim_all	m_dmfet.F90	/^   integer :: n_canonical, dim_all,/;"	k	type:dmfet_type
+dim_sub	m_dmfet.F90	/^   integer :: n_canonical, dim_all, dim_sub,/;"	k	type:dmfet_type
+dmfet	m_dmfet_driver.F90	/^subroutine dmfet(/;"	s	module:m_dmfet_driver
+dmfet_core	m_dmfet.F90	/^subroutine dmfet_core(/;"	s	module:m_dmfet
+dmfet_init	m_dmfet.F90	/^subroutine dmfet_init(/;"	s	module:m_dmfet
+dmfet_run	m_dmfet.F90	/^subroutine dmfet_run(/;"	s	module:m_dmfet
+dmfet_subspac	m_dmfet.F90	/^subroutine dmfet_subspac(/;"	s	module:m_dmfet
+dmfet_type	m_dmfet.F90	/^ type, public :: dmfet_type$/;"	t	module:m_dmfet
+dmfet_wan2sub	m_dmfet.F90	/^subroutine dmfet_wan2sub(/;"	s	module:m_dmfet
+docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+driver	m_driver.F90	/^subroutine driver(/;"	s	module:m_driver
+dry_run	m_argparse.F90	/^   integer :: dry_run=/;"	k	type:args_t
+dtfil	m_dmfet.F90	/^   type(datafiles_type),pointer :: dtfil /;"	k	type:dmfet_type
+dtset	m_dmfet.F90	/^   type(dataset_type),pointer :: dtset /;"	k	type:dmfet_type
+dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
+e_fermie	m_dmfet.F90	/^   real(dp) :: e_fermie$/;"	k	type:dmfet_type
+eigen	m_dmfet.F90	/^   real(dp), pointer :: eigen(/;"	k	type:dmfet_type
+eigen_meandege	m_dfpt_looppert.F90	/^subroutine eigen_meandege(/;"	s	module:m_dfpt_loopert
+enable_64bit_flags	Makefile	/^enable_64bit_flags = no$/;"	m
+enable_avx_safe_mode	Makefile	/^enable_avx_safe_mode = no$/;"	m
+enable_bse_unpacked	Makefile	/^enable_bse_unpacked = no$/;"	m
+enable_cclock	Makefile	/^enable_cclock = no$/;"	m
+enable_config_file	Makefile	/^enable_config_file = yes$/;"	m
+enable_connectors	Makefile	/^enable_connectors = yes$/;"	m
+enable_debug	Makefile	/^enable_debug = basic$/;"	m
+enable_exports	Makefile	/^enable_exports = no$/;"	m
+enable_fallbacks	Makefile	/^enable_fallbacks = yes$/;"	m
+enable_fast_check	Makefile	/^enable_fast_check = no$/;"	m
+enable_fc_wrapper	Makefile	/^enable_fc_wrapper = no$/;"	m
+enable_gpu	Makefile	/^enable_gpu = no$/;"	m
+enable_gw_dpc	Makefile	/^enable_gw_dpc = no$/;"	m
+enable_hints	Makefile	/^enable_hints = yes$/;"	m
+enable_lotf	Makefile	/^enable_lotf = no$/;"	m
+enable_macroave	Makefile	/^enable_macroave = yes$/;"	m
+enable_maintainer_checks	Makefile	/^enable_maintainer_checks = no$/;"	m
+enable_memory_profiling	Makefile	/^enable_memory_profiling = $/;"	m
+enable_mpi	Makefile	/^enable_mpi = yes$/;"	m
+enable_mpi_inplace	Makefile	/^enable_mpi_inplace = no$/;"	m
+enable_mpi_io	Makefile	/^enable_mpi_io = auto$/;"	m
+enable_mpi_io_default	Makefile	/^enable_mpi_io_default = no$/;"	m
+enable_netcdf_default	Makefile	/^enable_netcdf_default = no$/;"	m
+enable_openmp	Makefile	/^enable_openmp = no$/;"	m
+enable_optim	Makefile	/^enable_optim = standard$/;"	m
+enable_shared	Makefile	/^enable_shared = $/;"	m
+enable_static	Makefile	/^enable_static = $/;"	m
+enable_stdin	Makefile	/^enable_stdin = yes$/;"	m
+enable_triqs_v1_4	Makefile	/^enable_triqs_v1_4 = no$/;"	m
+enable_triqs_v2_0	Makefile	/^enable_triqs_v2_0 = no$/;"	m
+enable_wannier90_v1	Makefile	/^enable_wannier90_v1 = no$/;"	m
+enable_xml	Makefile	/^enable_xml = no$/;"	m
+enable_zdot_bugfix	Makefile	/^enable_zdot_bugfix = no$/;"	m
+eph	m_eph_driver.F90	/^subroutine eph(/;"	s	module:m_eph_driver
+erlxconv	m_mover.F90	/^subroutine erlxconv(/;"	s	subroutine:mover
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
+exit	m_argparse.F90	/^   integer :: exit=/;"	k	type:args_t
+fallbacks_incs	Makefile	/^fallbacks_incs = -I$(fallbacks_instdir)\/include$/;"	m
+fallbacks_instdir	Makefile	/^fallbacks_instdir = \/tigress\/xingz\/abinit-8.10.2\/fallbacks\/exports$/;"	m
+fc_info_string	Makefile	/^fc_info_string = Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.222 Build 20180410$/;"	m
+fc_mod_incs	Makefile	/^fc_mod_incs = $/;"	m
+fc_timing	Makefile	/^fc_timing = standard$/;"	m
+fcflags_opt_01_gsl_ext	Makefile	/^fcflags_opt_01_gsl_ext = -O3$/;"	m
+fcflags_opt_02_clib	Makefile	/^fcflags_opt_02_clib = -O3$/;"	m
+fcflags_opt_10_defs	Makefile	/^fcflags_opt_10_defs = -O3$/;"	m
+fcflags_opt_10_dumpinfo	Makefile	/^fcflags_opt_10_dumpinfo = -O3$/;"	m
+fcflags_opt_11_memory_mpi	Makefile	/^fcflags_opt_11_memory_mpi = -O3$/;"	m
+fcflags_opt_12_hide_mpi	Makefile	/^fcflags_opt_12_hide_mpi = -O3$/;"	m
+fcflags_opt_14_hidewrite	Makefile	/^fcflags_opt_14_hidewrite = -O3$/;"	m
+fcflags_opt_15_gpu_toolbox	Makefile	/^fcflags_opt_15_gpu_toolbox = -O3$/;"	m
+fcflags_opt_16_hideleave	Makefile	/^fcflags_opt_16_hideleave = -O3$/;"	m
+fcflags_opt_17_libtetra_ext	Makefile	/^fcflags_opt_17_libtetra_ext = -O3$/;"	m
+fcflags_opt_18_timing	Makefile	/^fcflags_opt_18_timing = -O3$/;"	m
+fcflags_opt_21_hashfuncs	Makefile	/^fcflags_opt_21_hashfuncs = -O3$/;"	m
+fcflags_opt_27_toolbox_oop	Makefile	/^fcflags_opt_27_toolbox_oop = -O3$/;"	m
+fcflags_opt_28_numeric_noabirule	Makefile	/^fcflags_opt_28_numeric_noabirule = -O3$/;"	m
+fcflags_opt_29_kpoints	Makefile	/^fcflags_opt_29_kpoints = -O3$/;"	m
+fcflags_opt_32_util	Makefile	/^fcflags_opt_32_util = -O3$/;"	m
+fcflags_opt_41_geometry	Makefile	/^fcflags_opt_41_geometry = -O3$/;"	m
+fcflags_opt_41_xc_lowlevel	Makefile	/^fcflags_opt_41_xc_lowlevel = -O3$/;"	m
+fcflags_opt_42_libpaw	Makefile	/^fcflags_opt_42_libpaw = -O3$/;"	m
+fcflags_opt_42_nlstrain	Makefile	/^fcflags_opt_42_nlstrain = -O3$/;"	m
+fcflags_opt_42_parser	Makefile	/^fcflags_opt_42_parser = -O3$/;"	m
+fcflags_opt_43_ptgroups	Makefile	/^fcflags_opt_43_ptgroups = -O0$/;"	m
+fcflags_opt_43_wvl_wrappers	Makefile	/^fcflags_opt_43_wvl_wrappers = -O3$/;"	m
+fcflags_opt_44_abitools	Makefile	/^fcflags_opt_44_abitools = -O3$/;"	m
+fcflags_opt_44_abitypes_defs	Makefile	/^fcflags_opt_44_abitypes_defs = -O3$/;"	m
+fcflags_opt_45_geomoptim	Makefile	/^fcflags_opt_45_geomoptim = -O3$/;"	m
+fcflags_opt_45_xgTools	Makefile	/^fcflags_opt_45_xgTools = -O3$/;"	m
+fcflags_opt_46_diago	Makefile	/^fcflags_opt_46_diago = -O3$/;"	m
+fcflags_opt_49_gw_toolbox_oop	Makefile	/^fcflags_opt_49_gw_toolbox_oop = -O3$/;"	m
+fcflags_opt_51_manage_mpi	Makefile	/^fcflags_opt_51_manage_mpi = -O3$/;"	m
+fcflags_opt_52_fft_mpi_noabirule	Makefile	/^fcflags_opt_52_fft_mpi_noabirule = -O3$/;"	m
+fcflags_opt_52_manage_cuda	Makefile	/^fcflags_opt_52_manage_cuda = -O3$/;"	m
+fcflags_opt_53_ffts	Makefile	/^fcflags_opt_53_ffts = -O3$/;"	m
+fcflags_opt_54_spacepar	Makefile	/^fcflags_opt_54_spacepar = -O3$/;"	m
+fcflags_opt_55_abiutil	Makefile	/^fcflags_opt_55_abiutil = -O3$/;"	m
+fcflags_opt_56_io_mpi	Makefile	/^fcflags_opt_56_io_mpi = -O3$/;"	m
+fcflags_opt_56_mixing	Makefile	/^fcflags_opt_56_mixing = -O3$/;"	m
+fcflags_opt_56_recipspace	Makefile	/^fcflags_opt_56_recipspace = -O3$/;"	m
+fcflags_opt_56_xc	Makefile	/^fcflags_opt_56_xc = -O3$/;"	m
+fcflags_opt_57_iopsp_parser	Makefile	/^fcflags_opt_57_iopsp_parser = -O3$/;"	m
+fcflags_opt_57_iovars	Makefile	/^fcflags_opt_57_iovars = -O3$/;"	m
+fcflags_opt_59_ionetcdf	Makefile	/^fcflags_opt_59_ionetcdf = -O3$/;"	m
+fcflags_opt_61_occeig	Makefile	/^fcflags_opt_61_occeig = -O3$/;"	m
+fcflags_opt_62_cg_noabirule	Makefile	/^fcflags_opt_62_cg_noabirule = -O3$/;"	m
+fcflags_opt_62_ctqmc	Makefile	/^fcflags_opt_62_ctqmc = -O3$/;"	m
+fcflags_opt_62_iowfdenpot	Makefile	/^fcflags_opt_62_iowfdenpot = -O3$/;"	m
+fcflags_opt_62_poisson	Makefile	/^fcflags_opt_62_poisson = -O3$/;"	m
+fcflags_opt_62_wvl_wfs	Makefile	/^fcflags_opt_62_wvl_wfs = -O3$/;"	m
+fcflags_opt_63_bader	Makefile	/^fcflags_opt_63_bader = -O3$/;"	m
+fcflags_opt_64_psp	Makefile	/^fcflags_opt_64_psp = -O3$/;"	m
+fcflags_opt_65_lotf_base	Makefile	/^fcflags_opt_65_lotf_base = -O3$/;"	m
+fcflags_opt_65_paw	Makefile	/^fcflags_opt_65_paw = -O3$/;"	m
+fcflags_opt_66_nonlocal	Makefile	/^fcflags_opt_66_nonlocal = -O3$/;"	m
+fcflags_opt_66_vdwxc	Makefile	/^fcflags_opt_66_vdwxc = -O3$/;"	m
+fcflags_opt_66_wfs	Makefile	/^fcflags_opt_66_wfs = -O3$/;"	m
+fcflags_opt_67_common	Makefile	/^fcflags_opt_67_common = -O3$/;"	m
+fcflags_opt_67_triqs_ext	Makefile	/^fcflags_opt_67_triqs_ext = -O3$/;"	m
+fcflags_opt_68_dmft	Makefile	/^fcflags_opt_68_dmft = -O3$/;"	m
+fcflags_opt_68_lotf	Makefile	/^fcflags_opt_68_lotf = -O3$/;"	m
+fcflags_opt_68_recursion	Makefile	/^fcflags_opt_68_recursion = -O3$/;"	m
+fcflags_opt_68_rsprc	Makefile	/^fcflags_opt_68_rsprc = -O3$/;"	m
+fcflags_opt_69_wfdesc	Makefile	/^fcflags_opt_69_wfdesc = -O3$/;"	m
+fcflags_opt_70_gw	Makefile	/^fcflags_opt_70_gw = -O3$/;"	m
+fcflags_opt_71_bse	Makefile	/^fcflags_opt_71_bse = -O3$/;"	m
+fcflags_opt_71_wannier	Makefile	/^fcflags_opt_71_wannier = -O3$/;"	m
+fcflags_opt_72_response	Makefile	/^fcflags_opt_72_response = -O3$/;"	m
+fcflags_opt_77_ddb	Makefile	/^fcflags_opt_77_ddb = -O3$/;"	m
+fcflags_opt_77_suscep	Makefile	/^fcflags_opt_77_suscep = -O3$/;"	m
+fcflags_opt_78_effpot	Makefile	/^fcflags_opt_78_effpot = -O3$/;"	m
+fcflags_opt_78_eph	Makefile	/^fcflags_opt_78_eph = -O3$/;"	m
+fcflags_opt_79_seqpar_mpi	Makefile	/^fcflags_opt_79_seqpar_mpi = -O3$/;"	m
+fcflags_opt_80_tdep	Makefile	/^fcflags_opt_80_tdep = -O3$/;"	m
+fcflags_opt_83_cut3d	Makefile	/^fcflags_opt_83_cut3d = -O3$/;"	m
+fcflags_opt_84_fold2Bloch	Makefile	/^fcflags_opt_84_fold2Bloch = -O3$/;"	m
+fcflags_opt_94_scfcv	Makefile	/^fcflags_opt_94_scfcv = -O3$/;"	m
+fcflags_opt_95_drive	Makefile	/^fcflags_opt_95_drive = -O3$/;"	m
+fcflags_opt_98_main	Makefile	/^fcflags_opt_98_main = -O3$/;"	m
+fcflags_opt_algo	Makefile	/^fcflags_opt_algo = -O3$/;"	m
+fcflags_opt_atompaw	Makefile	/^fcflags_opt_atompaw = -O3$/;"	m
+fcflags_opt_bigdft	Makefile	/^fcflags_opt_bigdft = -O3$/;"	m
+fcflags_opt_libxc	Makefile	/^fcflags_opt_libxc = -O3$/;"	m
+fcflags_opt_linalg	Makefile	/^fcflags_opt_linalg = -O3$/;"	m
+fcflags_opt_netcdf	Makefile	/^fcflags_opt_netcdf = -O3$/;"	m
+fcflags_opt_psml	Makefile	/^fcflags_opt_psml = -O3$/;"	m
+fcflags_opt_triqs	Makefile	/^fcflags_opt_triqs = -O3$/;"	m
+fcflags_opt_wannier90	Makefile	/^fcflags_opt_wannier90 = -O3$/;"	m
+fcflags_opt_yaml	Makefile	/^fcflags_opt_yaml = -O3$/;"	m
+fconv	m_mover.F90	/^subroutine fconv(/;"	s	subroutine:mover
+getcgqphase	m_dfpt_looppert.F90	/^subroutine getcgqphase(/;"	s	module:m_dfpt_loopert
+gettag	m_mover.F90	/^subroutine gettag(/;"	s	subroutine:prtxfase
+gstate	m_gstate.F90	/^subroutine gstate(/;"	s	module:m_gstate
+gstateimg	m_gstateimg.F90	/^subroutine gstateimg(/;"	s	module:m_gstateimg
+gwls_sternheimer	m_gwls_sternheimer.F90	/^subroutine gwls_sternheimer(/;"	s	module:m_gwls_sternheimer
+host	Makefile	/^host = x86_64-unknown-linux-gnu$/;"	m
+host_alias	Makefile	/^host_alias = $/;"	m
+host_cpu	Makefile	/^host_cpu = x86_64$/;"	m
+host_os	Makefile	/^host_os = linux-gnu$/;"	m
+host_triplet	Makefile	/^host_triplet = x86_64-unknown-linux-gnu$/;"	m
+host_vendor	Makefile	/^host_vendor = unknown$/;"	m
+htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+initmv	m_nonlinear.F90	/^subroutine initmv(/;"	s	module:m_nonlinear
+install_sh	Makefile	/^install_sh = ${SHELL} \/tigress\/xingz\/abinit-8.10.2\/config\/gnu\/install-sh$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+kg	m_dmfet.F90	/^   integer, pointer :: kg(/;"	k	type:dmfet_type
+lib95_drive_a_AR	Makefile	/^lib95_drive_a_AR = $(AR) $(ARFLAGS)$/;"	m
+lib95_drive_a_LIBADD	Makefile	/^lib95_drive_a_LIBADD =$/;"	m
+lib95_drive_a_OBJECTS	Makefile	/^lib95_drive_a_OBJECTS = $(am_lib95_drive_a_OBJECTS)$/;"	m
+lib95_drive_a_SOURCES	Makefile	/^lib95_drive_a_SOURCES = $(lib95_drive_srcs)$/;"	m
+lib95_drive_srcs	Makefile	/^lib95_drive_srcs = \\$/;"	m
+lib_algo_fcflags	Makefile	/^lib_algo_fcflags = $/;"	m
+lib_algo_flavor	Makefile	/^lib_algo_flavor = none$/;"	m
+lib_algo_incs	Makefile	/^lib_algo_incs = $/;"	m
+lib_algo_ldflags	Makefile	/^lib_algo_ldflags = $/;"	m
+lib_algo_libs	Makefile	/^lib_algo_libs = $/;"	m
+lib_atompaw_bins	Makefile	/^lib_atompaw_bins = $/;"	m
+lib_atompaw_fcflags	Makefile	/^lib_atompaw_fcflags = $/;"	m
+lib_atompaw_incs	Makefile	/^lib_atompaw_incs = $/;"	m
+lib_atompaw_ldflags	Makefile	/^lib_atompaw_ldflags = $/;"	m
+lib_atompaw_libs	Makefile	/^lib_atompaw_libs = -L$(fallbacks_instdir)\/lib -latompaw$/;"	m
+lib_bigdft_fcflags	Makefile	/^lib_bigdft_fcflags = $/;"	m
+lib_bigdft_incs	Makefile	/^lib_bigdft_incs = $/;"	m
+lib_bigdft_ldflags	Makefile	/^lib_bigdft_ldflags = $/;"	m
+lib_bigdft_libs	Makefile	/^lib_bigdft_libs = $/;"	m
+lib_dft_flavor	Makefile	/^lib_dft_flavor = libxc-fallback+atompaw-fallback$/;"	m
+lib_etsf_io_fcflags	Makefile	/^lib_etsf_io_fcflags = $/;"	m
+lib_etsf_io_incs	Makefile	/^lib_etsf_io_incs = $/;"	m
+lib_etsf_io_ldflags	Makefile	/^lib_etsf_io_ldflags = $/;"	m
+lib_etsf_io_libs	Makefile	/^lib_etsf_io_libs = $/;"	m
+lib_fft_fcflags	Makefile	/^lib_fft_fcflags = $/;"	m
+lib_fft_flavor	Makefile	/^lib_fft_flavor = fftw3$/;"	m
+lib_fft_incs	Makefile	/^lib_fft_incs = $/;"	m
+lib_fft_ldflags	Makefile	/^lib_fft_ldflags = $/;"	m
+lib_fft_libs	Makefile	/^lib_fft_libs = -lfftw3$/;"	m
+lib_gpu_fcflags	Makefile	/^lib_gpu_fcflags = $/;"	m
+lib_gpu_flavor	Makefile	/^lib_gpu_flavor = none$/;"	m
+lib_gpu_incs	Makefile	/^lib_gpu_incs = $/;"	m
+lib_gpu_ldflags	Makefile	/^lib_gpu_ldflags = $/;"	m
+lib_gpu_libs	Makefile	/^lib_gpu_libs = $/;"	m
+lib_libxc_fcflags	Makefile	/^lib_libxc_fcflags = $/;"	m
+lib_libxc_incs	Makefile	/^lib_libxc_incs = -I$(fallbacks_instdir)\/include$/;"	m
+lib_libxc_ldflags	Makefile	/^lib_libxc_ldflags = $/;"	m
+lib_libxc_libs	Makefile	/^lib_libxc_libs = -L$(fallbacks_instdir)\/lib -lxcf90 -lxc$/;"	m
+lib_linalg_fcflags	Makefile	/^lib_linalg_fcflags = $/;"	m
+lib_linalg_flavor	Makefile	/^lib_linalg_flavor = mkl$/;"	m
+lib_linalg_incs	Makefile	/^lib_linalg_incs = $/;"	m
+lib_linalg_ldflags	Makefile	/^lib_linalg_ldflags = $/;"	m
+lib_linalg_libs	Makefile	/^lib_linalg_libs = -lmkl_intel_lp64  -lmkl_intel_lp64 -L\/opt\/intel\/compilers_and_libraries_2018.3.222\/linux\/mkl\/lib\/intel64 -lmkl_sequential -lmkl_core -lpthread -lm $/;"	m
+lib_math_fcflags	Makefile	/^lib_math_fcflags = $/;"	m
+lib_math_flavor	Makefile	/^lib_math_flavor = none$/;"	m
+lib_math_incs	Makefile	/^lib_math_incs = $/;"	m
+lib_math_ldflags	Makefile	/^lib_math_ldflags = $/;"	m
+lib_math_libs	Makefile	/^lib_math_libs = $/;"	m
+lib_mpi_fcflags	Makefile	/^lib_mpi_fcflags = $/;"	m
+lib_mpi_incs	Makefile	/^lib_mpi_incs = $/;"	m
+lib_mpi_ldflags	Makefile	/^lib_mpi_ldflags = $/;"	m
+lib_mpi_libs	Makefile	/^lib_mpi_libs = $/;"	m
+lib_netcdf_fcflags	Makefile	/^lib_netcdf_fcflags = $/;"	m
+lib_netcdf_incs	Makefile	/^lib_netcdf_incs = $/;"	m
+lib_netcdf_ldflags	Makefile	/^lib_netcdf_ldflags = $/;"	m
+lib_netcdf_libs	Makefile	/^lib_netcdf_libs = $/;"	m
+lib_psml_fcflags	Makefile	/^lib_psml_fcflags = $/;"	m
+lib_psml_incs	Makefile	/^lib_psml_incs = $/;"	m
+lib_psml_ldflags	Makefile	/^lib_psml_ldflags = $/;"	m
+lib_psml_libs	Makefile	/^lib_psml_libs = $/;"	m
+lib_timer_fcflags	Makefile	/^lib_timer_fcflags = $/;"	m
+lib_timer_flavor	Makefile	/^lib_timer_flavor = abinit$/;"	m
+lib_timer_incs	Makefile	/^lib_timer_incs = $/;"	m
+lib_timer_ldflags	Makefile	/^lib_timer_ldflags = $/;"	m
+lib_timer_libs	Makefile	/^lib_timer_libs =  -lrt$/;"	m
+lib_trio_flavor	Makefile	/^lib_trio_flavor = none$/;"	m
+lib_triqs_fcflags	Makefile	/^lib_triqs_fcflags = $/;"	m
+lib_triqs_incs	Makefile	/^lib_triqs_incs = $/;"	m
+lib_triqs_ldflags	Makefile	/^lib_triqs_ldflags = $/;"	m
+lib_triqs_libs	Makefile	/^lib_triqs_libs = $/;"	m
+lib_wannier90_bins	Makefile	/^lib_wannier90_bins = $/;"	m
+lib_wannier90_fcflags	Makefile	/^lib_wannier90_fcflags = $/;"	m
+lib_wannier90_incs	Makefile	/^lib_wannier90_incs = $/;"	m
+lib_wannier90_ldflags	Makefile	/^lib_wannier90_ldflags = $/;"	m
+lib_wannier90_libs	Makefile	/^lib_wannier90_libs = $/;"	m
+lib_yaml_fcflags	Makefile	/^lib_yaml_fcflags = $/;"	m
+lib_yaml_incs	Makefile	/^lib_yaml_incs = $/;"	m
+lib_yaml_ldflags	Makefile	/^lib_yaml_ldflags = $/;"	m
+lib_yaml_libs	Makefile	/^lib_yaml_libs = $/;"	m
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+m_argparse	m_argparse.F90	/^module m_argparse$/;"	m
+m_bethe_salpeter	m_bethe_salpeter.F90	/^module m_bethe_salpeter$/;"	m
+m_dfpt_loopert	m_dfpt_looppert.F90	/^module m_dfpt_loopert$/;"	m
+m_dfptnl_loop	m_dfptnl_loop.F90	/^module m_dfptnl_loop$/;"	m
+m_dmfet	m_dmfet.F90	/^module m_dmfet$/;"	m
+m_dmfet_driver	m_dmfet_driver.F90	/^module m_dmfet_driver$/;"	m
+m_driver	m_driver.F90	/^module m_driver$/;"	m
+m_eph_driver	m_eph_driver.F90	/^module m_eph_driver$/;"	m
+m_gstate	m_gstate.F90	/^module m_gstate$/;"	m
+m_gstateimg	m_gstateimg.F90	/^module m_gstateimg$/;"	m
+m_gwls_sternheimer	m_gwls_sternheimer.F90	/^module m_gwls_sternheimer$/;"	m
+m_mover	m_mover.F90	/^module m_mover$/;"	m
+m_mover_effpot	m_mover_effpot.F90	/^module m_mover_effpot$/;"	m
+m_nonlinear	m_nonlinear.F90	/^module m_nonlinear$/;"	m
+m_pead_nl_loop	m_pead_nl_loop.F90	/^module m_pead_nl_loop$/;"	m
+m_precpred_1geo	m_precpred_1geo.F90	/^module m_precpred_1geo$/;"	m
+m_respfn_driver	m_respfn_driver.F90	/^module m_respfn_driver$/;"	m
+m_screening_driver	m_screening_driver.F90	/^module m_screening_driver$/;"	m
+m_sigma_driver	m_sigma_driver.F90	/^module m_sigma_driver$/;"	m
+m_wfk_analyze	m_wfk_analyze.F90	/^module m_wfk_analyze$/;"	m
+mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mcg	m_dmfet.F90	/^   integer,pointer :: mcg /;"	k	type:dmfet_type
+mkdir_p	Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
+mkinstalldirs	Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+move_1geo	m_gstateimg.F90	/^subroutine move_1geo(/;"	s	module:m_gstateimg
+mover	m_mover.F90	/^subroutine mover(/;"	s	module:m_mover
+mover_effpot	m_mover_effpot.F90	/^subroutine mover_effpot(/;"	s	module:m_mover_effpot
+mpi_enreg	m_dmfet.F90	/^   type(MPI_type),pointer :: mpi_enreg /;"	k	type:dmfet_type
+n_canonical	m_dmfet.F90	/^   integer :: n_canonical,/;"	k	type:dmfet_type
+n_frozen	m_dmfet.F90	/^   integer :: n_canonical, dim_all, dim_sub, n_frozen$/;"	k	type:dmfet_type
+noinst_LIBRARIES	Makefile	/^noinst_LIBRARIES = lib95_drive.a$/;"	m
+nonlinear	m_nonlinear.F90	/^subroutine nonlinear(/;"	s	module:m_nonlinear
+npwarr	m_dmfet.F90	/^   integer, pointer :: npwarr(/;"	k	type:dmfet_type
+occ	m_dmfet.F90	/^   real(dp), pointer :: occ(/;"	k	type:dmfet_type
+occ_wan	m_dmfet.F90	/^   real(dp), pointer ::  occ_wan(/;"	k	type:dmfet_type
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
+outxfhist	m_gstate.F90	/^subroutine outxfhist(/;"	s	module:m_gstate
+parse_yesno	m_argparse.F90	/^logical function parse_yesno(/;"	f	module:m_argparse
+paw_qpscgw	m_sigma_driver.F90	/^subroutine paw_qpscgw(/;"	s	module:m_sigma_driver
+pawfgr	m_dmfet.F90	/^   type(pawfgr_/;"	k	type:dmfet_type
+pawrad	m_dmfet.F90	/^   type(pawrad_/;"	k	type:dmfet_type
+pawtab	m_dmfet.F90	/^   type(pawtab_/;"	k	type:dmfet_type
+pawuj_drive	m_gstate.F90	/^subroutine pawuj_drive(/;"	s	module:m_gstate
+pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
+pead_nl_loop	m_pead_nl_loop.F90	/^subroutine pead_nl_loop(/;"	s	module:m_pead_nl_loop
+pead_nl_mv	m_pead_nl_loop.F90	/^subroutine pead_nl_mv(/;"	s	module:m_pead_nl_loop
+pead_nl_resp	m_pead_nl_loop.F90	/^subroutine pead_nl_resp(/;"	s	module:m_pead_nl_loop
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/abinit$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/abinit$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/abinit$/;"	m
+pkglibexecdir	Makefile	/^pkglibexecdir = $(libexecdir)\/abinit$/;"	m
+precpred_1geo	m_precpred_1geo.F90	/^subroutine precpred_1geo(/;"	s	module:m_precpred_1geo
+predict_copy	m_gstateimg.F90	/^subroutine predict_copy(/;"	s	module:m_gstateimg
+predictimg	m_gstateimg.F90	/^subroutine predictimg(/;"	s	module:m_gstateimg
+prefix	Makefile	/^prefix = \/tigress\/xingz\/abinit-8.10.2$/;"	m
+print_chi2	m_nonlinear.F90	/^   subroutine print_chi2(/;"	s	subroutine:nonlinear
+print_dchidtau	m_nonlinear.F90	/^   subroutine print_dchidtau(/;"	s	subroutine:nonlinear
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
+prtimg	m_gstateimg.F90	/^subroutine prtimg(/;"	s	module:m_gstateimg
+prtnatom	m_mover.F90	/^subroutine prtnatom(/;"	s	subroutine:prtxfase
+prtxf	m_gstate.F90	/^subroutine prtxf(/;"	s	module:m_gstate
+prtxfase	m_mover.F90	/^subroutine prtxfase(/;"	s	module:m_mover
+psdir	Makefile	/^psdir = ${docdir}$/;"	m
+psps	m_dmfet.F90	/^   type(pseudopotential_type),pointer :: psps /;"	k	type:dmfet_type
+random_stopping_power	m_screening_driver.F90	/^subroutine random_stopping_power(/;"	s	module:m_screening_driver
+read_wfd	m_wfk_analyze.F90	/^subroutine read_wfd(/;"	s	subroutine:wfk_analyze
+respfn	m_respfn_driver.F90	/^subroutine respfn(/;"	s	module:m_respfn_driver
+run_atompaw	Makefile	/^run_atompaw = \/tigress\/xingz\/abinit-8.10.2\/fallbacks\/exports\/bin\/atompaw-abinit$/;"	m
+run_etsf_io	Makefile	/^run_etsf_io = $/;"	m
+run_graphatom	Makefile	/^run_graphatom = \/tigress\/xingz\/abinit-8.10.2\/fallbacks\/exports\/bin\/graphatom-abinit$/;"	m
+run_nc_config	Makefile	/^run_nc_config = $/;"	m
+run_nccopy	Makefile	/^run_nccopy = $/;"	m
+run_ncdump	Makefile	/^run_ncdump = $/;"	m
+run_ncgen	Makefile	/^run_ncgen = $/;"	m
+run_ncgen3	Makefile	/^run_ncgen3 = $/;"	m
+run_postw90_x	Makefile	/^run_postw90_x = $/;"	m
+run_w90chk2chk_x	Makefile	/^run_w90chk2chk_x = $/;"	m
+run_wannier90_x	Makefile	/^run_wannier90_x = $/;"	m
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+screening	m_screening_driver.F90	/^subroutine screening(/;"	s	module:m_screening_driver
+setup2	m_gstate.F90	/^subroutine setup2(/;"	s	module:m_gstate
+setup_bse	m_bethe_salpeter.F90	/^subroutine setup_bse(/;"	s	module:m_bethe_salpeter
+setup_bse_interp	m_bethe_salpeter.F90	/^subroutine setup_bse_interp(/;"	s	module:m_bethe_salpeter
+setup_screening	m_screening_driver.F90	/^subroutine setup_screening(/;"	s	module:m_screening_driver
+setup_sigma	m_sigma_driver.F90	/^subroutine setup_sigma(/;"	s	module:m_sigma_driver
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sigma	m_sigma_driver.F90	/^subroutine sigma(/;"	s	module:m_sigma_driver
+sigma_bksmask	m_sigma_driver.F90	/^subroutine sigma_bksmask(/;"	s	module:m_sigma_driver
+sigma_tables	m_sigma_driver.F90	/^subroutine sigma_tables(/;"	s	module:m_sigma_driver
+src_01_gsl_ext_incs	Makefile	/^src_01_gsl_ext_incs = -I$(top_builddir)\/src\/01_gsl_ext -I$(top_srcdir)\/src\/01_gsl_ext$/;"	m
+src_02_clib_incs	Makefile	/^src_02_clib_incs = -I$(top_builddir)\/src\/02_clib -I$(top_srcdir)\/src\/02_clib$/;"	m
+src_10_defs_incs	Makefile	/^src_10_defs_incs = -I$(top_builddir)\/src\/10_defs -I$(top_srcdir)\/src\/10_defs$/;"	m
+src_10_dumpinfo_incs	Makefile	/^src_10_dumpinfo_incs = -I$(top_builddir)\/src\/10_dumpinfo -I$(top_srcdir)\/src\/10_dumpinfo$/;"	m
+src_11_memory_mpi_incs	Makefile	/^src_11_memory_mpi_incs = -I$(top_builddir)\/src\/11_memory_mpi -I$(top_srcdir)\/src\/11_memory_mpi$/;"	m
+src_12_hide_mpi_incs	Makefile	/^src_12_hide_mpi_incs = -I$(top_builddir)\/src\/12_hide_mpi -I$(top_srcdir)\/src\/12_hide_mpi$/;"	m
+src_14_hidewrite_incs	Makefile	/^src_14_hidewrite_incs = -I$(top_builddir)\/src\/14_hidewrite -I$(top_srcdir)\/src\/14_hidewrite$/;"	m
+src_15_gpu_toolbox_incs	Makefile	/^src_15_gpu_toolbox_incs = -I$(top_builddir)\/src\/15_gpu_toolbox -I$(top_srcdir)\/src\/15_gpu_toolbox$/;"	m
+src_16_hideleave_incs	Makefile	/^src_16_hideleave_incs = -I$(top_builddir)\/src\/16_hideleave -I$(top_srcdir)\/src\/16_hideleave$/;"	m
+src_17_libtetra_ext_incs	Makefile	/^src_17_libtetra_ext_incs = -I$(top_builddir)\/src\/17_libtetra_ext -I$(top_srcdir)\/src\/17_libtetra_ext$/;"	m
+src_18_timing_incs	Makefile	/^src_18_timing_incs = -I$(top_builddir)\/src\/18_timing -I$(top_srcdir)\/src\/18_timing$/;"	m
+src_21_hashfuncs_incs	Makefile	/^src_21_hashfuncs_incs = -I$(top_builddir)\/src\/21_hashfuncs -I$(top_srcdir)\/src\/21_hashfuncs$/;"	m
+src_27_toolbox_oop_incs	Makefile	/^src_27_toolbox_oop_incs = -I$(top_builddir)\/src\/27_toolbox_oop -I$(top_srcdir)\/src\/27_toolbox_oop$/;"	m
+src_28_numeric_noabirule_incs	Makefile	/^src_28_numeric_noabirule_incs = -I$(top_builddir)\/src\/28_numeric_noabirule -I$(top_srcdir)\/src\/28_numeric_noabirule$/;"	m
+src_29_kpoints_incs	Makefile	/^src_29_kpoints_incs = -I$(top_builddir)\/src\/29_kpoints -I$(top_srcdir)\/src\/29_kpoints$/;"	m
+src_32_util_incs	Makefile	/^src_32_util_incs = -I$(top_builddir)\/src\/32_util -I$(top_srcdir)\/src\/32_util$/;"	m
+src_41_geometry_incs	Makefile	/^src_41_geometry_incs = -I$(top_builddir)\/src\/41_geometry -I$(top_srcdir)\/src\/41_geometry$/;"	m
+src_41_xc_lowlevel_incs	Makefile	/^src_41_xc_lowlevel_incs = -I$(top_builddir)\/src\/41_xc_lowlevel -I$(top_srcdir)\/src\/41_xc_lowlevel$/;"	m
+src_42_libpaw_incs	Makefile	/^src_42_libpaw_incs = -I$(top_builddir)\/src\/42_libpaw -I$(top_srcdir)\/src\/42_libpaw$/;"	m
+src_42_nlstrain_incs	Makefile	/^src_42_nlstrain_incs = -I$(top_builddir)\/src\/42_nlstrain -I$(top_srcdir)\/src\/42_nlstrain$/;"	m
+src_42_parser_incs	Makefile	/^src_42_parser_incs = -I$(top_builddir)\/src\/42_parser -I$(top_srcdir)\/src\/42_parser$/;"	m
+src_43_ptgroups_incs	Makefile	/^src_43_ptgroups_incs = -I$(top_builddir)\/src\/43_ptgroups -I$(top_srcdir)\/src\/43_ptgroups$/;"	m
+src_43_wvl_wrappers_incs	Makefile	/^src_43_wvl_wrappers_incs = -I$(top_builddir)\/src\/43_wvl_wrappers -I$(top_srcdir)\/src\/43_wvl_wrappers$/;"	m
+src_44_abitools_incs	Makefile	/^src_44_abitools_incs = -I$(top_builddir)\/src\/44_abitools -I$(top_srcdir)\/src\/44_abitools$/;"	m
+src_44_abitypes_defs_incs	Makefile	/^src_44_abitypes_defs_incs = -I$(top_builddir)\/src\/44_abitypes_defs -I$(top_srcdir)\/src\/44_abitypes_defs$/;"	m
+src_45_geomoptim_incs	Makefile	/^src_45_geomoptim_incs = -I$(top_builddir)\/src\/45_geomoptim -I$(top_srcdir)\/src\/45_geomoptim$/;"	m
+src_45_xgTools_incs	Makefile	/^src_45_xgTools_incs = -I$(top_builddir)\/src\/45_xgTools -I$(top_srcdir)\/src\/45_xgTools$/;"	m
+src_46_diago_incs	Makefile	/^src_46_diago_incs = -I$(top_builddir)\/src\/46_diago -I$(top_srcdir)\/src\/46_diago$/;"	m
+src_49_gw_toolbox_oop_incs	Makefile	/^src_49_gw_toolbox_oop_incs = -I$(top_builddir)\/src\/49_gw_toolbox_oop -I$(top_srcdir)\/src\/49_gw_toolbox_oop$/;"	m
+src_51_manage_mpi_incs	Makefile	/^src_51_manage_mpi_incs = -I$(top_builddir)\/src\/51_manage_mpi -I$(top_srcdir)\/src\/51_manage_mpi$/;"	m
+src_52_fft_mpi_noabirule_incs	Makefile	/^src_52_fft_mpi_noabirule_incs = -I$(top_builddir)\/src\/52_fft_mpi_noabirule -I$(top_srcdir)\/src\/52_fft_mpi_noabirule$/;"	m
+src_52_manage_cuda_incs	Makefile	/^src_52_manage_cuda_incs = -I$(top_builddir)\/src\/52_manage_cuda -I$(top_srcdir)\/src\/52_manage_cuda$/;"	m
+src_53_ffts_incs	Makefile	/^src_53_ffts_incs = -I$(top_builddir)\/src\/53_ffts -I$(top_srcdir)\/src\/53_ffts$/;"	m
+src_54_spacepar_incs	Makefile	/^src_54_spacepar_incs = -I$(top_builddir)\/src\/54_spacepar -I$(top_srcdir)\/src\/54_spacepar$/;"	m
+src_55_abiutil_incs	Makefile	/^src_55_abiutil_incs = -I$(top_builddir)\/src\/55_abiutil -I$(top_srcdir)\/src\/55_abiutil$/;"	m
+src_56_io_mpi_incs	Makefile	/^src_56_io_mpi_incs = -I$(top_builddir)\/src\/56_io_mpi -I$(top_srcdir)\/src\/56_io_mpi$/;"	m
+src_56_mixing_incs	Makefile	/^src_56_mixing_incs = -I$(top_builddir)\/src\/56_mixing -I$(top_srcdir)\/src\/56_mixing$/;"	m
+src_56_recipspace_incs	Makefile	/^src_56_recipspace_incs = -I$(top_builddir)\/src\/56_recipspace -I$(top_srcdir)\/src\/56_recipspace$/;"	m
+src_56_xc_incs	Makefile	/^src_56_xc_incs = -I$(top_builddir)\/src\/56_xc -I$(top_srcdir)\/src\/56_xc$/;"	m
+src_57_iopsp_parser_incs	Makefile	/^src_57_iopsp_parser_incs = -I$(top_builddir)\/src\/57_iopsp_parser -I$(top_srcdir)\/src\/57_iopsp_parser$/;"	m
+src_57_iovars_incs	Makefile	/^src_57_iovars_incs = -I$(top_builddir)\/src\/57_iovars -I$(top_srcdir)\/src\/57_iovars$/;"	m
+src_59_ionetcdf_incs	Makefile	/^src_59_ionetcdf_incs = -I$(top_builddir)\/src\/59_ionetcdf -I$(top_srcdir)\/src\/59_ionetcdf$/;"	m
+src_61_occeig_incs	Makefile	/^src_61_occeig_incs = -I$(top_builddir)\/src\/61_occeig -I$(top_srcdir)\/src\/61_occeig$/;"	m
+src_62_cg_noabirule_incs	Makefile	/^src_62_cg_noabirule_incs = -I$(top_builddir)\/src\/62_cg_noabirule -I$(top_srcdir)\/src\/62_cg_noabirule$/;"	m
+src_62_ctqmc_incs	Makefile	/^src_62_ctqmc_incs = -I$(top_builddir)\/src\/62_ctqmc -I$(top_srcdir)\/src\/62_ctqmc$/;"	m
+src_62_iowfdenpot_incs	Makefile	/^src_62_iowfdenpot_incs = -I$(top_builddir)\/src\/62_iowfdenpot -I$(top_srcdir)\/src\/62_iowfdenpot$/;"	m
+src_62_poisson_incs	Makefile	/^src_62_poisson_incs = -I$(top_builddir)\/src\/62_poisson -I$(top_srcdir)\/src\/62_poisson$/;"	m
+src_62_wvl_wfs_incs	Makefile	/^src_62_wvl_wfs_incs = -I$(top_builddir)\/src\/62_wvl_wfs -I$(top_srcdir)\/src\/62_wvl_wfs$/;"	m
+src_63_bader_incs	Makefile	/^src_63_bader_incs = -I$(top_builddir)\/src\/63_bader -I$(top_srcdir)\/src\/63_bader$/;"	m
+src_64_psp_incs	Makefile	/^src_64_psp_incs = -I$(top_builddir)\/src\/64_psp -I$(top_srcdir)\/src\/64_psp$/;"	m
+src_65_lotf_base_incs	Makefile	/^src_65_lotf_base_incs = -I$(top_builddir)\/src\/65_lotf_base -I$(top_srcdir)\/src\/65_lotf_base$/;"	m
+src_65_paw_incs	Makefile	/^src_65_paw_incs = -I$(top_builddir)\/src\/65_paw -I$(top_srcdir)\/src\/65_paw$/;"	m
+src_66_nonlocal_incs	Makefile	/^src_66_nonlocal_incs = -I$(top_builddir)\/src\/66_nonlocal -I$(top_srcdir)\/src\/66_nonlocal$/;"	m
+src_66_vdwxc_incs	Makefile	/^src_66_vdwxc_incs = -I$(top_builddir)\/src\/66_vdwxc -I$(top_srcdir)\/src\/66_vdwxc$/;"	m
+src_66_wfs_incs	Makefile	/^src_66_wfs_incs = -I$(top_builddir)\/src\/66_wfs -I$(top_srcdir)\/src\/66_wfs$/;"	m
+src_67_common_incs	Makefile	/^src_67_common_incs = -I$(top_builddir)\/src\/67_common -I$(top_srcdir)\/src\/67_common$/;"	m
+src_67_triqs_ext_incs	Makefile	/^src_67_triqs_ext_incs = -I$(top_builddir)\/src\/67_triqs_ext -I$(top_srcdir)\/src\/67_triqs_ext$/;"	m
+src_68_dmft_incs	Makefile	/^src_68_dmft_incs = -I$(top_builddir)\/src\/68_dmft -I$(top_srcdir)\/src\/68_dmft$/;"	m
+src_68_lotf_incs	Makefile	/^src_68_lotf_incs = -I$(top_builddir)\/src\/68_lotf -I$(top_srcdir)\/src\/68_lotf$/;"	m
+src_68_recursion_incs	Makefile	/^src_68_recursion_incs = -I$(top_builddir)\/src\/68_recursion -I$(top_srcdir)\/src\/68_recursion$/;"	m
+src_68_rsprc_incs	Makefile	/^src_68_rsprc_incs = -I$(top_builddir)\/src\/68_rsprc -I$(top_srcdir)\/src\/68_rsprc$/;"	m
+src_69_wfdesc_incs	Makefile	/^src_69_wfdesc_incs = -I$(top_builddir)\/src\/69_wfdesc -I$(top_srcdir)\/src\/69_wfdesc$/;"	m
+src_70_gw_incs	Makefile	/^src_70_gw_incs = -I$(top_builddir)\/src\/70_gw -I$(top_srcdir)\/src\/70_gw$/;"	m
+src_71_bse_incs	Makefile	/^src_71_bse_incs = -I$(top_builddir)\/src\/71_bse -I$(top_srcdir)\/src\/71_bse$/;"	m
+src_71_wannier_incs	Makefile	/^src_71_wannier_incs = -I$(top_builddir)\/src\/71_wannier -I$(top_srcdir)\/src\/71_wannier$/;"	m
+src_72_response_incs	Makefile	/^src_72_response_incs = -I$(top_builddir)\/src\/72_response -I$(top_srcdir)\/src\/72_response$/;"	m
+src_77_ddb_incs	Makefile	/^src_77_ddb_incs = -I$(top_builddir)\/src\/77_ddb -I$(top_srcdir)\/src\/77_ddb$/;"	m
+src_77_suscep_incs	Makefile	/^src_77_suscep_incs = -I$(top_builddir)\/src\/77_suscep -I$(top_srcdir)\/src\/77_suscep$/;"	m
+src_78_effpot_incs	Makefile	/^src_78_effpot_incs = -I$(top_builddir)\/src\/78_effpot -I$(top_srcdir)\/src\/78_effpot$/;"	m
+src_78_eph_incs	Makefile	/^src_78_eph_incs = -I$(top_builddir)\/src\/78_eph -I$(top_srcdir)\/src\/78_eph$/;"	m
+src_79_seqpar_mpi_incs	Makefile	/^src_79_seqpar_mpi_incs = -I$(top_builddir)\/src\/79_seqpar_mpi -I$(top_srcdir)\/src\/79_seqpar_mpi$/;"	m
+src_80_tdep_incs	Makefile	/^src_80_tdep_incs = -I$(top_builddir)\/src\/80_tdep -I$(top_srcdir)\/src\/80_tdep$/;"	m
+src_83_cut3d_incs	Makefile	/^src_83_cut3d_incs = -I$(top_builddir)\/src\/83_cut3d -I$(top_srcdir)\/src\/83_cut3d$/;"	m
+src_84_fold2Bloch_incs	Makefile	/^src_84_fold2Bloch_incs = -I$(top_builddir)\/src\/84_fold2Bloch -I$(top_srcdir)\/src\/84_fold2Bloch$/;"	m
+src_94_scfcv_incs	Makefile	/^src_94_scfcv_incs = -I$(top_builddir)\/src\/94_scfcv -I$(top_srcdir)\/src\/94_scfcv$/;"	m
+src_95_drive_incs	Makefile	/^src_95_drive_incs = -I$(top_builddir)\/src\/95_drive -I$(top_srcdir)\/src\/95_drive$/;"	m
+src_incs_incs	Makefile	/^src_incs_incs = -I$(top_builddir)\/src\/incs -I$(top_srcdir)\/src\/incs$/;"	m
+src_mods_incs	Makefile	/^src_mods_incs = -I$(top_builddir)\/src\/mods -I$(top_srcdir)\/src\/mods$/;"	m
+srcdir	Makefile	/^srcdir = .$/;"	m
+subdir	Makefile	/^subdir = src\/95_drive$/;"	m
+subdirs	Makefile	/^subdirs =  fallbacks tests$/;"	m
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+target	Makefile	/^target = x86_64-unknown-linux-gnu$/;"	m
+target_alias	Makefile	/^target_alias = $/;"	m
+target_cpu	Makefile	/^target_cpu = x86_64$/;"	m
+target_os	Makefile	/^target_os = linux-gnu$/;"	m
+target_triplet	Makefile	/^target_triplet = x86_64-unknown-linux-gnu$/;"	m
+target_vendor	Makefile	/^target_vendor = unknown$/;"	m
+top_build_prefix	Makefile	/^top_build_prefix = ..\/..\/$/;"	m
+top_builddir	Makefile	/^top_builddir = ..\/..$/;"	m
+top_srcdir	Makefile	/^top_srcdir = ..\/..$/;"	m
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
+wfk_analyze	m_wfk_analyze.F90	/^subroutine wfk_analyze(/;"	s	module:m_wfk_analyze
+with_algo_flavor	Makefile	/^with_algo_flavor = none$/;"	m
+with_algo_incs	Makefile	/^with_algo_incs = $/;"	m
+with_algo_libs	Makefile	/^with_algo_libs = $/;"	m
+with_atompaw_bins	Makefile	/^with_atompaw_bins = $/;"	m
+with_atompaw_incs	Makefile	/^with_atompaw_incs = $/;"	m
+with_atompaw_libs	Makefile	/^with_atompaw_libs = $/;"	m
+with_bigdft_incs	Makefile	/^with_bigdft_incs = $/;"	m
+with_bigdft_libs	Makefile	/^with_bigdft_libs = $/;"	m
+with_config_file	Makefile	/^with_config_file = .\/xing.ac$/;"	m
+with_dft_flavor	Makefile	/^with_dft_flavor = libxc+atompaw$/;"	m
+with_fc_vendor	Makefile	/^with_fc_vendor = $/;"	m
+with_fc_version	Makefile	/^with_fc_version = $/;"	m
+with_fft_flavor	Makefile	/^with_fft_flavor = fftw3$/;"	m
+with_fft_incs	Makefile	/^with_fft_incs = $/;"	m
+with_fft_libs	Makefile	/^with_fft_libs = $/;"	m
+with_gnu_ld	Makefile	/^with_gnu_ld = $/;"	m
+with_gpu_cflags	Makefile	/^with_gpu_cflags = $/;"	m
+with_gpu_cppflags	Makefile	/^with_gpu_cppflags = $/;"	m
+with_gpu_flavor	Makefile	/^with_gpu_flavor = cuda-double$/;"	m
+with_gpu_incs	Makefile	/^with_gpu_incs = $/;"	m
+with_gpu_ldflags	Makefile	/^with_gpu_ldflags = $/;"	m
+with_gpu_libs	Makefile	/^with_gpu_libs = $/;"	m
+with_gpu_prefix	Makefile	/^with_gpu_prefix = $/;"	m
+with_libxc_incs	Makefile	/^with_libxc_incs = $/;"	m
+with_libxc_libs	Makefile	/^with_libxc_libs = $/;"	m
+with_linalg_flavor	Makefile	/^with_linalg_flavor = mkl$/;"	m
+with_linalg_incs	Makefile	/^with_linalg_incs = $/;"	m
+with_linalg_libs	Makefile	/^with_linalg_libs = $/;"	m
+with_math_flavor	Makefile	/^with_math_flavor = none$/;"	m
+with_math_incs	Makefile	/^with_math_incs = $/;"	m
+with_math_libs	Makefile	/^with_math_libs = $/;"	m
+with_mpi_incs	Makefile	/^with_mpi_incs = $/;"	m
+with_mpi_level	Makefile	/^with_mpi_level = $/;"	m
+with_mpi_libs	Makefile	/^with_mpi_libs = $/;"	m
+with_mpi_prefix	Makefile	/^with_mpi_prefix = $/;"	m
+with_netcdf_incs	Makefile	/^with_netcdf_incs = $/;"	m
+with_netcdf_libs	Makefile	/^with_netcdf_libs = $/;"	m
+with_psml_incs	Makefile	/^with_psml_incs = $/;"	m
+with_psml_libs	Makefile	/^with_psml_libs = $/;"	m
+with_tardir	Makefile	/^with_tardir = $/;"	m
+with_timer_flavor	Makefile	/^with_timer_flavor = abinit$/;"	m
+with_timer_incs	Makefile	/^with_timer_incs = $/;"	m
+with_timer_libs	Makefile	/^with_timer_libs = $/;"	m
+with_trio_flavor	Makefile	/^with_trio_flavor = none$/;"	m
+with_triqs_incs	Makefile	/^with_triqs_incs = $/;"	m
+with_triqs_libs	Makefile	/^with_triqs_libs = $/;"	m
+with_wannier90_bins	Makefile	/^with_wannier90_bins = $/;"	m
+with_wannier90_incs	Makefile	/^with_wannier90_incs = $/;"	m
+with_wannier90_libs	Makefile	/^with_wannier90_libs = $/;"	m
+with_yaml_incs	Makefile	/^with_yaml_incs = $/;"	m
+with_yaml_libs	Makefile	/^with_yaml_libs = $/;"	m
+wrt_moldyn_netcdf	m_mover.F90	/^subroutine wrt_moldyn_netcdf(/;"	s	module:m_mover
+wrtloctens	m_respfn_driver.F90	/^subroutine wrtloctens(/;"	s	module:m_respfn_driver
+ylm	m_dmfet.F90	/^   real(dp), pointer :: ylm(/;"	k	type:dmfet_type
+ylmgr	m_dmfet.F90	/^   real(dp), pointer :: ylmgr(/;"	k	type:dmfet_type

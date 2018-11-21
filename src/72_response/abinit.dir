@@ -1,0 +1,45 @@
+#Dependencies (outside the directory) of the directory ./src/72_response
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+include_dirs = [
+	"44_abitools",
+	"59_ionetcdf",
+	"27_toolbox_oop",
+	"42_libpaw",
+	"65_paw",
+	"66_nonlocal",
+	"17_libtetra_ext",
+	"55_abiutil",
+	"62_iowfdenpot",
+	"18_timing",
+	"12_hide_mpi",
+	"56_mixing",
+	"56_io_mpi",
+	"14_hidewrite",
+	"54_spacepar",
+	"28_numeric_noabirule",
+	"69_wfdesc",
+	"32_util",
+	"67_common",
+	"64_psp",
+	"44_abitypes_defs",
+	"51_manage_mpi",
+	"61_occeig",
+	"16_hideleave",
+	"56_recipspace",
+	"52_fft_mpi_noabirule",
+	"56_xc",
+	"66_wfs",
+	"41_geometry",
+	"11_memory_mpi",
+	"10_defs",
+	"53_ffts",
+	"68_rsprc"]

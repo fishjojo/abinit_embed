@@ -1,0 +1,31 @@
+#Dependencies (inside the directory) of the directory ./src/79_seqpar_mpi
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_79_seqpar_mpi.$(MODEXT) \
+	m_inwffil.$(MODEXT) \
+	m_lobpcg.$(MODEXT) \
+	m_lobpcgwf.$(MODEXT) \
+	m_lobpcgwf_old.$(MODEXT) \
+	m_tddft.$(MODEXT) \
+	m_vtorho.$(MODEXT) \
+	m_vtowfk.$(MODEXT) \
+	m_wvl_wfsinp.$(MODEXT) 
+
+m_inwffil.$(OBJEXT): m_wvl_wfsinp.$(OBJEXT) 
+
+m_lobpcgwf.$(OBJEXT): m_lobpcg.$(OBJEXT) 
+
+m_lobpcgwf_old.$(OBJEXT): m_lobpcg.$(OBJEXT) 
+
+m_vtorho.$(OBJEXT): m_tddft.$(OBJEXT) m_vtowfk.$(OBJEXT) 
+
+m_vtowfk.$(OBJEXT): m_lobpcgwf.$(OBJEXT) m_lobpcgwf_old.$(OBJEXT) 

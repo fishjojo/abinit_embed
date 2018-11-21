@@ -1,0 +1,104 @@
+#Dependencies (inside the directory) of the directory ./src/70_gw
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_70_gw.$(MODEXT) \
+	m_FFT_prof.$(MODEXT) \
+	m_calc_ucrpa.$(MODEXT) \
+	m_chi0.$(MODEXT) \
+	m_chi0tk.$(MODEXT) \
+	m_classify_bands.$(MODEXT) \
+	m_cohsex.$(MODEXT) \
+	m_dyson_solver.$(MODEXT) \
+	m_gwls_ComputeCorrelationEnergy.$(MODEXT) \
+	m_gwls_ComputePoles.$(MODEXT) \
+	m_gwls_DielectricArray.$(MODEXT) \
+	m_gwls_GWanalyticPart.$(MODEXT) \
+	m_gwls_GWlanczos.$(MODEXT) \
+	m_gwls_GenerateEpsilon.$(MODEXT) \
+	m_gwls_LanczosBasis.$(MODEXT) \
+	m_gwls_LanczosResolvents.$(MODEXT) \
+	m_gwls_Projected_AT.$(MODEXT) \
+	m_gwls_Projected_BT.$(MODEXT) \
+	m_gwls_QR_factorization.$(MODEXT) \
+	m_gwls_TimingLog.$(MODEXT) \
+	m_gwls_hamiltonian.$(MODEXT) \
+	m_gwls_lineqsolver.$(MODEXT) \
+	m_gwls_model_polarisability.$(MODEXT) \
+	m_gwls_polarisability.$(MODEXT) \
+	m_gwls_utility.$(MODEXT) \
+	m_gwls_valenceWavefunctions.$(MODEXT) \
+	m_gwls_wf.$(MODEXT) \
+	m_model_screening.$(MODEXT) \
+	m_ppmodel.$(MODEXT) \
+	m_prep_calc_ucrpa.$(MODEXT) \
+	m_qparticles.$(MODEXT) \
+	m_read_plowannier.$(MODEXT) \
+	m_screen.$(MODEXT) \
+	m_screening.$(MODEXT) \
+	m_sigc.$(MODEXT) \
+	m_sigma.$(MODEXT) \
+	m_sigx.$(MODEXT) \
+	m_vhxc_me.$(MODEXT) 
+
+m_chi0.$(OBJEXT): m_chi0tk.$(OBJEXT) m_read_plowannier.$(OBJEXT) 
+
+m_cohsex.$(OBJEXT): m_screening.$(OBJEXT) m_sigma.$(OBJEXT) 
+
+m_dyson_solver.$(OBJEXT): m_sigma.$(OBJEXT) 
+
+m_gwls_ComputeCorrelationEnergy.$(OBJEXT): m_gwls_ComputePoles.$(OBJEXT) m_gwls_DielectricArray.$(OBJEXT) m_gwls_GWanalyticPart.$(OBJEXT) m_gwls_GWlanczos.$(OBJEXT) m_gwls_GenerateEpsilon.$(OBJEXT) m_gwls_LanczosBasis.$(OBJEXT) m_gwls_Projected_AT.$(OBJEXT) m_gwls_Projected_BT.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_model_polarisability.$(OBJEXT) m_gwls_polarisability.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_ComputePoles.$(OBJEXT): m_gwls_GWanalyticPart.$(OBJEXT) m_gwls_GWlanczos.$(OBJEXT) m_gwls_GenerateEpsilon.$(OBJEXT) m_gwls_LanczosBasis.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_polarisability.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_DielectricArray.$(OBJEXT): m_gwls_GenerateEpsilon.$(OBJEXT) m_gwls_LanczosBasis.$(OBJEXT) m_gwls_QR_factorization.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_model_polarisability.$(OBJEXT) m_gwls_polarisability.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_valenceWavefunctions.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_GWanalyticPart.$(OBJEXT): m_gwls_GWlanczos.$(OBJEXT) m_gwls_GenerateEpsilon.$(OBJEXT) m_gwls_LanczosBasis.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_model_polarisability.$(OBJEXT) m_gwls_polarisability.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_GWlanczos.$(OBJEXT): m_gwls_QR_factorization.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_polarisability.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_GenerateEpsilon.$(OBJEXT): m_gwls_GWlanczos.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_model_polarisability.$(OBJEXT) m_gwls_polarisability.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_LanczosBasis.$(OBJEXT): m_gwls_GenerateEpsilon.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_LanczosResolvents.$(OBJEXT): m_gwls_GWlanczos.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_Projected_AT.$(OBJEXT): m_gwls_GWanalyticPart.$(OBJEXT) m_gwls_GWlanczos.$(OBJEXT) m_gwls_LanczosBasis.$(OBJEXT) m_gwls_LanczosResolvents.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_Projected_BT.$(OBJEXT): m_gwls_DielectricArray.$(OBJEXT) m_gwls_GWlanczos.$(OBJEXT) m_gwls_LanczosBasis.$(OBJEXT) m_gwls_LanczosResolvents.$(OBJEXT) m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_QR_factorization.$(OBJEXT): m_gwls_TimingLog.$(OBJEXT) m_gwls_hamiltonian.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_TimingLog.$(OBJEXT): m_gwls_hamiltonian.$(OBJEXT) m_gwls_utility.$(OBJEXT) 
+
+m_gwls_hamiltonian.$(OBJEXT): m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_lineqsolver.$(OBJEXT): m_gwls_hamiltonian.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_model_polarisability.$(OBJEXT): m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_valenceWavefunctions.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_polarisability.$(OBJEXT): m_gwls_hamiltonian.$(OBJEXT) m_gwls_lineqsolver.$(OBJEXT) m_gwls_utility.$(OBJEXT) m_gwls_valenceWavefunctions.$(OBJEXT) m_gwls_wf.$(OBJEXT) 
+
+m_gwls_valenceWavefunctions.$(OBJEXT): m_gwls_hamiltonian.$(OBJEXT) m_gwls_utility.$(OBJEXT) 
+
+m_gwls_wf.$(OBJEXT): m_gwls_utility.$(OBJEXT) 
+
+m_prep_calc_ucrpa.$(OBJEXT): m_read_plowannier.$(OBJEXT) 
+
+m_qparticles.$(OBJEXT): m_sigma.$(OBJEXT) 
+
+m_screen.$(OBJEXT): m_ppmodel.$(OBJEXT) m_screening.$(OBJEXT) 
+
+m_sigc.$(OBJEXT): m_ppmodel.$(OBJEXT) m_screening.$(OBJEXT) m_sigma.$(OBJEXT) 
+
+m_sigma.$(OBJEXT): m_screening.$(OBJEXT) 
+
+m_sigx.$(OBJEXT): m_sigma.$(OBJEXT) 

@@ -1,0 +1,113 @@
+#Dependencies (inside the directory) of the directory ./src/43_ptgroups
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_43_ptgroups.$(MODEXT) \
+	m_defs_ptgroups.$(MODEXT) \
+	m_ptg_C1.$(MODEXT) \
+	m_ptg_C2.$(MODEXT) \
+	m_ptg_C2h.$(MODEXT) \
+	m_ptg_C2v.$(MODEXT) \
+	m_ptg_C3.$(MODEXT) \
+	m_ptg_C3h.$(MODEXT) \
+	m_ptg_C3i.$(MODEXT) \
+	m_ptg_C3v.$(MODEXT) \
+	m_ptg_C4.$(MODEXT) \
+	m_ptg_C4h.$(MODEXT) \
+	m_ptg_C4v.$(MODEXT) \
+	m_ptg_C6.$(MODEXT) \
+	m_ptg_C6h.$(MODEXT) \
+	m_ptg_C6v.$(MODEXT) \
+	m_ptg_Ci.$(MODEXT) \
+	m_ptg_Cs.$(MODEXT) \
+	m_ptg_D2.$(MODEXT) \
+	m_ptg_D2d.$(MODEXT) \
+	m_ptg_D2h.$(MODEXT) \
+	m_ptg_D3.$(MODEXT) \
+	m_ptg_D3d.$(MODEXT) \
+	m_ptg_D3h.$(MODEXT) \
+	m_ptg_D4.$(MODEXT) \
+	m_ptg_D4h.$(MODEXT) \
+	m_ptg_D6.$(MODEXT) \
+	m_ptg_D6h.$(MODEXT) \
+	m_ptg_O.$(MODEXT) \
+	m_ptg_Oh.$(MODEXT) \
+	m_ptg_S4.$(MODEXT) \
+	m_ptg_T.$(MODEXT) \
+	m_ptg_Td.$(MODEXT) \
+	m_ptg_Th.$(MODEXT) \
+	m_ptgroups.$(MODEXT) 
+
+m_ptg_C1.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C2.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C2h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C2v.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C3.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C3h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C3i.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C3v.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C4.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C4h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C4v.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C6.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C6h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_C6v.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_Ci.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_Cs.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D2.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D2d.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D2h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D3.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D3d.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D3h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D4.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D4h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D6.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_D6h.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_O.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_Oh.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_S4.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_T.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_Td.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptg_Th.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) 
+
+m_ptgroups.$(OBJEXT): m_defs_ptgroups.$(OBJEXT) m_ptg_C1.$(OBJEXT) m_ptg_C2.$(OBJEXT) m_ptg_C2h.$(OBJEXT) m_ptg_C2v.$(OBJEXT) m_ptg_C3.$(OBJEXT) m_ptg_C3h.$(OBJEXT) m_ptg_C3i.$(OBJEXT) m_ptg_C3v.$(OBJEXT) m_ptg_C4.$(OBJEXT) m_ptg_C4h.$(OBJEXT) m_ptg_C4v.$(OBJEXT) m_ptg_C6.$(OBJEXT) m_ptg_C6h.$(OBJEXT) m_ptg_C6v.$(OBJEXT) m_ptg_Ci.$(OBJEXT) m_ptg_Cs.$(OBJEXT) m_ptg_D2.$(OBJEXT) m_ptg_D2d.$(OBJEXT) m_ptg_D2h.$(OBJEXT) m_ptg_D3.$(OBJEXT) m_ptg_D3d.$(OBJEXT) m_ptg_D3h.$(OBJEXT) m_ptg_D4.$(OBJEXT) m_ptg_D4h.$(OBJEXT) m_ptg_D6.$(OBJEXT) m_ptg_D6h.$(OBJEXT) m_ptg_O.$(OBJEXT) m_ptg_Oh.$(OBJEXT) m_ptg_S4.$(OBJEXT) m_ptg_T.$(OBJEXT) m_ptg_Td.$(OBJEXT) m_ptg_Th.$(OBJEXT) 

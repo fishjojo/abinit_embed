@@ -1,0 +1,90 @@
+# -----------------------------------------------------------------
+# Orbital interaction in Copper
+# -----------------------------------------------------------------
+
+ndtset 3
+jdtset 1 2 3 
+#jdtset 1 2 3 4
+pawprtvol 3
+paral_kgb 0
+
+# -----------------------------------------------------------------
+# Parameters common to all datasets
+# -----------------------------------------------------------------
+
+# Convergence parameters
+nstep     20
+nline     5
+nnsclo    2
+ecut      8.0
+pawecutdg 12.0
+#tolvrs    1.0d-15
+tolwfr    1.0d-10
+
+occopt    3
+tsmear    0.0036749
+ 
+# Physical parameters
+natom     1
+ntypat    1
+typat     1 
+znucl     29.0 
+
+xred      0.00 0.00 0.00
+#          0.25 0.25 0.25
+
+chkprim   0
+
+acell     3*6.822
+
+rprim     0.5 0.5 0.0
+          0.0 0.5 0.5
+          0.5 0.0 0.5
+          
+
+ngkpt     2 2 2
+nshiftk   1
+shiftk    0 0 0
+istwfk    *1
+
+nsym      1
+nband     30
+
+pawovlp    -1
+# -----------------------------------------------------------------
+#   First dataset
+# -----------------------------------------------------------------
+nsym1     0
+
+
+# -----------------------------------------------------------------
+#   Second dataset
+# -----------------------------------------------------------------
+getden2  -1
+nstep2    20
+nnsclo2   3
+nline2    3 
+
+
+# -----------------------------------------------------------------
+#   Third dataset
+# -----------------------------------------------------------------
+
+getwfk3   2
+getden3   2
+nbandkss3 2
+kssform3   3
+prtdos3    3
+
+plowan_compute3 1
+plowan_bandi3  5
+plowan_bandf3 10
+plowan_natom3  1
+plowan_iatom3   1 
+plowan_nbl3     1
+plowan_lcalc3   2
+plowan_projcalc3  5
+
+plowan_realspace3  1
+plowan_nt3  1
+plowan_it3 0  0  0

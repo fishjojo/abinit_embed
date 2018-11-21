@@ -1,0 +1,21 @@
+#Dependencies (inside the directory) of the directory ./src/42_nlstrain
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+CLEANFILES += \
+	interfaces_42_nlstrain.$(MODEXT) \
+	m_contistr01.$(MODEXT) \
+	m_contistr03.$(MODEXT) \
+	m_contistr12.$(MODEXT) \
+	m_contstr21.$(MODEXT) \
+	m_contstr23.$(MODEXT) \
+	m_contstr25.$(MODEXT) \
+	m_contstr25a.$(MODEXT) \
+	m_contstr26.$(MODEXT) 

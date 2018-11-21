@@ -1,0 +1,28 @@
+#Dependencies (outside the directory) of the directory ./src/78_effpot
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+include_dirs = [
+	"77_ddb",
+	"32_util",
+	"44_abitools",
+	"27_toolbox_oop",
+	"44_abitypes_defs",
+	"72_response",
+	"16_hideleave",
+	"42_parser",
+	"55_abiutil",
+	"41_geometry",
+	"45_geomoptim",
+	"12_hide_mpi",
+	"10_defs",
+	"14_hidewrite",
+	"57_iovars",
+	"28_numeric_noabirule"]

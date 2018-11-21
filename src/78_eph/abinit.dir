@@ -1,0 +1,39 @@
+#Dependencies (outside the directory) of the directory ./src/78_eph
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+include_dirs = [
+	"77_ddb",
+	"44_abitools",
+	"59_ionetcdf",
+	"27_toolbox_oop",
+	"42_libpaw",
+	"72_response",
+	"66_nonlocal",
+	"17_libtetra_ext",
+	"62_iowfdenpot",
+	"18_timing",
+	"12_hide_mpi",
+	"14_hidewrite",
+	"29_kpoints",
+	"69_wfdesc",
+	"32_util",
+	"28_numeric_noabirule",
+	"44_abitypes_defs",
+	"61_occeig",
+	"16_hideleave",
+	"65_paw",
+	"62_cg_noabirule",
+	"56_recipspace",
+	"52_fft_mpi_noabirule",
+	"66_wfs",
+	"41_geometry",
+	"10_defs",
+	"53_ffts"]

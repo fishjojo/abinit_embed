@@ -1,0 +1,53 @@
+#Dependencies (outside the directory) of the directory ./src/94_scfcv
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+include_dirs = [
+	"44_abitools",
+	"59_ionetcdf",
+	"27_toolbox_oop",
+	"42_libpaw",
+	"65_paw",
+	"70_gw",
+	"32_util",
+	"66_nonlocal",
+	"68_recursion",
+	"55_abiutil",
+	"62_iowfdenpot",
+	"62_ctqmc",
+	"18_timing",
+	"12_hide_mpi",
+	"56_mixing",
+	"56_io_mpi",
+	"14_hidewrite",
+	"54_spacepar",
+	"57_iovars",
+	"69_wfdesc",
+	"62_wvl_wfs",
+	"67_common",
+	"28_numeric_noabirule",
+	"44_abitypes_defs",
+	"51_manage_mpi",
+	"43_wvl_wrappers",
+	"62_poisson",
+	"16_hideleave",
+	"79_seqpar_mpi",
+	"71_wannier",
+	"56_recipspace",
+	"61_occeig",
+	"52_fft_mpi_noabirule",
+	"68_dmft",
+	"56_xc",
+	"66_wfs",
+	"41_xc_lowlevel",
+	"41_geometry",
+	"10_defs",
+	"53_ffts",
+	"68_rsprc"]

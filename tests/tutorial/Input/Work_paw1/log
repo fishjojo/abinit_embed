@@ -1,0 +1,3192 @@
+  ABINIT 8.10.2
+  
+  Give name for formatted input file: 
+tpaw1_1.in
+  Give name for formatted output file:
+tpaw1_1.out
+  Give root name for generic input files:
+tpaw1_1i
+  Give root name for generic output files:
+tpaw1_1o
+  Give root name for generic temporary files:
+tpaw1_1tmp
+ 
+--- !COMMENT
+src_file: m_dtfil.F90
+src_line: 1159
+message: |
+    Output file tpaw1_1.out
+     already exists.
+...
+ 
+ 
+--- !COMMENT
+src_file: m_dtfil.F90
+src_line: 1183
+message: |
+    Renaming old tpaw1_1.out to tpaw1_1.out0013
+...
+ 
+
+.Version 8.10.2 of ABINIT 
+.(MPI version, prepared for a x86_64_linux_intel18.0 computer) 
+
+.Copyright (C) 1998-2018 ABINIT group . 
+ ABINIT comes with ABSOLUTELY NO WARRANTY.
+ It is free software, and you are welcome to redistribute it
+ under certain conditions (GNU General Public License,
+ see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).
+
+ ABINIT is a project of the Universite Catholique de Louvain,
+ Corning Inc. and other collaborators, see ~abinit/doc/developers/contributors.txt .
+ Please read https://docs.abinit.org/theory/acknowledgments for suggested
+ acknowledgments of the ABINIT effort.
+ For more information, see https://www.abinit.org .
+
+.Starting date : Thu 18 Oct 2018.
+- ( at 18h17 )
+  
+ 
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+ === Build Information === 
+  Version       : 8.10.2
+  Build target  : x86_64_linux_intel18.0
+  Build date    : 20181015
+ 
+ === Compiler Suite === 
+  C compiler       : intel18.0
+  C++ compiler     : gnu18.0
+  Fortran compiler : intel18.0
+  CFLAGS           :  -g -O2 -vec-report0
+  CXXFLAGS         :  -g -O2 -mtune=native -march=native
+  FCFLAGS          :  -g -extend-source -noaltparam -nofpscomp
+  FC_LDFLAGS       :    -static-intel -static-libgcc
+ 
+ === Optimizations === 
+  Debug level        : basic
+  Optimization level : standard
+  Architecture       : intel_xeon
+ 
+ === Multicore === 
+  Parallel build : yes
+  Parallel I/O   : auto
+  openMP support : no
+  GPU support    : no
+ 
+ === Connectors / Fallbacks === 
+  Connectors on : yes
+  Fallbacks on  : yes
+  DFT flavor    : none
+  FFT flavor    : fftw3
+  LINALG flavor : mkl
+  MATH flavor   : none
+  TIMER flavor  : abinit
+  TRIO flavor   : none
+ 
+ === Experimental features === 
+  Bindings            : @enable_bindings@
+  Exports             : no
+  GW double-precision : no
+ 
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Default optimizations:
+   -O3
+
+
+ Optimizations for 43_ptgroups:
+   -O0
+
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ CPP options activated during the build:
+
+                  CC_INTEL                   CXX_GNU                  FC_INTEL
+ 
+ HAVE_FC_ALLOCATABLE_DT...             HAVE_FC_ASYNC  HAVE_FC_COMMAND_ARGUMENT
+ 
+      HAVE_FC_COMMAND_LINE        HAVE_FC_CONTIGUOUS           HAVE_FC_CPUTIME
+ 
+              HAVE_FC_EXIT             HAVE_FC_FLUSH             HAVE_FC_GAMMA
+ 
+   HAVE_FC_IEEE_EXCEPTIONS             HAVE_FC_IOMSG     HAVE_FC_ISO_C_BINDING
+ 
+  HAVE_FC_ISO_FORTRAN_2008        HAVE_FC_LONG_LINES        HAVE_FC_MOVE_ALLOC
+ 
+           HAVE_FC_PRIVATE         HAVE_FC_PROTECTED         HAVE_FC_STREAM_IO
+ 
+                  HAVE_FFT            HAVE_FFT_FFTW3              HAVE_FFT_MPI
+ 
+           HAVE_FFT_SERIAL        HAVE_LIBPAW_ABINIT      HAVE_LIBTETRA_ABINIT
+ 
+               HAVE_LINALG        HAVE_LINALG_SERIAL                  HAVE_MPI
+ 
+                 HAVE_MPI2       HAVE_MPI_IALLREDUCE        HAVE_MPI_IALLTOALL
+ 
+       HAVE_MPI_IALLTOALLV        HAVE_MPI_INTEGER16               HAVE_MPI_IO
+ 
+ HAVE_MPI_TYPE_CREATE_S...                HAVE_NUMPY             HAVE_OS_LINUX
+ 
+         HAVE_TIMER_ABINIT              USE_MACROAVE                            
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- input  file    -> tpaw1_1.in
+- output file    -> tpaw1_1.out
+- root for input  files -> tpaw1_1i
+- root for output files -> tpaw1_1o
+ 
+-instrng: 68 lines of input have been read from file tpaw1_1.in
+ 
+
+ Please give name of formatted atomic psp file
+ iofn2 : for atom type 1, psp file is ../../../Psps_for_tests/6c.lda.atompaw
+  read the values zionpsp=  4.0 , pspcod=   7 , lmax=   1
+ 2 0.                                   : shape_type,rshape                     
+  
+ 
+ inpspheads: deduce mpsang = 2, n1xccc = 1.
+ invars1 : treat image number: 1
+ 
+ symlatt : the Bravais lattice is cF (face-centered cubic)
+  xred   is defined in input file
+ ingeo: takes atomic coordinates from input array xred
+ 
+ symlatt : the Bravais lattice is cF (face-centered cubic)
+ 
+ symlatt : the Bravais lattice is cF (face-centered cubic)
+ symspgr : spgroup= 227  Fd -3 m   (=Oh^7)
+ symspgr : optical characteristics = isotropic
+ ingeo: angdeg(1:3)=   60.00000000   60.00000000   60.00000000
+ chkneu : initialized the occupation numbers for occopt=    1, spin-unpolarized or antiferromagnetic case :
+  2.00  2.00  2.00  2.00  0.00  0.00  0.00  0.00
+mpi_setup: mkmem  undefined in the input file.Use default mkmem  = nkpt
+ mpi_setup: With nkpt_me=10 and mkmem  = 10, ground state wf handled in core.
+mpi_setup: mkqmem undefined in the input file.Use default mkqmem = nkpt
+ mpi_setup: With nkpt_me=10 and mkqmem = 10, ground state wf handled in core.
+mpi_setup: mk1mem undefined in the input file.Use default mk1mem = nkpt
+ mpi_setup: With nkpt_me=10 and mk1mem = 10, ground state wf handled in core.
+getng is called for the coarse grid:
+ For input ecut=  1.500000E+01 best grid ngfft=      18      18      18
+       max ecut=  1.770327E+01
+ 
+ ==== FFT mesh ====
+  FFT mesh divisions ........................    18   18   18
+  Augmented FFT divisions ...................    19   19   18
+  FFT algorithm .............................   312
+  FFT cache size ............................    16
+ getmpw: optimal value of mpw= 213
+getng is called for the fine grid:
+ Using supplied coarse mesh as initial guess.
+ For input ecut=  5.000000E+01 best grid ngfft=      32      32      32
+       max ecut=  5.560781E+01
+ 
+ ==== FFT mesh ====
+  FFT mesh divisions ........................    32   32   32
+  Augmented FFT divisions ...................    33   33   32
+  FFT algorithm .............................   312
+  FFT cache size ............................    16
+ 
+ Symmetries : space group Fd -3 m (#227); Bravais cF (face-center cubic)
+ 
+ getdim_nloc : deduce lmnmax  =   8, lnmax  =   4,
+                      lmnmaxso=   8, lnmaxso=   4.
+memory : analysis of memory needs
+================================================================================
+ Values of the parameters that define the memory need of the present run
+     intxc =       0    ionmov =       0      iscf =      17    lmnmax =       8
+     lnmax =       4     mgfft =      18  mpssoang =       2    mqgrid =    3001
+     natom =       2  nloc_mem =       2    nspden =       1   nspinor =       1
+    nsppol =       1      nsym =      48    n1xccc =       1    ntypat =       1
+    occopt =       1   xclevel =       1
+-    mband =           8        mffmem =           1         mkmem =          10
+       mpw =         213          nfft =        5832          nkpt =          10
+ PAW method is used; the additional fine FFT grid is defined by:
+   mgfftf=        32    nfftf =     32768
+================================================================================
+P This job should need less than                       7.002 Mbytes of memory.
+  Rough estimation (10% accuracy) of disk space for files :
+_ WF disk file :      0.262 Mbytes ; DEN or POT disk file :      0.252 Mbytes.
+================================================================================
+ 
+ Biggest array : pawfgrtab%gylm(gr), with      3.6029 MBytes.
+ memana : allocated an array of      3.603 Mbytes, for testing purposes.
+ memana: allocated       7.002Mbytes, for testing purposes. 
+ The job will continue.
+--------------------------------------------------------------------------------
+------------- Echo of variables that govern the present computation ------------
+--------------------------------------------------------------------------------
+-
+- outvars: echo of selected default values                                      
+-   iomode0 =  0 , fftalg0 =312 , wfoptalg0 = 10
+-
+- outvars: echo of global parameters not present in the input file              
+-  max_nthreads =    0
+-
+ -outvars: echo values of preprocessed input variables --------
+            acell      6.7406531160E+00  6.7406531160E+00  6.7406531160E+00 Bohr
+              amu      1.20110000E+01
+             ecut      1.50000000E+01 Hartree
+           ecutsm      5.00000000E-01 Hartree
+-          fftalg         312
+              ixc           7
+              kpt     -1.25000000E-01 -2.50000000E-01  0.00000000E+00
+                      -1.25000000E-01  5.00000000E-01  0.00000000E+00
+                      -2.50000000E-01 -3.75000000E-01  0.00000000E+00
+                      -1.25000000E-01 -3.75000000E-01  1.25000000E-01
+                      -1.25000000E-01  2.50000000E-01  0.00000000E+00
+                      -2.50000000E-01  3.75000000E-01  0.00000000E+00
+                      -3.75000000E-01  5.00000000E-01  0.00000000E+00
+                      -2.50000000E-01  5.00000000E-01  1.25000000E-01
+                      -1.25000000E-01  0.00000000E+00  0.00000000E+00
+                      -3.75000000E-01  0.00000000E+00  0.00000000E+00
+         kptrlatt        4   -4    4     -4    4    4     -4   -4    4
+          kptrlen      2.69626125E+01
+P           mkmem          10
+            natom           2
+            nband           8
+            ngfft          18      18      18
+          ngfftdg          32      32      32
+             nkpt          10
+            nstep          20
+             nsym          48
+           ntypat           1
+              occ      2.000000  2.000000  2.000000  2.000000  0.000000  0.000000
+                       0.000000  0.000000
+        pawecutdg      5.00000000E+01 Hartree
+        pawprtvol           3
+         pawprtwf           1
+     plowan_bandi           1
+     plowan_bandf           8
+   plowan_compute           1
+     plowan_natom           2
+     plowan_iatom0       1    2
+       plowan_nbl0       2    2
+     plowan_lcalc0       0    1    0    1
+  plowan_projcalc0       1    2    3    4
+           prtvol           4
+            rprim      0.0000000000E+00  5.0000000000E-01  5.0000000000E-01
+                       5.0000000000E-01  0.0000000000E+00  5.0000000000E-01
+                       5.0000000000E-01  5.0000000000E-01  0.0000000000E+00
+           shiftk      5.00000000E-01  5.00000000E-01  5.00000000E-01
+          spgroup         227
+           symrel      1  0  0   0  1  0   0  0  1      -1  0  0   0 -1  0   0  0 -1
+                       0 -1  1   0 -1  0   1 -1  0       0  1 -1   0  1  0  -1  1  0
+                      -1  0  0  -1  0  1  -1  1  0       1  0  0   1  0 -1   1 -1  0
+                       0  1 -1   1  0 -1   0  0 -1       0 -1  1  -1  0  1   0  0  1
+                      -1  0  0  -1  1  0  -1  0  1       1  0  0   1 -1  0   1  0 -1
+                       0 -1  1   1 -1  0   0 -1  0       0  1 -1  -1  1  0   0  1  0
+                       1  0  0   0  0  1   0  1  0      -1  0  0   0  0 -1   0 -1  0
+                       0  1 -1   0  0 -1   1  0 -1       0 -1  1   0  0  1  -1  0  1
+                      -1  0  1  -1  1  0  -1  0  0       1  0 -1   1 -1  0   1  0  0
+                       0 -1  0   1 -1  0   0 -1  1       0  1  0  -1  1  0   0  1 -1
+                       1  0 -1   0  0 -1   0  1 -1      -1  0  1   0  0  1   0 -1  1
+                       0  1  0   0  0  1   1  0  0       0 -1  0   0  0 -1  -1  0  0
+                       1  0 -1   0  1 -1   0  0 -1      -1  0  1   0 -1  1   0  0  1
+                       0 -1  0   0 -1  1   1 -1  0       0  1  0   0  1 -1  -1  1  0
+                      -1  0  1  -1  0  0  -1  1  0       1  0 -1   1  0  0   1 -1  0
+                       0  1  0   1  0  0   0  0  1       0 -1  0  -1  0  0   0  0 -1
+                       0  0 -1   0  1 -1   1  0 -1       0  0  1   0 -1  1  -1  0  1
+                       1 -1  0   0 -1  1   0 -1  0      -1  1  0   0  1 -1   0  1  0
+                       0  0  1   1  0  0   0  1  0       0  0 -1  -1  0  0   0 -1  0
+                      -1  1  0  -1  0  0  -1  0  1       1 -1  0   1  0  0   1  0 -1
+                       0  0  1   0  1  0   1  0  0       0  0 -1   0 -1  0  -1  0  0
+                       1 -1  0   0 -1  0   0 -1  1      -1  1  0   0  1  0   0  1 -1
+                       0  0 -1   1  0 -1   0  1 -1       0  0  1  -1  0  1   0 -1  1
+                      -1  1  0  -1  0  1  -1  0  0       1 -1  0   1  0 -1   1  0  0
+            tnons      0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+                       0.0000000  0.0000000  0.0000000     0.2500000  0.2500000  0.2500000
+           tolvrs      1.00000000E-10
+            typat      1  1
+           useylm           1
+              wtk        0.09375    0.09375    0.09375    0.18750    0.09375    0.09375
+                         0.09375    0.18750    0.03125    0.03125
+           xangst      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       8.9175000000E-01  8.9175000000E-01  8.9175000000E-01
+            xcart      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       1.6851632790E+00  1.6851632790E+00  1.6851632790E+00
+             xred      0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+                       2.5000000000E-01  2.5000000000E-01  2.5000000000E-01
+            znucl        6.00000
+ 
+================================================================================
+ 
+ chkinp: Checking input parameters for consistency.
+ DATA TYPE INFORMATION: 
+ REAL:      Data type name: REAL(DP) 
+            Kind value:      8
+            Precision:      15
+            Smallest nonnegligible quantity relative to 1:  0.22204460E-15
+            Smallest positive number:                       0.22250739-307
+            Largest representable number:                   0.17976931+309
+ INTEGER:   Data type name: INTEGER(default) 
+            Kind value: 4
+            Bit size:   32
+            Largest representable number: 2147483647
+ LOGICAL:   Data type name: LOGICAL 
+            Kind value: 4
+ CHARACTER: Data type name: CHARACTER             Kind value: 1
+
+  ==== OpenMP parallelism is OFF ====
+ 
+  ==== Using MPI-2 specifications ==== 
+  MPI-IO support is ON
+  xmpi_tag_ub ................   2147483647
+  xmpi_bsize_ch ..............            1
+  xmpi_bsize_int .............            4
+  xmpi_bsize_sp ..............            4
+  xmpi_bsize_dp ..............            8
+  xmpi_bsize_spc .............            8
+  xmpi_bsize_dpc .............           16
+  xmpio_bsize_frm ............            4
+  xmpi_address_kind ..........            8
+  xmpi_offset_kind ...........            8
+  MPI_WTICK ..................   1.000000000000000E-006
+ 
+================================================================================
+== DATASET  1 ==================================================================
+-   nproc =    1
+ 
+ 
+--- !COMMENT
+src_file: m_xgScalapack.F90
+src_line: 251
+message: |
+    xgScalapack in auto mode
+...
+ 
+ 
+ getdim_nloc : deduce lmnmax  =   8, lnmax  =   4,
+                      lmnmaxso=   8, lnmaxso=   4.
+ Exchange-correlation functional for the present dataset will be:
+  LDA: Perdew-Wang 92 LSD fit to Ceperley-Alder data - ixc=7
+ Citation for XC functional:
+  J.P.Perdew and Y.Wang, PRB 45, 13244 (1992)
+ 
+ Unit cell volume ucvol=  7.6567760E+01 bohr^3
+ Angles (23,13,12)=  6.00000000E+01  6.00000000E+01  6.00000000E+01 degrees
+ 
+ Coarse grid specifications (used for wave-functions):
+ 
+ getcut: wavevector=  0.0000  0.0000  0.0000  ngfft=  18  18  18
+         ecut(hartree)=     15.000   => boxcut(ratio)=   2.17276
+ 
+ Fine grid specifications (used for densities):
+ 
+ getcut: wavevector=  0.0000  0.0000  0.0000  ngfft=  32  32  32
+         ecut(hartree)=     50.000   => boxcut(ratio)=   2.10918
+- pspini: atom type   1  psp file is ../../../Psps_for_tests/6c.lda.atompaw
+- pspatm: opening atomic psp file    ../../../Psps_for_tests/6c.lda.atompaw
+- Paw atomic data for element C - Generated by AtomPAW + AtomPAW2Abinit v3.2.1
+-  6.00000   4.00000  20080326                znucl, zion, pspdat
+    7    7    1    0       505   0.00000      pspcod,pspxc,lmax,lloc,mmax,r2well
+ Pseudopotential format is: paw4
+ basis_size (lnmax)=  4 (lmn_size=  8), orbitals=   0   0   1   1
+ Spheres core radius: rc_sph= 1.50000000
+ 4 radial meshes are used:
+  - mesh 1: r(i)=AA*[exp(BB*(i-1))-1], size= 505 , AA= 0.21824E-02 BB= 0.13095E-01
+  - mesh 2: r(i)=AA*[exp(BB*(i-1))-1], size= 500 , AA= 0.21824E-02 BB= 0.13095E-01
+  - mesh 3: r(i)=AA*[exp(BB*(i-1))-1], size= 530 , AA= 0.21824E-02 BB= 0.13095E-01
+  - mesh 4: r(i)=AA*[exp(BB*(i-1))-1], size= 644 , AA= 0.21824E-02 BB= 0.13095E-01
+ Shapefunction is SIN type: shapef(r)=[sin(pi*r/rshp)/(pi*r/rshp)]**2
+ Radius for shape functions = sphere core radius
+ Radial grid used for partial waves is grid 1
+ Radial grid used for projectors is grid  2
+ Radial grid used for (t)core density is grid 3
+ Radial grid used for Vloc is grid 4
+ Radial grid used for pseudo valence density is grid 4
+ Compensation charge density is taken into account in XC energy/potential
+ beta integral value:      -0.301106E+01
+ pspatm: atomic psp has been read  and splines computed
+ 
+   4.14245303E+01                                ecore*ucvol(ha*bohr**3)
+ ==== Info on pseudopotentials ====
+  PAW calculation
+  Number of pseudopotentials ..    1
+  Number of types of atoms   ..    1
+  Scalar calculation (no spin-orbit term)
+  Nonlocal part applied using real spherical harmonics
+  Max number of non-local projectors over l and type   2
+  Highest angular momentum +1 .......   2
+  Max number of (l,n)   components ..   4
+  Max number of (l,m,n) components ..   8
+ 
+ Pseudo-Core Charge Info: 
+   Number of radial points for pseudo-core charge ..    1
+   XC core-correction treatment (optnlxccc) ........    1
+   Radius for pseudo-core charge for each type ..... 
+ 
+  - Atom type    1 has pseudo-core radius ..  2.2228
+ 
+ Info on the Q-grid used for form factors in spline form: 
+   Number of q-points for radial functions ffspl ..   3001
+   Number of q-points for vlspl ...................   3001
+   vloc is computed in Reciprocal Space
+ 
+  XC functional for type 1 is 7
+  Pseudo number              1  read from ../../../Psps_for_tests/6c.lda.atompaw
+  Format or code             7
+  Generation date     20080326
+  Content of first line: 
+ Paw atomic data for element C - Generated by AtomPAW + AtomPAW2Abinit v3.2.1
+ 
+ wfconv:     8 bands initialized randomly with npw=   209, for ikpt=     1
+ wfconv:     8 bands initialized randomly with npw=   213, for ikpt=     2
+ wfconv:     8 bands initialized randomly with npw=   213, for ikpt=     3
+ wfconv:     8 bands initialized randomly with npw=   211, for ikpt=     4
+ wfconv:     8 bands initialized randomly with npw=   212, for ikpt=     5
+ wfconv:     8 bands initialized randomly with npw=   212, for ikpt=     6
+ wfconv:     8 bands initialized randomly with npw=   211, for ikpt=     7
+ wfconv:     8 bands initialized randomly with npw=   212, for ikpt=     8
+ wfconv:     8 bands initialized randomly with npw=   202, for ikpt=     9
+ wfconv:     8 bands initialized randomly with npw=   211, for ikpt=    10
+_setup2: Arith. and geom. avg. npw (full set) are     211.281     211.272
+ 
+ PAW TEST:
+ ==== setsym_ylm: rotation matrices in the basis ============
+ ====              of real spherical harmonics    ============
+  > Number of symmetries (nsym)=  48
+   >For symmetry  1 ( 1 0 0 0 1 0 0 0 1)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000    1.000    0.000
+    0.000    0.000    1.000
+   >For symmetry  2 (-1 0 0 0-1 0 0 0-1)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000   -1.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry  3 ( 0 0 1-1-1-1 1 0 0)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000   -1.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry  4 ( 0 0-1 1 1 1-1 0 0)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000    1.000    0.000
+    0.000    0.000    1.000
+   >For symmetry  5 (-1-1-1 0 0 1 0 1 0)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000   -1.000    0.000
+    0.000    0.000    1.000
+   >For symmetry  6 ( 1 1 1 0 0-1 0-1 0)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000    1.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry  7 ( 0 1 0 1 0 0-1-1-1)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000    1.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry  8 ( 0-1 0-1 0 0 1 1 1)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000   -1.000    0.000
+    0.000    0.000    1.000
+   >For symmetry  9 (-1-1-1 0 1 0 0 0 1)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+   -1.000    0.000    0.000
+    0.000    0.000    1.000
+   >For symmetry 10 ( 1 1 1 0-1 0 0 0-1)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+    1.000    0.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry 11 ( 0 0 1 1 0 0-1-1-1)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+    1.000    0.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry 12 ( 0 0-1-1 0 0 1 1 1)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+   -1.000    0.000    0.000
+    0.000    0.000    1.000
+   >For symmetry 13 ( 1 0 0 0 0 1 0 1 0)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+    1.000    0.000    0.000
+    0.000    0.000    1.000
+   >For symmetry 14 (-1 0 0 0 0-1 0-1 0)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+   -1.000    0.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry 15 ( 0 1 0-1-1-1 1 0 0)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+   -1.000    0.000    0.000
+    0.000    0.000   -1.000
+   >For symmetry 16 ( 0-1 0 1 1 1-1 0 0)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+    1.000    0.000    0.000
+    0.000    0.000    1.000
+   >For symmetry 17 ( 0 0 1 0 1 0-1-1-1)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+    0.000    0.000    1.000
+   -1.000    0.000    0.000
+   >For symmetry 18 ( 0 0-1 0-1 0 1 1 1)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+    0.000    0.000   -1.000
+    1.000    0.000    0.000
+   >For symmetry 19 (-1-1-1 1 0 0 0 0 1)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+    0.000    0.000   -1.000
+    1.000    0.000    0.000
+   >For symmetry 20 ( 1 1 1-1 0 0 0 0-1)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+    0.000    0.000    1.000
+   -1.000    0.000    0.000
+   >For symmetry 21 ( 1 0 0-1-1-1 0 1 0)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+    0.000    0.000   -1.000
+   -1.000    0.000    0.000
+   >For symmetry 22 (-1 0 0 1 1 1 0-1 0)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+    0.000    0.000    1.000
+    1.000    0.000    0.000
+   >For symmetry 23 ( 0 1 0 0 0 1 1 0 0)
+    Rotation matrice for l=1:
+    0.000    1.000    0.000
+    0.000    0.000    1.000
+    1.000    0.000    0.000
+   >For symmetry 24 ( 0-1 0 0 0-1-1 0 0)
+    Rotation matrice for l=1:
+    0.000   -1.000    0.000
+    0.000    0.000   -1.000
+   -1.000    0.000    0.000
+   >For symmetry 25 ( 1 0 0 0 1 0-1-1-1)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+    0.000    1.000    0.000
+   -1.000    0.000    0.000
+   >For symmetry 26 (-1 0 0 0-1 0 1 1 1)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+    0.000   -1.000    0.000
+    1.000    0.000    0.000
+   >For symmetry 27 (-1-1-1 0 0 1 1 0 0)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+    0.000   -1.000    0.000
+    1.000    0.000    0.000
+   >For symmetry 28 ( 1 1 1 0 0-1-1 0 0)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+    0.000    1.000    0.000
+   -1.000    0.000    0.000
+   >For symmetry 29 ( 0 0 1-1-1-1 0 1 0)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+    0.000   -1.000    0.000
+   -1.000    0.000    0.000
+   >For symmetry 30 ( 0 0-1 1 1 1 0-1 0)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+    0.000    1.000    0.000
+    1.000    0.000    0.000
+   >For symmetry 31 ( 0 1 0 1 0 0 0 0 1)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+    0.000    1.000    0.000
+    1.000    0.000    0.000
+   >For symmetry 32 ( 0-1 0-1 0 0 0 0-1)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+    0.000   -1.000    0.000
+   -1.000    0.000    0.000
+   >For symmetry 33 (-1-1-1 0 1 0 1 0 0)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+   -1.000    0.000    0.000
+    0.000    1.000    0.000
+   >For symmetry 34 ( 1 1 1 0-1 0-1 0 0)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+    1.000    0.000    0.000
+    0.000   -1.000    0.000
+   >For symmetry 35 ( 1 0 0 0 0 1-1-1-1)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+    1.000    0.000    0.000
+    0.000   -1.000    0.000
+   >For symmetry 36 (-1 0 0 0 0-1 1 1 1)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+   -1.000    0.000    0.000
+    0.000    1.000    0.000
+   >For symmetry 37 ( 0 0 1 1 0 0 0 1 0)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+    1.000    0.000    0.000
+    0.000    1.000    0.000
+   >For symmetry 38 ( 0 0-1-1 0 0 0-1 0)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+   -1.000    0.000    0.000
+    0.000   -1.000    0.000
+   >For symmetry 39 ( 0 1 0-1-1-1 0 0 1)
+    Rotation matrice for l=1:
+    0.000    0.000    1.000
+   -1.000    0.000    0.000
+    0.000   -1.000    0.000
+   >For symmetry 40 ( 0-1 0 1 1 1 0 0-1)
+    Rotation matrice for l=1:
+    0.000    0.000   -1.000
+    1.000    0.000    0.000
+    0.000    1.000    0.000
+   >For symmetry 41 ( 0 0 1 0 1 0 1 0 0)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000    0.000    1.000
+    0.000    1.000    0.000
+   >For symmetry 42 ( 0 0-1 0-1 0-1 0 0)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000    0.000   -1.000
+    0.000   -1.000    0.000
+   >For symmetry 43 ( 1 0 0-1-1-1 0 0 1)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000    0.000   -1.000
+    0.000   -1.000    0.000
+   >For symmetry 44 (-1 0 0 1 1 1 0 0-1)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000    0.000    1.000
+    0.000    1.000    0.000
+   >For symmetry 45 (-1-1-1 1 0 0 0 1 0)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000    0.000   -1.000
+    0.000    1.000    0.000
+   >For symmetry 46 ( 1 1 1-1 0 0 0-1 0)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000    0.000    1.000
+    0.000   -1.000    0.000
+   >For symmetry 47 ( 0 1 0 0 0 1-1-1-1)
+    Rotation matrice for l=1:
+   -1.000    0.000    0.000
+    0.000    0.000    1.000
+    0.000   -1.000    0.000
+   >For symmetry 48 ( 0-1 0 0 0-1 1 1 1)
+    Rotation matrice for l=1:
+    1.000    0.000    0.000
+    0.000    0.000   -1.000
+    0.000    1.000    0.000
+ initro: for itypat=  1, take pseudo charge density from pp file
+ 
+================================================================================
+ FFT (fine) grid used in SCF cycle:
+ 
+ getcut: wavevector=  0.0000  0.0000  0.0000  ngfft=  32  32  32
+         ecut(hartree)=     50.000   => boxcut(ratio)=   2.10918
+ 
+--- !WARNING
+src_file: m_paw_tools.F90
+src_line: 217
+message: |
+    PAW COMPENSATION DENSITIES ARE OVERLAPPING !!!!
+       There are     4 pairs of overlapping atoms.
+       The maximum overlap percentage is obtained for the atoms   1 and   2.
+        | Distance between atoms   1 and   2 is  :   2.91879
+        | PAW radius of the sphere around atom   1 is:   1.50000
+        | PAW radius of the sphere around atom   2 is:   1.50000
+        | This leads to a (voluminal) overlap ratio of  0.11 %
+    THIS IS DANGEROUS !, as PAW formalism assumes non-overlapping compensation densities.
+...
+ 
+       Overlap ratio seems to be acceptable (less than value
+       of "pawovlp" input parameter): execution will continue.
+       But be aware that results might be approximate,
+       and even inaccurate (depending on your physical system) !
+ 
+ 
+ PAW TEST:
+ ====== Moments of (n1-tn1) =========
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 1.0053819E-02 **    M=-1.0408341E-17
+   l,m= 1-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 0: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-2: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 0: M= 4.5693906E-19 **    M=-1.2917158E-18
+   l,m= 2 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 2: M= 0.0000000E+00 **    M= 0.0000000E+00
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 1.0053819E-02 **    M=-1.0408341E-17
+   l,m= 1-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 0: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-2: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 0: M= 4.5693906E-19 **    M=-1.2917158E-18
+   l,m= 2 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 2: M= 0.0000000E+00 **    M= 0.0000000E+00
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00667   0.03643   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03643  -0.16417   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00219   0.00000   0.00000  -0.01478   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00219   0.00000   0.00000  -0.01478   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00219   0.00000   0.00000  -0.01478
+   0.00000   0.00000  -0.01478   0.00000   0.00000   0.09617   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.01478   0.00000   0.00000   0.09617   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.01478   0.00000   0.00000   0.09617
+   **************** Dij_hat *****************
+   0.23463  -0.84833   0.00000   0.00000  -0.00000  -0.00000  -0.00000   0.00000
+  -0.84833   3.09019  -0.00000  -0.00000   0.00000   0.00000   0.00000  -0.00000
+   0.00000  -0.00000  -0.28002  -0.00000  -0.00000   1.02535   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.28002  -0.00000   0.00000   1.02535   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.28002   0.00000   0.00000   1.02535
+  -0.00000   0.00000   1.02535   0.00000   0.00000  -3.19789  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000   1.02535   0.00000  -0.00000  -3.19789  -0.00000
+   0.00000  -0.00000   0.00000   0.00000   1.02535  -0.00000  -0.00000  -3.19789
+   ***************** Dij_xc *****************
+  -0.05698   0.15046   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15046  -0.40334   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02978   0.00000   0.00000   0.10312   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02978   0.00000   0.00000   0.10312   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02978   0.00000   0.00000   0.10312
+   0.00000   0.00000   0.10312   0.00000   0.00000  -0.37112   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10312   0.00000   0.00000  -0.37112   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10312   0.00000   0.00000  -0.37112
+   **********    TOTAL Dij in Ha   **********
+   0.59558  -1.67591   0.00000   0.00000  -0.00000  -0.00000  -0.00000   0.00000
+  -1.67591   4.22814  -0.00000  -0.00000   0.00000   0.00000   0.00000  -0.00000
+   0.00000  -0.00000  -0.04628  -0.00000  -0.00000  -0.18875   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.04628  -0.00000   0.00000  -0.18875   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.04628   0.00000   0.00000  -0.18875
+  -0.00000   0.00000  -0.18875   0.00000   0.00000   2.80879  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.18875   0.00000  -0.00000   2.80879  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.18875  -0.00000  -0.00000   2.80879
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00667   0.03643   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03643  -0.16417   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00219   0.00000   0.00000  -0.01478   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00219   0.00000   0.00000  -0.01478   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00219   0.00000   0.00000  -0.01478
+   0.00000   0.00000  -0.01478   0.00000   0.00000   0.09617   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.01478   0.00000   0.00000   0.09617   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.01478   0.00000   0.00000   0.09617
+   **************** Dij_hat *****************
+   0.23463  -0.84833   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.84833   3.09019  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.28002  -0.00000   0.00000   1.02535   0.00000  -0.00000
+   0.00000  -0.00000  -0.00000  -0.28002   0.00000   0.00000   1.02535  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.28002  -0.00000  -0.00000   1.02535
+  -0.00000   0.00000   1.02535   0.00000  -0.00000  -3.19789  -0.00000   0.00000
+  -0.00000   0.00000   0.00000   1.02535  -0.00000  -0.00000  -3.19789   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000   1.02535   0.00000   0.00000  -3.19789
+   ***************** Dij_xc *****************
+  -0.05698   0.15046   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15046  -0.40334   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02978   0.00000   0.00000   0.10312   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02978   0.00000   0.00000   0.10312   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02978   0.00000   0.00000   0.10312
+   0.00000   0.00000   0.10312   0.00000   0.00000  -0.37112   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10312   0.00000   0.00000  -0.37112   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10312   0.00000   0.00000  -0.37112
+   **********    TOTAL Dij in Ha   **********
+   0.59558  -1.67591   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.67591   4.22814  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.04628  -0.00000   0.00000  -0.18875   0.00000  -0.00000
+   0.00000  -0.00000  -0.00000  -0.04628   0.00000   0.00000  -0.18875  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.04628  -0.00000  -0.00000  -0.18875
+  -0.00000   0.00000  -0.18875   0.00000  -0.00000   2.80879  -0.00000   0.00000
+  -0.00000   0.00000   0.00000  -0.18875  -0.00000  -0.00000   2.80879   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.18875   0.00000   0.00000   2.80879
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59558  -1.67591   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.67591   4.22814   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.04628   0.00000   0.00000  -0.18875   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.04628   0.00000   0.00000  -0.18875   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.04628   0.00000   0.00000  -0.18875
+   0.00000   0.00000  -0.18875   0.00000   0.00000   2.80879   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.18875   0.00000   0.00000   2.80879   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.18875   0.00000   0.00000   2.80879
+ Atom #  2
+   0.59558  -1.67591   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.67591   4.22814   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.04628   0.00000   0.00000  -0.18875   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.04628   0.00000   0.00000  -0.18875   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.04628   0.00000   0.00000  -0.18875
+   0.00000   0.00000  -0.18875   0.00000   0.00000   2.80879   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.18875   0.00000   0.00000   2.80879   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.18875   0.00000   0.00000   2.80879
+ 
+ 
+ ITER STEP NUMBER     1
+ vtorho : nnsclo_now=2, note that nnsclo,dbl_nnsclo,istep=0 0 1
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  3.61E-01  2.75E-01  2.48E-01  1.98E-01  1.05E-01  1.32E-01  1.11E-01  9.44E-02
+ ene: -2.96E-01  1.91E-01  2.93E-01  3.55E-01  4.59E-01  6.18E-01  7.94E-01  1.24E+00
+ res:  4.17E-03  9.65E-03  6.99E-03  7.33E-03  2.11E-02  5.29E-03  7.16E-03  1.30E-02
+ ene: -3.43E-01  1.84E-01  2.60E-01  2.87E-01  5.88E-01  7.07E-01  7.08E-01  8.53E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =4
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -3.4315E-01  1.8396E-01  2.5957E-01  2.8707E-01  5.8845E-01  7.0655E-01
+  7.0773E-01  8.5334E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  2.88E-01  2.69E-01  3.46E-01  2.44E-01  3.61E-01  1.35E-01  2.84E-01  1.93E-01
+ ene: -1.96E-01  9.86E-03  1.16E-01  1.52E-01  3.51E-01  4.56E-01  6.92E-01  1.47E+00
+ res:  4.56E-02  7.44E-03  2.04E-01  1.00E-01  1.01E-01  9.41E-02  2.14E-02  3.66E-02
+ ene: -1.93E-01 -7.82E-02  2.21E-01  2.49E-01  6.60E-01  7.38E-01  7.52E-01  9.46E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =8
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -1.9284E-01 -7.8224E-02  2.2080E-01  2.4856E-01  6.6011E-01  7.3813E-01
+  7.5157E-01  9.4609E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  3.23E-01  5.45E-01  4.52E-01  2.71E-01  2.47E-01  2.50E-01  2.71E-01  2.25E-01
+ ene: -2.19E-01  1.94E-01  2.06E-01  2.84E-01  6.00E-01  7.02E-01  7.29E-01  1.72E+00
+ res:  5.60E-03  1.21E-02  5.92E-03  5.13E-03  6.44E-03  1.35E-02  8.10E-03  7.31E-02
+ ene: -2.62E-01  1.00E-01  1.78E-01  1.89E-01  5.73E-01  7.38E-01  8.30E-01  8.42E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =12
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -2.6175E-01  1.0039E-01  1.7754E-01  1.8867E-01  5.7341E-01  7.3832E-01
+  8.2970E-01  8.4217E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  2.85E-01  3.22E-01  2.48E-01  3.54E-01  1.89E-01  1.93E-01  1.89E-01  9.73E-02
+ ene: -1.73E-01  7.93E-02  2.39E-01  3.04E-01  5.15E-01  7.55E-01  8.49E-01  1.19E+00
+ res:  4.58E-03  6.68E-03  9.10E-03  1.82E-02  1.46E-02  8.36E-03  1.12E-02  1.61E-02
+ ene: -2.26E-01  1.62E-02  1.42E-01  2.17E-01  6.70E-01  7.27E-01  8.23E-01  8.56E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =16
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -2.2576E-01  1.6230E-02  1.4186E-01  2.1717E-01  6.7047E-01  7.2706E-01
+  8.2274E-01  8.5650E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  2.79E-01  2.91E-01  4.71E-01  3.72E-01  1.91E-01  3.48E-01  1.11E-01  8.82E-02
+ ene: -2.29E-01  1.90E-01  2.38E-01  3.48E-01  4.24E-01  5.77E-01  8.61E-01  1.11E+00
+ res:  1.78E-02  2.55E-02  4.40E-02  1.07E-01  1.06E-01  9.37E-03  1.69E-02  6.48E-03
+ ene: -3.00E-01  9.20E-02  2.08E-01  2.99E-01  6.67E-01  6.88E-01  7.21E-01  9.21E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =20
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -3.0035E-01  9.2045E-02  2.0785E-01  2.9915E-01  6.6716E-01  6.8813E-01
+  7.2122E-01  9.2103E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  2.12E-01  2.95E-01  1.79E-01  4.10E-01  3.23E-01  1.80E-01  2.10E-01  9.98E-02
+ ene: -1.12E-01 -6.05E-03  1.66E-01  2.96E-01  6.77E-01  8.14E-01  9.01E-01  1.21E+00
+ res:  3.74E-03  2.27E-03  4.82E-03  7.52E-03  1.66E-02  1.91E-02  2.00E-02  1.64E-02
+ ene: -1.60E-01 -4.52E-02  9.11E-02  2.12E-01  6.42E-01  7.94E-01  8.54E-01  9.11E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =24
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -1.6045E-01 -4.5200E-02  9.1117E-02  2.1179E-01  6.4154E-01  7.9380E-01
+  8.5363E-01  9.1079E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  1.47E-01  2.92E-01  1.49E-01  4.23E-01  4.74E-01  2.21E-01  4.32E-01  1.66E-01
+ ene: -1.13E-01  5.75E-02  1.43E-01  1.94E-01  4.27E-01  5.88E-01  6.84E-01  1.98E+00
+ res:  6.25E-03  1.39E-02  9.04E-03  5.32E-02  4.47E-02  1.73E-02  2.97E-02  2.72E-02
+ ene: -1.48E-01 -1.28E-02  1.08E-01  1.56E-01  5.74E-01  6.48E-01  9.25E-01  9.42E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =28
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -1.4755E-01 -1.2820E-02  1.0836E-01  1.5599E-01  5.7366E-01  6.4773E-01
+  9.2496E-01  9.4215E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  1.84E-01  2.71E-01  1.85E-01  2.91E-01  3.61E-01  9.07E-02  2.30E-01  1.36E-01
+ ene: -6.95E-02  1.66E-02  9.93E-02  1.70E-01  2.75E-01  5.68E-01  1.06E+00  1.36E+00
+ res:  4.31E-03  7.16E-03  3.59E-03  2.01E-01  1.48E-01  1.11E-02  1.09E-02  1.41E-02
+ ene: -1.24E-01 -3.08E-02  6.84E-02  1.49E-01  6.62E-01  7.79E-01  8.24E-01  9.22E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =32
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -1.2365E-01 -3.0765E-02  6.8361E-02  1.4902E-01  6.6221E-01  7.7936E-01
+  8.2449E-01  9.2171E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  3.38E-01  6.21E-01  1.93E-01  1.38E-01  1.54E-01  1.75E-01  1.42E-01  4.06E-01
+ ene: -2.94E-01  2.68E-01  3.30E-01  4.52E-01  5.01E-01  6.13E-01  7.20E-01  9.43E-01
+ res:  9.64E-03  8.31E-02  3.61E-02  5.94E-02  3.93E-02  1.58E-02  5.03E-03  4.80E-02
+ ene: -3.83E-01  2.76E-01  3.35E-01  3.46E-01  6.04E-01  6.06E-01  6.21E-01  9.02E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =36
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -3.8334E-01  2.7579E-01  3.3477E-01  3.4570E-01  6.0391E-01  6.0604E-01
+  6.2066E-01  9.0186E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  2.99E-01  2.68E-01  3.71E-01  3.19E-01  2.76E-01  1.82E-01  5.87E-01  1.48E-01
+ ene: -2.21E-01  5.91E-02  2.81E-01  3.27E-01  5.28E-01  7.15E-01  9.23E-01  1.35E+00
+ res:  6.04E-03  4.85E-03  2.92E-03  7.44E-03  1.38E-02  1.12E-02  2.56E-02  5.07E-02
+ ene: -2.64E-01 -1.19E-02  2.68E-01  2.70E-01  6.78E-01  6.97E-01  7.12E-01  1.09E+00
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =40
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -2.6403E-01 -1.1910E-02  2.6833E-01  2.6965E-01  6.7806E-01  6.9680E-01
+  7.1186E-01  1.0898E+00
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.67369   0.05494   0.02383  -0.04978   0.00150   0.00126  -0.00211  -0.00087
+   0.05494   0.00351   0.01493   0.00681   0.00852   0.00020   0.00011   0.00032
+   0.02383   0.01493   1.43680   0.04060   0.10384   0.04644  -0.00833  -0.00921
+  -0.04978   0.00681   0.04060   1.35003  -0.01999  -0.00862   0.05538   0.00404
+   0.00150   0.00852   0.10384  -0.01999   1.44610  -0.01046   0.00474   0.05138
+   0.00126   0.00020   0.04644  -0.00862  -0.01046   0.00201  -0.00084  -0.00094
+  -0.00211   0.00011  -0.00833   0.05538   0.00474  -0.00084   0.00315   0.00047
+  -0.00087   0.00032  -0.00921   0.00404   0.05138  -0.00094   0.00047   0.00231
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.68315   0.05079   0.00359   0.05846   0.03232  -0.00088   0.00138   0.00135
+   0.05079   0.00238   0.00216   0.00022   0.00626   0.00004  -0.00011   0.00011
+   0.00359   0.00216   1.45343   0.03786   0.10598   0.04821  -0.00700  -0.01269
+   0.05846   0.00022   0.03786   1.36698  -0.02249  -0.00766   0.05705   0.00496
+   0.03232   0.00626   0.10598  -0.02249   1.45642  -0.01074   0.00579   0.04590
+  -0.00088   0.00004   0.04821  -0.00766  -0.01074   0.00208  -0.00079  -0.00105
+   0.00138  -0.00011  -0.00700   0.05705   0.00579  -0.00079   0.00316   0.00054
+   0.00135   0.00011  -0.01269   0.00496   0.04590  -0.00105   0.00054   0.00199
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.67842   0.05286   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.05286   0.00294   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.41829   0.00000   0.00000   0.05073   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.41829   0.00000   0.00000   0.05073   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.41829   0.00000   0.00000   0.05073
+   0.00000   0.00000   0.05073   0.00000   0.00000   0.00245   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.05073   0.00000   0.00000   0.00245   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.05073   0.00000   0.00000   0.00245
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.67842   0.05286   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.05286   0.00294   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.41829   0.00000   0.00000   0.05073   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.41829   0.00000   0.00000   0.05073   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.41829   0.00000   0.00000   0.05073
+   0.00000   0.00000   0.05073   0.00000   0.00000   0.00245   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.05073   0.00000   0.00000   0.00245   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.05073   0.00000   0.00000   0.00245
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.9272E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.1542E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  1  -11.534954443117    -1.153E+01 2.042E-01 1.423E+01
+ scprqt: <Vxc>= -5.0620718E-01 hartree
+ 
+Simple mixing update:
+  residual square of the potential :  1.416049941738213E-004
+  rhotov : is_hybrid_ncpp= F
+  rhotov : n3xccc=       32768
+ scfcv_core: previous iteration took 00 [s]
+ 
+ PAW TEST:
+ ====== Moments of (n1-tn1) =========
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 4.8726703E-02 **    M=-6.9388939E-18
+   l,m= 1-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 0: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-2: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 0: M= 1.0332334E-17 **    M= 3.0094769E-18
+   l,m= 2 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 2: M=-7.7220689E-18 **    M= 3.5110565E-19
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 4.8726703E-02 **    M=-6.9388939E-18
+   l,m= 1-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 0: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 1 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-2: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2-1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 0: M= 1.0308072E-17 **    M= 3.0531653E-18
+   l,m= 2 1: M= 0.0000000E+00 **    M= 0.0000000E+00
+   l,m= 2 2: M=-7.6955178E-18 **    M= 3.5960380E-19
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00681   0.03939   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03939  -0.18026   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00466   0.00000   0.00000  -0.02309   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00466   0.00000   0.00000  -0.02309   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00466   0.00000   0.00000  -0.02309
+   0.00000   0.00000  -0.02309   0.00000   0.00000   0.12838   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02309   0.00000   0.00000   0.12838   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02309   0.00000   0.00000   0.12838
+   **************** Dij_hat *****************
+   0.22983  -0.83098   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.83098   3.02700  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.27430  -0.00000  -0.00000   1.00439   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.27430  -0.00000   0.00000   1.00439   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.27430   0.00000   0.00000   1.00439
+  -0.00000   0.00000   1.00439   0.00000   0.00000  -3.13251  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000   1.00439   0.00000  -0.00000  -3.13251  -0.00000
+  -0.00000   0.00000   0.00000   0.00000   1.00439  -0.00000  -0.00000  -3.13251
+   ***************** Dij_xc *****************
+  -0.05564   0.14940   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.14940  -0.40543   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10083   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10083   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10083
+   0.00000   0.00000   0.10083   0.00000   0.00000  -0.36308   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10083   0.00000   0.00000  -0.36308   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10083   0.00000   0.00000  -0.36308
+   **********    TOTAL Dij in Ha   **********
+   0.59198  -1.65666   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.65666   4.14678  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.03691  -0.00000  -0.00000  -0.22032   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.03691  -0.00000   0.00000  -0.22032   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.03691   0.00000   0.00000  -0.22032
+  -0.00000   0.00000  -0.22032   0.00000   0.00000   2.91443  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.22032   0.00000  -0.00000   2.91443  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.22032  -0.00000  -0.00000   2.91443
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00681   0.03939   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03939  -0.18026   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00466   0.00000   0.00000  -0.02309   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00466   0.00000   0.00000  -0.02309   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00466   0.00000   0.00000  -0.02309
+   0.00000   0.00000  -0.02309   0.00000   0.00000   0.12838   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02309   0.00000   0.00000   0.12838   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02309   0.00000   0.00000   0.12838
+   **************** Dij_hat *****************
+   0.22983  -0.83098  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -0.83098   3.02700   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.27430  -0.00000  -0.00000   1.00439   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.27430  -0.00000   0.00000   1.00439   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.27430   0.00000   0.00000   1.00439
+   0.00000  -0.00000   1.00439   0.00000   0.00000  -3.13251  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000   1.00439   0.00000  -0.00000  -3.13251  -0.00000
+   0.00000  -0.00000   0.00000   0.00000   1.00439  -0.00000  -0.00000  -3.13251
+   ***************** Dij_xc *****************
+  -0.05564   0.14940   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.14940  -0.40543   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10083   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10083   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10083
+   0.00000   0.00000   0.10083   0.00000   0.00000  -0.36308   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10083   0.00000   0.00000  -0.36308   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10083   0.00000   0.00000  -0.36308
+   **********    TOTAL Dij in Ha   **********
+   0.59198  -1.65666  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -1.65666   4.14678   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.03691  -0.00000  -0.00000  -0.22032   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.03691  -0.00000   0.00000  -0.22032   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.03691   0.00000   0.00000  -0.22032
+   0.00000  -0.00000  -0.22032   0.00000   0.00000   2.91443  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.22032   0.00000  -0.00000   2.91443  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.22032  -0.00000  -0.00000   2.91443
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59198  -1.65666   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.65666   4.14678   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03691   0.00000   0.00000  -0.22032   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03691   0.00000   0.00000  -0.22032   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03691   0.00000   0.00000  -0.22032
+   0.00000   0.00000  -0.22032   0.00000   0.00000   2.91443   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22032   0.00000   0.00000   2.91443   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22032   0.00000   0.00000   2.91443
+ Atom #  2
+   0.59198  -1.65666   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.65666   4.14678   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03691   0.00000   0.00000  -0.22032   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03691   0.00000   0.00000  -0.22032   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03691   0.00000   0.00000  -0.22032
+   0.00000   0.00000  -0.22032   0.00000   0.00000   2.91443   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22032   0.00000   0.00000   2.91443   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22032   0.00000   0.00000   2.91443
+ 
+ 
+ ITER STEP NUMBER     2
+ vtorho : nnsclo_now=2, note that nnsclo,dbl_nnsclo,istep=0 0 2
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  1.10E-04  1.35E-04  9.10E-05  3.68E-05  6.89E-05  6.51E-05  1.84E-04  4.07E-04
+ ene: -3.22E-01  2.15E-01  2.93E-01  3.24E-01  6.15E-01  7.42E-01  7.43E-01  8.76E-01
+ res:  7.40E-08  1.06E-08  7.27E-09  1.69E-09  1.27E-08  9.08E-08  1.36E-08  4.17E-07
+ ene: -3.22E-01  2.15E-01  2.93E-01  3.24E-01  6.15E-01  7.42E-01  7.43E-01  8.76E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =44
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -3.2175E-01  2.1486E-01  2.9350E-01  3.2449E-01  6.1545E-01  7.4154E-01
+  7.4292E-01  8.7552E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  2.04E-04  2.07E-04  2.33E-04  3.87E-04  2.28E-04  3.52E-04  2.99E-04  1.40E-03
+ ene: -1.70E-01 -5.60E-02  2.48E-01  2.70E-01  6.82E-01  7.59E-01  7.81E-01  9.53E-01
+ res:  8.38E-08  1.51E-07  4.08E-08  4.57E-08  8.57E-08  2.27E-07  3.92E-07  2.12E-05
+ ene: -1.70E-01 -5.60E-02  2.48E-01  2.70E-01  6.82E-01  7.59E-01  7.81E-01  9.53E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =48
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -1.6992E-01 -5.6029E-02  2.4795E-01  2.6971E-01  6.8176E-01  7.5918E-01
+  7.8109E-01  9.5251E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  2.19E-04  1.22E-04  1.56E-04  6.34E-05  1.41E-04  2.62E-04  1.49E-04  9.63E-04
+ ene: -2.40E-01  1.28E-01  2.10E-01  2.22E-01  5.93E-01  7.47E-01  8.68E-01  8.70E-01
+ res:  2.20E-07  2.64E-08  1.91E-08  5.84E-09  1.83E-08  8.12E-08  9.35E-07  9.25E-07
+ ene: -2.40E-01  1.28E-01  2.10E-01  2.22E-01  5.93E-01  7.47E-01  8.68E-01  8.70E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =52
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -2.4005E-01  1.2768E-01  2.0950E-01  2.2186E-01  5.9319E-01  7.4726E-01
+  8.6773E-01  8.6993E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  1.35E-04  2.60E-04  1.43E-04  1.14E-04  1.82E-04  1.60E-04  2.33E-04  3.70E-04
+ ene: -2.02E-01  4.30E-02  1.71E-01  2.50E-01  6.93E-01  7.54E-01  8.56E-01  8.86E-01
+ res:  1.22E-07  7.15E-08  1.22E-08  2.04E-08  7.42E-08  1.89E-07  3.04E-07  5.05E-07
+ ene: -2.02E-01  4.30E-02  1.71E-01  2.50E-01  6.93E-01  7.54E-01  8.56E-01  8.86E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =56
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -2.0159E-01  4.3012E-02  1.7141E-01  2.4999E-01  6.9340E-01  7.5427E-01
+  8.5565E-01  8.8644E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  2.63E-04  2.98E-04  1.40E-04  1.48E-04  1.03E-04  7.11E-05  2.58E-04  5.60E-03
+ ene: -2.81E-01  1.18E-01  2.40E-01  3.30E-01  6.97E-01  7.18E-01  7.53E-01  9.19E-01
+ res:  1.05E-07  9.97E-08  1.40E-08  5.37E-08  1.48E-07  7.52E-08  1.06E-07  1.81E-05
+ ene: -2.81E-01  1.18E-01  2.40E-01  3.30E-01  6.97E-01  7.18E-01  7.53E-01  9.19E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =60
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -2.8078E-01  1.1831E-01  2.4032E-01  3.3047E-01  6.9718E-01  7.1812E-01
+  7.5262E-01  9.1918E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  9.33E-05  1.60E-04  2.58E-04  1.75E-05  1.67E-04  1.72E-04  4.50E-04  1.44E-03
+ ene: -1.34E-01 -2.05E-02  1.19E-01  2.45E-01  6.55E-01  8.29E-01  8.86E-01  9.40E-01
+ res:  8.62E-08  5.89E-08  3.08E-07  2.52E-09  1.67E-07  7.44E-07  1.24E-05  9.85E-05
+ ene: -1.34E-01 -2.05E-02  1.18E-01  2.45E-01  6.55E-01  8.29E-01  8.86E-01  9.39E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =64
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -1.3356E-01 -2.0518E-02  1.1849E-01  2.4519E-01  6.5503E-01  8.2879E-01
+  8.8612E-01  9.3890E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  2.02E-04  1.35E-04  3.14E-04  1.43E-04  1.24E-04  2.37E-04  9.69E-05  9.70E-04
+ ene: -1.23E-01  1.45E-02  1.32E-01  1.83E-01  5.88E-01  6.61E-01  9.67E-01  9.77E-01
+ res:  1.10E-07  8.46E-08  5.20E-08  1.86E-08  1.19E-08  4.19E-08  2.92E-06  4.19E-06
+ ene: -1.23E-01  1.44E-02  1.32E-01  1.83E-01  5.88E-01  6.61E-01  9.67E-01  9.77E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =68
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -1.2337E-01  1.4444E-02  1.3185E-01  1.8299E-01  5.8759E-01  6.6131E-01
+  9.6659E-01  9.7686E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  1.15E-04  1.78E-04  2.96E-04  5.07E-04  2.19E-04  5.66E-04  1.94E-04  1.88E-03
+ ene: -9.59E-02 -4.17E-03  9.37E-02  1.68E-01  6.79E-01  8.00E-01  8.59E-01  9.43E-01
+ res:  6.15E-08  1.26E-07  9.12E-08  8.21E-08  6.54E-08  4.88E-07  8.29E-07  2.73E-05
+ ene: -9.60E-02 -4.19E-03  9.37E-02  1.68E-01  6.79E-01  8.00E-01  8.59E-01  9.43E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =72
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -9.5960E-02 -4.1884E-03  9.3688E-02  1.6788E-01  6.7905E-01  7.9974E-01
+  8.5929E-01  9.4290E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  8.22E-05  8.99E-05  2.13E-05  1.61E-04  2.02E-05  9.31E-05  1.27E-04  3.23E-03
+ ene: -3.63E-01  3.11E-01  3.73E-01  3.73E-01  6.36E-01  6.36E-01  6.52E-01  9.08E-01
+ res:  2.75E-08  1.33E-08  1.60E-09  2.89E-08  3.92E-09  3.60E-08  2.86E-08  4.77E-05
+ ene: -3.63E-01  3.11E-01  3.73E-01  3.73E-01  6.36E-01  6.36E-01  6.52E-01  9.08E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =76
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -3.6348E-01  3.1098E-01  3.7347E-01  3.7347E-01  6.3605E-01  6.3605E-01
+  6.5200E-01  9.0781E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  2.59E-04  5.14E-04  9.64E-06  2.77E-05  3.85E-05  2.48E-04  3.50E-04  3.06E-02
+ ene: -2.41E-01  1.29E-02  3.06E-01  3.06E-01  7.08E-01  7.08E-01  7.25E-01  9.66E-01
+ res:  3.80E-07  3.33E-07  1.36E-09  1.45E-08  7.29E-08  2.97E-07  1.05E-06  7.77E-05
+ ene: -2.41E-01  1.28E-02  3.06E-01  3.06E-01  7.08E-01  7.08E-01  7.25E-01  9.63E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =80
+     eigenvalues (hartree) for    8  bands
+              after    3 non-SCF iterations with    4 CG line minimizations
+ -2.4113E-01  1.2789E-02  3.0561E-01  3.0561E-01  7.0751E-01  7.0751E-01
+  7.2526E-01  9.6311E-01
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.62707   0.04448   0.00183  -0.05060  -0.00838   0.00049  -0.00166  -0.00094
+   0.04448   0.00168   0.00033   0.00061  -0.00048  -0.00002   0.00008   0.00004
+   0.00183   0.00033   1.43337   0.03747   0.11548   0.05611  -0.00699  -0.00782
+  -0.05060   0.00061   0.03747   1.36260  -0.01969  -0.00701   0.06505   0.00463
+  -0.00838  -0.00048   0.11548  -0.01969   1.45236  -0.00781   0.00463   0.05926
+   0.00049  -0.00002   0.05611  -0.00701  -0.00781   0.00259  -0.00081  -0.00094
+  -0.00166   0.00008  -0.00699   0.06505   0.00463  -0.00081   0.00373   0.00055
+  -0.00094   0.00004  -0.00782   0.00463   0.05926  -0.00094   0.00055   0.00281
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.62707   0.04448  -0.00184   0.05060   0.00839  -0.00049   0.00166   0.00095
+   0.04448   0.00168  -0.00034  -0.00061   0.00049   0.00002  -0.00008  -0.00004
+  -0.00184  -0.00034   1.43337   0.03747   0.11548   0.05611  -0.00700  -0.00782
+   0.05060  -0.00061   0.03747   1.36260  -0.01969  -0.00701   0.06505   0.00463
+   0.00839   0.00049   0.11548  -0.01969   1.45236  -0.00781   0.00462   0.05926
+  -0.00049   0.00002   0.05611  -0.00701  -0.00781   0.00259  -0.00081  -0.00094
+   0.00166  -0.00008  -0.00700   0.06505   0.00462  -0.00081   0.00373   0.00055
+   0.00095  -0.00004  -0.00782   0.00463   0.05926  -0.00094   0.00055   0.00281
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.62707   0.04448   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04448   0.00168   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.41611   0.00000   0.00000   0.06014   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.41611   0.00000   0.00000   0.06014   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.41611   0.00000   0.00000   0.06014
+   0.00000   0.00000   0.06014   0.00000   0.00000   0.00305   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06014   0.00000   0.00000   0.00305   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06014   0.00000   0.00000   0.00305
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.62707   0.04448   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04448   0.00168   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.41611   0.00000   0.00000   0.06014   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.41611   0.00000   0.00000   0.06014   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.41611   0.00000   0.00000   0.06014
+   0.00000   0.00000   0.06014   0.00000   0.00000   0.00305   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06014   0.00000   0.00000   0.00305   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06014   0.00000   0.00000   0.00305
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.8136E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.3275E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  2  -11.528011461994     6.943E-03 9.848E-05 1.373E+00
+ scprqt: <Vxc>= -4.9949598E-01 hartree
+ 
+ Pulay update with  1 previous iterations:
+ mixing of old trial potential : alpha(m:m-4)=   1.39     -0.391
+  rhotov : is_hybrid_ncpp= F
+  rhotov : n3xccc=       32768
+ scfcv_core: previous iteration took 00 [s]
+ 
+ PAW TEST:
+ ==== Non-zero Moments of (n1-tn1) ====
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.9223107E-02 **    M=-4.1633363E-17
+   l,m= 2 0: M= 1.1944607E-17 **    M=-7.7363063E-19
+   l,m= 2 2: M= 3.2793458E-18 **    M=-3.5358989E-19
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.9223107E-02 **    M=-4.1633363E-17
+   l,m= 2 0: M= 1.0465275E-17 **    M=-5.7879690E-19
+   l,m= 2 2: M= 3.3667124E-18 **    M=-2.5432784E-19
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00681   0.03969   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03969  -0.18180   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00528   0.00000   0.00000  -0.02500   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00528   0.00000   0.00000  -0.02500   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00528   0.00000   0.00000  -0.02500
+   0.00000   0.00000  -0.02500   0.00000   0.00000   0.13504   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02500   0.00000   0.00000   0.13504   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02500   0.00000   0.00000   0.13504
+   **************** Dij_hat *****************
+   0.22800  -0.82437  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -0.82437   3.00292   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.27212   0.00000   0.00000   0.99640  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.27212   0.00000  -0.00000   0.99640  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.27212  -0.00000  -0.00000   0.99640
+   0.00000  -0.00000   0.99640  -0.00000  -0.00000  -3.10759   0.00000   0.00000
+   0.00000  -0.00000  -0.00000   0.99640  -0.00000   0.00000  -3.10759   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000   0.99640   0.00000   0.00000  -3.10759
+   ***************** Dij_xc *****************
+  -0.05559   0.15018   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15018  -0.40986   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02851   0.00000   0.00000   0.10078   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02851   0.00000   0.00000   0.10078   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02851   0.00000   0.00000   0.10078
+   0.00000   0.00000   0.10078   0.00000   0.00000  -0.36231   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10078   0.00000   0.00000  -0.36231   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10078   0.00000   0.00000  -0.36231
+   **********    TOTAL Dij in Ha   **********
+   0.59021  -1.64897  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -1.64897   4.11672   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.03401   0.00000   0.00000  -0.23026  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.03401   0.00000  -0.00000  -0.23026  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.03401  -0.00000  -0.00000  -0.23026
+   0.00000  -0.00000  -0.23026  -0.00000  -0.00000   2.94678   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.23026  -0.00000   0.00000   2.94678   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.23026   0.00000   0.00000   2.94678
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00681   0.03969   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03969  -0.18180   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00528   0.00000   0.00000  -0.02500   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00528   0.00000   0.00000  -0.02500   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00528   0.00000   0.00000  -0.02500
+   0.00000   0.00000  -0.02500   0.00000   0.00000   0.13504   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02500   0.00000   0.00000   0.13504   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02500   0.00000   0.00000   0.13504
+   **************** Dij_hat *****************
+   0.22800  -0.82437   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.82437   3.00292  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.27212   0.00000   0.00000   0.99640  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.27212   0.00000  -0.00000   0.99640  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.27212  -0.00000  -0.00000   0.99640
+  -0.00000   0.00000   0.99640  -0.00000  -0.00000  -3.10759   0.00000   0.00000
+  -0.00000   0.00000  -0.00000   0.99640  -0.00000   0.00000  -3.10759   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000   0.99640   0.00000   0.00000  -3.10759
+   ***************** Dij_xc *****************
+  -0.05559   0.15018   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15018  -0.40986   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02851   0.00000   0.00000   0.10078   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02851   0.00000   0.00000   0.10078   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02851   0.00000   0.00000   0.10078
+   0.00000   0.00000   0.10078   0.00000   0.00000  -0.36231   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10078   0.00000   0.00000  -0.36231   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10078   0.00000   0.00000  -0.36231
+   **********    TOTAL Dij in Ha   **********
+   0.59021  -1.64897   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.64897   4.11672  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.03401   0.00000   0.00000  -0.23026  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.03401   0.00000  -0.00000  -0.23026  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.03401  -0.00000  -0.00000  -0.23026
+  -0.00000   0.00000  -0.23026  -0.00000  -0.00000   2.94678   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.23026  -0.00000   0.00000   2.94678   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.23026   0.00000   0.00000   2.94678
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59021  -1.64897   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64897   4.11672   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03401   0.00000   0.00000  -0.23026   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03401   0.00000   0.00000  -0.23026   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03401   0.00000   0.00000  -0.23026
+   0.00000   0.00000  -0.23026   0.00000   0.00000   2.94678   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.23026   0.00000   0.00000   2.94678   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.23026   0.00000   0.00000   2.94678
+ Atom #  2
+   0.59021  -1.64897   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64897   4.11672   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03401   0.00000   0.00000  -0.23026   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03401   0.00000   0.00000  -0.23026   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03401   0.00000   0.00000  -0.23026
+   0.00000   0.00000  -0.23026   0.00000   0.00000   2.94678   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.23026   0.00000   0.00000   2.94678   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.23026   0.00000   0.00000   2.94678
+ 
+ 
+ ITER STEP NUMBER     3
+ vtorho : nnsclo_now=1, note that nnsclo,dbl_nnsclo,istep=0 0 3
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  1.79E-05  1.78E-05  1.05E-05  4.60E-06  9.77E-06  1.28E-05  8.52E-06  1.36E-05
+ ene: -3.13E-01  2.27E-01  3.07E-01  3.39E-01  6.26E-01  7.55E-01  7.56E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =84
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.1300E-01  2.2746E-01  3.0707E-01  3.3910E-01  6.2560E-01  7.5454E-01
+  7.5615E-01  8.8408E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  1.65E-05  3.51E-05  9.71E-06  4.27E-06  2.00E-05  3.70E-06  2.49E-05  3.06E-05
+ ene: -1.59E-01 -4.69E-02  2.61E-01  2.83E-01  6.90E-01  7.70E-01  7.93E-01  9.63E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =88
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.5942E-01 -4.6920E-02  2.6133E-01  2.8342E-01  6.9023E-01  7.7038E-01
+  7.9291E-01  9.6275E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  3.02E-05  8.83E-06  2.07E-05  1.02E-05  1.69E-05  1.70E-05  7.59E-06  1.22E-05
+ ene: -2.31E-01  1.40E-01  2.22E-01  2.35E-01  6.01E-01  7.52E-01  8.82E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =92
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3071E-01  1.4008E-01  2.2197E-01  2.3456E-01  6.0120E-01  7.5240E-01
+  8.8203E-01  8.8423E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  2.38E-05  2.68E-05  1.72E-05  1.74E-05  2.09E-05  2.26E-05  2.05E-05  3.53E-05
+ ene: -1.92E-01  5.39E-02  1.83E-01  2.63E-01  7.03E-01  7.64E-01  8.68E-01  8.99E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =96
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.9182E-01  5.3873E-02  1.8339E-01  2.6297E-01  7.0262E-01  7.6429E-01
+  8.6757E-01  8.9852E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  2.37E-05  2.91E-05  1.65E-05  1.35E-07  9.34E-07  1.16E-05  2.74E-05  1.76E-05
+ ene: -2.72E-01  1.30E-01  2.53E-01  3.45E-01  7.09E-01  7.29E-01  7.65E-01  9.30E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =100
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.7173E-01  1.2974E-01  2.5309E-01  3.4526E-01  7.0879E-01  7.2918E-01
+  7.6463E-01  9.2987E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  1.37E-05  1.87E-05  2.60E-05  1.44E-06  2.00E-05  2.20E-06  1.95E-05  6.51E-05
+ ene: -1.23E-01 -1.07E-02  1.30E-01  2.58E-01  6.62E-01  8.42E-01  9.00E-01  9.51E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =104
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.2272E-01 -1.0681E-02  1.2954E-01  2.5846E-01  6.6181E-01  8.4176E-01
+  8.9962E-01  9.5126E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  2.68E-05  1.20E-05  2.20E-05  3.02E-06  1.81E-05  2.56E-05  2.09E-06  7.30E-06
+ ene: -1.13E-01  2.63E-02  1.43E-01  1.95E-01  5.93E-01  6.67E-01  9.82E-01  9.93E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =108
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.1299E-01  2.6341E-02  1.4259E-01  1.9531E-01  5.9341E-01  6.6742E-01
+  9.8226E-01  9.9252E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  1.40E-05  1.55E-05  3.18E-05  2.64E-05  2.74E-05  3.70E-05  4.15E-06  1.19E-05
+ ene: -8.48E-02  7.01E-03  1.04E-01  1.79E-01  6.86E-01  8.08E-01  8.72E-01  9.57E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =112
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -8.4832E-02  7.0070E-03  1.0383E-01  1.7913E-01  6.8634E-01  8.0822E-01
+  8.7237E-01  9.5750E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  5.75E-06  1.28E-05  3.57E-06  3.57E-06  3.88E-06  3.88E-06  1.22E-05  5.73E-06
+ ene: -3.55E-01  3.25E-01  3.89E-01  3.89E-01  6.48E-01  6.48E-01  6.64E-01  9.21E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =116
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.5500E-01  3.2473E-01  3.8863E-01  3.8863E-01  6.4779E-01  6.4779E-01
+  6.6398E-01  9.2058E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  2.35E-05  3.89E-05  2.00E-06  2.00E-06  2.03E-06  2.03E-06  2.33E-05  1.78E-05
+ ene: -2.32E-01  2.29E-02  3.20E-01  3.20E-01  7.18E-01  7.18E-01  7.36E-01  9.73E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =120
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3169E-01  2.2937E-02  3.2001E-01  3.2001E-01  7.1824E-01  7.1824E-01
+  7.3637E-01  9.7259E-01
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.61768   0.04476   0.00096  -0.04958  -0.00694   0.00048  -0.00174  -0.00094
+   0.04476   0.00171   0.00030   0.00060  -0.00045  -0.00002   0.00008   0.00003
+   0.00096   0.00030   1.42471   0.03773   0.11780   0.05797  -0.00690  -0.00763
+  -0.04958   0.00060   0.03773   1.35802  -0.01987  -0.00689   0.06680   0.00457
+  -0.00694  -0.00045   0.11780  -0.01987   1.44589  -0.00760   0.00457   0.06118
+   0.00048  -0.00002   0.05797  -0.00689  -0.00760   0.00276  -0.00083  -0.00097
+  -0.00174   0.00008  -0.00690   0.06680   0.00457  -0.00083   0.00392   0.00056
+  -0.00094   0.00003  -0.00763   0.00457   0.06118  -0.00097   0.00056   0.00299
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.61768   0.04476  -0.00097   0.04958   0.00694  -0.00048   0.00174   0.00094
+   0.04476   0.00171  -0.00031  -0.00060   0.00045   0.00002  -0.00008  -0.00003
+  -0.00097  -0.00031   1.42472   0.03773   0.11780   0.05797  -0.00690  -0.00763
+   0.04958  -0.00060   0.03773   1.35803  -0.01987  -0.00689   0.06680   0.00457
+   0.00694   0.00045   0.11780  -0.01987   1.44589  -0.00760   0.00457   0.06118
+  -0.00048   0.00002   0.05797  -0.00689  -0.00760   0.00276  -0.00083  -0.00097
+   0.00174  -0.00008  -0.00690   0.06680   0.00457  -0.00083   0.00392   0.00056
+   0.00094  -0.00003  -0.00763   0.00457   0.06118  -0.00097   0.00056   0.00299
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.61768   0.04476   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04476   0.00171   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40954   0.00000   0.00000   0.06198   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06198   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06198
+   0.00000   0.00000   0.06198   0.00000   0.00000   0.00322   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06198   0.00000   0.00000   0.00322   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06198   0.00000   0.00000   0.00322
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.61768   0.04476   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04476   0.00171   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40954   0.00000   0.00000   0.06198   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06198   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06198
+   0.00000   0.00000   0.06198   0.00000   0.00000   0.00322   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06198   0.00000   0.00000   0.00322   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06198   0.00000   0.00000   0.00322
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.7751E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.3973E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  3  -11.525673869309     2.338E-03 6.510E-05 2.412E-02
+ scprqt: <Vxc>= -4.9565663E-01 hartree
+ 
+ Pulay update with  2 previous iterations:
+ mixing of old trial potential : alpha(m:m-4)=   1.45     -0.622      0.174
+  rhotov : is_hybrid_ncpp= F
+  rhotov : n3xccc=       32768
+ scfcv_core: previous iteration took 00 [s]
+ 
+ PAW TEST:
+ ==== Non-zero Moments of (n1-tn1) ====
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8109993E-02 **    M=-1.3877788E-17
+   l,m= 2 0: M= 1.2223273E-17 **    M= 1.0508123E-18
+   l,m= 2 2: M= 5.7109278E-18 **    M=-1.1042375E-18
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8109993E-02 **    M=-2.0816682E-17
+   l,m= 2 0: M= 9.8664472E-18 **    M= 6.0079967E-19
+   l,m= 2 2: M= 6.1141259E-18 **    M=-1.4249656E-18
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00675   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17968   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00519   0.00000   0.00000  -0.02465   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00519   0.00000   0.00000  -0.02465   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00519   0.00000   0.00000  -0.02465
+   0.00000   0.00000  -0.02465   0.00000   0.00000   0.13325   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02465   0.00000   0.00000   0.13325   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02465   0.00000   0.00000   0.13325
+   **************** Dij_hat *****************
+   0.22800  -0.82437  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -0.82437   3.00293   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.27212   0.00000   0.00000   0.99640  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.27212   0.00000  -0.00000   0.99640  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.27212  -0.00000  -0.00000   0.99640
+   0.00000  -0.00000   0.99640  -0.00000  -0.00000  -3.10759   0.00000   0.00000
+   0.00000  -0.00000  -0.00000   0.99640  -0.00000   0.00000  -3.10759   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000   0.99640   0.00000   0.00000  -3.10759
+   ***************** Dij_xc *****************
+  -0.05573   0.15063   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15063  -0.41136   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59012  -1.64896  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -1.64896   4.11735   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.03420   0.00000   0.00000  -0.22959  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.03420   0.00000  -0.00000  -0.22959  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.03420  -0.00000  -0.00000  -0.22959
+   0.00000  -0.00000  -0.22959  -0.00000  -0.00000   2.94406   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.22959  -0.00000   0.00000   2.94406   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.22959   0.00000   0.00000   2.94406
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00675   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17968   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00519   0.00000   0.00000  -0.02465   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00519   0.00000   0.00000  -0.02465   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00519   0.00000   0.00000  -0.02465
+   0.00000   0.00000  -0.02465   0.00000   0.00000   0.13325   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02465   0.00000   0.00000   0.13325   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02465   0.00000   0.00000   0.13325
+   **************** Dij_hat *****************
+   0.22800  -0.82437   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.82437   3.00293  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.27212   0.00000   0.00000   0.99640  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.27212   0.00000  -0.00000   0.99640  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.27212  -0.00000  -0.00000   0.99640
+  -0.00000   0.00000   0.99640  -0.00000  -0.00000  -3.10759   0.00000   0.00000
+  -0.00000   0.00000  -0.00000   0.99640  -0.00000   0.00000  -3.10759   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000   0.99640   0.00000   0.00000  -3.10759
+   ***************** Dij_xc *****************
+  -0.05573   0.15063   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15063  -0.41136   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59012  -1.64896   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.64896   4.11735  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.03420   0.00000   0.00000  -0.22959  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.03420   0.00000  -0.00000  -0.22959  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.03420  -0.00000  -0.00000  -0.22959
+  -0.00000   0.00000  -0.22959  -0.00000  -0.00000   2.94406   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.22959  -0.00000   0.00000   2.94406   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.22959   0.00000   0.00000   2.94406
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59012  -1.64896   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64896   4.11735   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03420   0.00000   0.00000  -0.22959   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03420   0.00000   0.00000  -0.22959   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03420   0.00000   0.00000  -0.22959
+   0.00000   0.00000  -0.22959   0.00000   0.00000   2.94406   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22959   0.00000   0.00000   2.94406   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22959   0.00000   0.00000   2.94406
+ Atom #  2
+   0.59012  -1.64896   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64896   4.11735   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03420   0.00000   0.00000  -0.22959   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03420   0.00000   0.00000  -0.22959   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03420   0.00000   0.00000  -0.22959
+   0.00000   0.00000  -0.22959   0.00000   0.00000   2.94406   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22959   0.00000   0.00000   2.94406   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22959   0.00000   0.00000   2.94406
+ 
+ 
+ ITER STEP NUMBER     4
+ vtorho : nnsclo_now=1, note that nnsclo,dbl_nnsclo,istep=0 0 4
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  1.22E-08  2.12E-08  7.44E-09  8.46E-09  1.34E-08  2.79E-08  4.02E-09  2.51E-08
+ ene: -3.13E-01  2.28E-01  3.07E-01  3.39E-01  6.26E-01  7.55E-01  7.56E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =124
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.1271E-01  2.2763E-01  3.0720E-01  3.3924E-01  6.2566E-01  7.5452E-01
+  7.5607E-01  8.8427E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  1.20E-08  1.88E-08  1.58E-08  4.04E-09  5.05E-08  2.77E-09  4.56E-08  1.37E-07
+ ene: -1.59E-01 -4.67E-02  2.61E-01  2.84E-01  6.90E-01  7.70E-01  7.93E-01  9.63E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =128
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.5915E-01 -4.6666E-02  2.6149E-01  2.8355E-01  6.9034E-01  7.7032E-01
+  7.9305E-01  9.6278E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  2.06E-08  2.09E-08  5.33E-09  8.56E-09  1.12E-08  2.39E-08  3.78E-09  1.18E-08
+ ene: -2.30E-01  1.40E-01  2.22E-01  2.35E-01  6.01E-01  7.53E-01  8.82E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =132
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3042E-01  1.4028E-01  2.2214E-01  2.3470E-01  6.0139E-01  7.5270E-01
+  8.8187E-01  8.8412E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  1.86E-08  1.79E-08  2.42E-08  5.32E-09  3.99E-08  4.02E-08  6.46E-08  1.13E-07
+ ene: -1.92E-01  5.41E-02  1.84E-01  2.63E-01  7.03E-01  7.64E-01  8.68E-01  8.99E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =136
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.9155E-01  5.4100E-02  1.8357E-01  2.6312E-01  7.0273E-01  7.6438E-01
+  8.6759E-01  8.9850E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  1.70E-08  3.80E-08  1.89E-08  1.12E-09  7.78E-10  1.76E-08  2.55E-08  7.54E-08
+ ene: -2.71E-01  1.30E-01  2.53E-01  3.45E-01  7.09E-01  7.29E-01  7.65E-01  9.30E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =140
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.7144E-01  1.2994E-01  2.5325E-01  3.4538E-01  7.0872E-01  7.2920E-01
+  7.6473E-01  9.2996E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  5.42E-08  1.06E-08  5.13E-08  1.24E-09  2.63E-08  4.90E-09  1.47E-07  2.97E-06
+ ene: -1.22E-01 -1.04E-02  1.30E-01  2.59E-01  6.62E-01  8.42E-01  9.00E-01  9.51E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =144
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.2246E-01 -1.0436E-02  1.2974E-01  2.5859E-01  6.6203E-01  8.4163E-01
+  8.9961E-01  9.5117E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  1.56E-08  7.15E-09  3.93E-08  3.66E-09  5.30E-09  2.20E-08  2.33E-09  1.53E-08
+ ene: -1.13E-01  2.66E-02  1.43E-01  1.95E-01  5.94E-01  6.68E-01  9.82E-01  9.92E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =148
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.1272E-01  2.6577E-02  1.4277E-01  1.9546E-01  5.9371E-01  6.6770E-01
+  9.8199E-01  9.9227E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  1.16E-08  1.68E-08  2.04E-08  3.95E-08  2.12E-08  4.86E-08  1.16E-08  1.97E-07
+ ene: -8.46E-02  7.24E-03  1.04E-01  1.79E-01  6.87E-01  8.08E-01  8.72E-01  9.57E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =152
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -8.4576E-02  7.2443E-03  1.0404E-01  1.7930E-01  6.8656E-01  8.0839E-01
+  8.7230E-01  9.5731E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  1.03E-08  1.53E-08  2.44E-09  2.43E-09  3.24E-09  3.25E-09  1.78E-08  6.72E-08
+ ene: -3.55E-01  3.25E-01  3.89E-01  3.89E-01  6.48E-01  6.48E-01  6.64E-01  9.21E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =156
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.5470E-01  3.2487E-01  3.8875E-01  3.8875E-01  6.4774E-01  6.4774E-01
+  6.6399E-01  9.2070E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  1.95E-08  5.88E-08  2.73E-09  2.73E-09  1.87E-09  1.87E-09  6.70E-09  1.32E-07
+ ene: -2.31E-01  2.32E-02  3.20E-01  3.20E-01  7.18E-01  7.18E-01  7.37E-01  9.73E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =160
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3141E-01  2.3174E-02  3.2013E-01  3.2013E-01  7.1820E-01  7.1820E-01
+  7.3658E-01  9.7267E-01
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.61830   0.04509   0.00114  -0.04993  -0.00722   0.00048  -0.00172  -0.00093
+   0.04509   0.00173   0.00035   0.00056  -0.00051  -0.00002   0.00008   0.00003
+   0.00114   0.00035   1.42428   0.03752   0.11774   0.05767  -0.00691  -0.00760
+  -0.04993   0.00056   0.03752   1.35861  -0.01971  -0.00692   0.06658   0.00459
+  -0.00722  -0.00051   0.11774  -0.01971   1.44573  -0.00760   0.00458   0.06091
+   0.00048  -0.00002   0.05767  -0.00692  -0.00760   0.00273  -0.00082  -0.00096
+  -0.00172   0.00008  -0.00691   0.06658   0.00458  -0.00082   0.00389   0.00056
+  -0.00093   0.00003  -0.00760   0.00459   0.06091  -0.00096   0.00056   0.00296
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.61830   0.04509  -0.00114   0.04993   0.00722  -0.00048   0.00172   0.00093
+   0.04509   0.00173  -0.00035  -0.00056   0.00051   0.00002  -0.00008  -0.00003
+  -0.00114  -0.00035   1.42428   0.03752   0.11774   0.05767  -0.00691  -0.00760
+   0.04993  -0.00056   0.03752   1.35861  -0.01971  -0.00692   0.06658   0.00459
+   0.00722   0.00051   0.11774  -0.01971   1.44573  -0.00760   0.00458   0.06091
+  -0.00048   0.00002   0.05767  -0.00692  -0.00760   0.00273  -0.00082  -0.00096
+   0.00172  -0.00008  -0.00691   0.06658   0.00458  -0.00082   0.00389   0.00056
+   0.00093  -0.00003  -0.00760   0.00459   0.06091  -0.00096   0.00056   0.00296
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.61830   0.04509   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04509   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40954   0.00000   0.00000   0.06172   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06172   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06172
+   0.00000   0.00000   0.06172   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06172   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06172   0.00000   0.00000   0.00320
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.61830   0.04509   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04509   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40954   0.00000   0.00000   0.06172   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06172   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40954   0.00000   0.00000   0.06172
+   0.00000   0.00000   0.06172   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06172   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06172   0.00000   0.00000   0.00320
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.7753E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.3856E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  4  -11.525680338015    -6.469E-06 2.967E-06 5.876E-04
+ scprqt: <Vxc>= -4.9523423E-01 hartree
+ 
+ Pulay update with  3 previous iterations:
+ mixing of old trial potential : alpha(m:m-4)=   1.21     -0.258      0.734E-01 -0.213E-01
+  rhotov : is_hybrid_ncpp= F
+  rhotov : n3xccc=       32768
+ scfcv_core: previous iteration took 00 [s]
+ 
+ PAW TEST:
+ ==== Non-zero Moments of (n1-tn1) ====
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8251784E-02 **    M=-1.3877788E-17
+   l,m= 2 0: M=-3.9792579E-18 **    M=-1.8174845E-18
+   l,m= 2 2: M=-5.1791032E-18 **    M=-4.2711903E-18
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8251784E-02 **    M=-2.7755576E-17
+   l,m= 2 0: M= 3.1182143E-18 **    M= 9.5157177E-19
+   l,m= 2 2: M= 1.2633480E-18 **    M= 4.2775791E-19
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03925   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03925  -0.17969   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00520   0.00000   0.00000  -0.02468   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00520   0.00000   0.00000  -0.02468   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00520   0.00000   0.00000  -0.02468
+   0.00000   0.00000  -0.02468   0.00000   0.00000   0.13337   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02468   0.00000   0.00000   0.13337   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02468   0.00000   0.00000   0.13337
+   **************** Dij_hat *****************
+   0.22797  -0.82426  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -0.82426   3.00253   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.27208   0.00000   0.00000   0.99626  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.27208   0.00000  -0.00000   0.99626  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.27208  -0.00000  -0.00000   0.99626
+   0.00000  -0.00000   0.99626  -0.00000  -0.00000  -3.10718   0.00000   0.00000
+   0.00000  -0.00000  -0.00000   0.99626  -0.00000   0.00000  -3.10718   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000   0.99626   0.00000   0.00000  -3.10718
+   ***************** Dij_xc *****************
+  -0.05572   0.15061   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15061  -0.41133   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36324   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36324   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36324
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64887  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -1.64887   4.11696   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.03416   0.00000   0.00000  -0.22976  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.03416   0.00000  -0.00000  -0.22976  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.03416  -0.00000  -0.00000  -0.22976
+   0.00000  -0.00000  -0.22976  -0.00000  -0.00000   2.94458   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.22976  -0.00000   0.00000   2.94458   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.22976   0.00000   0.00000   2.94458
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03925   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03925  -0.17969   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00520   0.00000   0.00000  -0.02468   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00520   0.00000   0.00000  -0.02468   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00520   0.00000   0.00000  -0.02468
+   0.00000   0.00000  -0.02468   0.00000   0.00000   0.13337   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02468   0.00000   0.00000   0.13337   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02468   0.00000   0.00000   0.13337
+   **************** Dij_hat *****************
+   0.22797  -0.82426   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.82426   3.00253  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.27208   0.00000   0.00000   0.99626  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.27208   0.00000  -0.00000   0.99626  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.27208  -0.00000  -0.00000   0.99626
+  -0.00000   0.00000   0.99626  -0.00000  -0.00000  -3.10718   0.00000   0.00000
+  -0.00000   0.00000  -0.00000   0.99626  -0.00000   0.00000  -3.10718   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000   0.99626   0.00000   0.00000  -3.10718
+   ***************** Dij_xc *****************
+  -0.05572   0.15061   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15061  -0.41133   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36324   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36324   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36324
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64887   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.64887   4.11696  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.03416   0.00000   0.00000  -0.22976  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.03416   0.00000  -0.00000  -0.22976  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.03416  -0.00000  -0.00000  -0.22976
+  -0.00000   0.00000  -0.22976  -0.00000  -0.00000   2.94458   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.22976  -0.00000   0.00000   2.94458   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.22976   0.00000   0.00000   2.94458
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59010  -1.64887   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64887   4.11696   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03416   0.00000   0.00000  -0.22976   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03416   0.00000   0.00000  -0.22976   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03416   0.00000   0.00000  -0.22976
+   0.00000   0.00000  -0.22976   0.00000   0.00000   2.94458   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22976   0.00000   0.00000   2.94458   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22976   0.00000   0.00000   2.94458
+ Atom #  2
+   0.59010  -1.64887   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64887   4.11696   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03416   0.00000   0.00000  -0.22976   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03416   0.00000   0.00000  -0.22976   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03416   0.00000   0.00000  -0.22976
+   0.00000   0.00000  -0.22976   0.00000   0.00000   2.94458   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22976   0.00000   0.00000   2.94458   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22976   0.00000   0.00000   2.94458
+ 
+ 
+ ITER STEP NUMBER     5
+ vtorho : nnsclo_now=1, note that nnsclo,dbl_nnsclo,istep=0 0 5
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  2.60E-09  3.78E-09  2.90E-09  1.07E-09  1.65E-09  2.83E-09  2.32E-09  2.66E-09
+ ene: -3.13E-01  2.28E-01  3.07E-01  3.39E-01  6.26E-01  7.55E-01  7.56E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =164
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.1254E-01  2.2785E-01  3.0743E-01  3.3948E-01  6.2584E-01  7.5474E-01
+  7.5629E-01  8.8446E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  2.66E-09  5.63E-09  1.71E-09  1.12E-09  2.52E-09  9.30E-10  4.12E-09  5.51E-09
+ ene: -1.59E-01 -4.65E-02  2.62E-01  2.84E-01  6.91E-01  7.71E-01  7.93E-01  9.63E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =168
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.5896E-01 -4.6492E-02  2.6172E-01  2.8378E-01  6.9051E-01  7.7052E-01
+  7.9328E-01  9.6300E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  3.76E-09  1.88E-09  3.91E-09  2.74E-09  2.69E-09  2.92E-09  2.01E-09  2.45E-09
+ ene: -2.30E-01  1.40E-01  2.22E-01  2.35E-01  6.02E-01  7.53E-01  8.82E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =172
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3025E-01  1.4050E-01  2.2236E-01  2.3492E-01  6.0156E-01  7.5284E-01
+  8.8211E-01  8.8437E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  3.38E-09  4.47E-09  3.24E-09  3.21E-09  3.09E-09  3.70E-09  2.85E-09  4.86E-09
+ ene: -1.91E-01  5.43E-02  1.84E-01  2.63E-01  7.03E-01  7.65E-01  8.68E-01  8.99E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =176
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.9137E-01  5.4296E-02  1.8378E-01  2.6334E-01  7.0291E-01  7.6457E-01
+  8.6781E-01  8.9873E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  3.25E-09  5.47E-09  3.37E-09  4.10E-11  2.02E-10  2.47E-09  4.76E-09  3.51E-09
+ ene: -2.71E-01  1.30E-01  2.53E-01  3.46E-01  7.09E-01  7.29E-01  7.65E-01  9.30E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =180
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.7126E-01  1.3015E-01  2.5347E-01  3.4563E-01  7.0891E-01  7.2940E-01
+  7.6496E-01  9.3018E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  2.44E-09  3.35E-09  4.43E-09  5.99E-10  3.13E-09  7.71E-10  1.69E-08  4.60E-07
+ ene: -1.22E-01 -1.03E-02  1.30E-01  2.59E-01  6.62E-01  8.42E-01  9.00E-01  9.51E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =184
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.2227E-01 -1.0253E-02  1.2994E-01  2.5882E-01  6.6219E-01  8.4185E-01
+  8.9986E-01  9.5140E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  4.09E-09  2.19E-09  3.43E-09  8.08E-10  3.04E-09  3.88E-09  6.20E-10  2.37E-09
+ ene: -1.13E-01  2.68E-02  1.43E-01  1.96E-01  5.94E-01  6.68E-01  9.82E-01  9.93E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =188
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.1253E-01  2.6788E-02  1.4296E-01  1.9567E-01  5.9386E-01  6.6786E-01
+  9.8225E-01  9.9254E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  2.41E-09  2.59E-09  4.53E-09  4.22E-09  4.06E-09  4.89E-09  1.27E-09  9.94E-09
+ ene: -8.44E-02  7.44E-03  1.04E-01  1.79E-01  6.87E-01  8.09E-01  8.73E-01  9.58E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =192
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -8.4377E-02  7.4446E-03  1.0423E-01  1.7950E-01  6.8673E-01  8.0858E-01
+  8.7253E-01  9.5757E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  1.22E-09  3.04E-09  1.03E-09  1.03E-09  1.10E-09  1.10E-09  2.69E-09  1.60E-09
+ ene: -3.55E-01  3.25E-01  3.89E-01  3.89E-01  6.48E-01  6.48E-01  6.64E-01  9.21E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =196
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.5453E-01  3.2511E-01  3.8900E-01  3.8900E-01  6.4794E-01  6.4794E-01
+  6.6420E-01  9.2096E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  3.29E-09  6.84E-09  5.52E-10  5.52E-10  5.12E-10  5.12E-10  4.33E-09  5.47E-09
+ ene: -2.31E-01  2.34E-02  3.20E-01  3.20E-01  7.18E-01  7.18E-01  7.37E-01  9.73E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =200
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3123E-01  2.3361E-02  3.2037E-01  3.2037E-01  7.1839E-01  7.1839E-01
+  7.3680E-01  9.7289E-01
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.61819   0.04512   0.00113  -0.04991  -0.00720   0.00047  -0.00172  -0.00093
+   0.04512   0.00173   0.00035   0.00056  -0.00051  -0.00002   0.00008   0.00003
+   0.00113   0.00035   1.42418   0.03753   0.11776   0.05770  -0.00691  -0.00760
+  -0.04991   0.00056   0.03753   1.35854  -0.01971  -0.00692   0.06661   0.00458
+  -0.00720  -0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06094
+   0.00047  -0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+  -0.00172   0.00008  -0.00691   0.06661   0.00458  -0.00082   0.00389   0.00056
+  -0.00093   0.00003  -0.00760   0.00458   0.06094  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.61819   0.04512  -0.00113   0.04991   0.00720  -0.00047   0.00172   0.00093
+   0.04512   0.00173  -0.00035  -0.00056   0.00051   0.00002  -0.00008  -0.00003
+  -0.00113  -0.00035   1.42418   0.03753   0.11776   0.05770  -0.00691  -0.00760
+   0.04991  -0.00056   0.03753   1.35854  -0.01971  -0.00692   0.06661   0.00458
+   0.00720   0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06094
+  -0.00047   0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+   0.00172  -0.00008  -0.00691   0.06661   0.00458  -0.00082   0.00389   0.00056
+   0.00093  -0.00003  -0.00760   0.00458   0.06094  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.61819   0.04512   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04512   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40946   0.00000   0.00000   0.06175   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40946   0.00000   0.00000   0.06175   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40946   0.00000   0.00000   0.06175
+   0.00000   0.00000   0.06175   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06175   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06175   0.00000   0.00000   0.00320
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.61819   0.04512   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04512   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40946   0.00000   0.00000   0.06175   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40946   0.00000   0.00000   0.06175   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40946   0.00000   0.00000   0.06175
+   0.00000   0.00000   0.06175   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06175   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06175   0.00000   0.00000   0.00320
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.7747E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.3859E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  5  -11.525680408963    -7.095E-08 4.602E-07 2.187E-05
+ scprqt: <Vxc>= -4.9512365E-01 hartree
+ 
+ Pulay update with  4 previous iterations:
+ mixing of old trial potential : alpha(m:m-4)=   1.30     -0.304      0.199E-02  0.598E-02 -0.920E-03
+  rhotov : is_hybrid_ncpp= F
+  rhotov : n3xccc=       32768
+ scfcv_core: previous iteration took 00 [s]
+ 
+ PAW TEST:
+ ==== Non-zero Moments of (n1-tn1) ====
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8281672E-02 **    M=-4.1633363E-17
+   l,m= 2 0: M=-2.8090298E-18 **    M=-3.4553784E-18
+   l,m= 2 2: M= 9.2082042E-18 **    M=-2.6239390E-19
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8281672E-02 **    M=-2.7755576E-17
+   l,m= 2 0: M=-4.3292472E-18 **    M=-2.9884584E-18
+   l,m= 2 2: M= 9.4806897E-18 **    M=-3.4093209E-18
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17972   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469
+   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13340   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13340   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13340
+   **************** Dij_hat *****************
+   0.22797  -0.82425  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -0.82425   3.00247   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.27207   0.00000   0.00000   0.99625  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.27207   0.00000  -0.00000   0.99625  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.27207  -0.00000  -0.00000   0.99625
+   0.00000  -0.00000   0.99625  -0.00000  -0.00000  -3.10712   0.00000   0.00000
+   0.00000  -0.00000  -0.00000   0.99625  -0.00000   0.00000  -3.10712   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000   0.99625   0.00000   0.00000  -3.10712
+   ***************** Dij_xc *****************
+  -0.05572   0.15060   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15060  -0.41130   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64886  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.03415   0.00000  -0.00000  -0.22979  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.03415  -0.00000  -0.00000  -0.22979
+   0.00000  -0.00000  -0.22979  -0.00000  -0.00000   2.94469   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.22979  -0.00000   0.00000   2.94469   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17972   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469
+   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13340   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13340   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13340
+   **************** Dij_hat *****************
+   0.22797  -0.82425   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.82425   3.00247  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.27207   0.00000   0.00000   0.99625  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.27207   0.00000  -0.00000   0.99625  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.27207  -0.00000  -0.00000   0.99625
+  -0.00000   0.00000   0.99625  -0.00000  -0.00000  -3.10712   0.00000   0.00000
+  -0.00000   0.00000  -0.00000   0.99625  -0.00000   0.00000  -3.10712   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000   0.99625   0.00000   0.00000  -3.10712
+   ***************** Dij_xc *****************
+  -0.05572   0.15060   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15060  -0.41130   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64886   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.64886   4.11691  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.03415   0.00000   0.00000  -0.22979  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.03415   0.00000  -0.00000  -0.22979  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.03415  -0.00000  -0.00000  -0.22979
+  -0.00000   0.00000  -0.22979  -0.00000  -0.00000   2.94469   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.22979  -0.00000   0.00000   2.94469   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ Atom #  2
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ 
+ ITER STEP NUMBER     6
+ vtorho : nnsclo_now=1, note that nnsclo,dbl_nnsclo,istep=0 0 6
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  2.36E-11  6.89E-11  5.50E-11  1.94E-11  2.02E-11  4.44E-11  4.17E-11  6.80E-11
+ ene: -3.13E-01  2.28E-01  3.07E-01  3.40E-01  6.26E-01  7.55E-01  7.56E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =204
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.1251E-01  2.2788E-01  3.0746E-01  3.3952E-01  6.2587E-01  7.5478E-01
+  7.5632E-01  8.8449E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  2.89E-11  6.02E-11  2.88E-11  2.21E-11  2.69E-11  1.74E-11  5.99E-11  1.18E-10
+ ene: -1.59E-01 -4.65E-02  2.62E-01  2.84E-01  6.91E-01  7.71E-01  7.93E-01  9.63E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =208
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.5894E-01 -4.6468E-02  2.6175E-01  2.8381E-01  6.9053E-01  7.7054E-01
+  7.9331E-01  9.6303E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  3.78E-11  2.52E-11  5.25E-11  5.29E-11  2.84E-11  3.52E-11  3.77E-11  4.12E-11
+ ene: -2.30E-01  1.41E-01  2.22E-01  2.35E-01  6.02E-01  7.53E-01  8.82E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =212
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3022E-01  1.4053E-01  2.2239E-01  2.3495E-01  6.0159E-01  7.5287E-01
+  8.8215E-01  8.8440E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  3.31E-11  5.11E-11  4.09E-11  5.56E-11  3.68E-11  4.71E-11  4.39E-11  1.12E-10
+ ene: -1.91E-01  5.43E-02  1.84E-01  2.63E-01  7.03E-01  7.65E-01  8.68E-01  8.99E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =216
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.9134E-01  5.4322E-02  1.8381E-01  2.6337E-01  7.0294E-01  7.6460E-01
+  8.6785E-01  8.9877E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  2.80E-11  6.63E-11  5.86E-11  7.61E-13  5.61E-12  3.43E-11  5.99E-11  6.51E-11
+ ene: -2.71E-01  1.30E-01  2.54E-01  3.46E-01  7.09E-01  7.29E-01  7.65E-01  9.30E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =220
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.7124E-01  1.3017E-01  2.5350E-01  3.4567E-01  7.0894E-01  7.2943E-01
+  7.6499E-01  9.3022E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  3.40E-11  3.92E-11  4.94E-11  1.19E-11  3.76E-11  2.45E-11  4.11E-10  3.03E-08
+ ene: -1.22E-01 -1.02E-02  1.30E-01  2.59E-01  6.62E-01  8.42E-01  9.00E-01  9.51E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =224
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.2224E-01 -1.0228E-02  1.2997E-01  2.5885E-01  6.6221E-01  8.4188E-01
+  8.9990E-01  9.5144E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  4.29E-11  2.75E-11  5.17E-11  1.55E-11  3.20E-11  3.95E-11  1.95E-11  8.40E-11
+ ene: -1.13E-01  2.68E-02  1.43E-01  1.96E-01  5.94E-01  6.68E-01  9.82E-01  9.93E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =228
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.1251E-01  2.6815E-02  1.4299E-01  1.9570E-01  5.9388E-01  6.6788E-01
+  9.8229E-01  9.9258E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  2.70E-11  2.81E-11  4.78E-11  6.60E-11  4.30E-11  6.24E-11  4.42E-11  3.61E-10
+ ene: -8.44E-02  7.47E-03  1.04E-01  1.80E-01  6.87E-01  8.09E-01  8.73E-01  9.58E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =232
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -8.4351E-02  7.4714E-03  1.0425E-01  1.7953E-01  6.8675E-01  8.0861E-01
+  8.7256E-01  9.5761E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  1.48E-11  5.41E-11  1.97E-11  1.98E-11  1.72E-11  1.72E-11  4.70E-11  1.27E-10
+ ene: -3.55E-01  3.25E-01  3.89E-01  3.89E-01  6.48E-01  6.48E-01  6.64E-01  9.21E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =236
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.5451E-01  3.2514E-01  3.8904E-01  3.8904E-01  6.4797E-01  6.4797E-01
+  6.6423E-01  9.2100E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  2.83E-11  7.60E-11  1.08E-11  1.08E-11  9.84E-12  9.84E-12  4.96E-11  1.76E-10
+ ene: -2.31E-01  2.34E-02  3.20E-01  3.20E-01  7.18E-01  7.18E-01  7.37E-01  9.73E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =240
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3120E-01  2.3387E-02  3.2040E-01  3.2040E-01  7.1842E-01  7.1842E-01
+  7.3684E-01  9.7292E-01
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.61821   0.04513   0.00113  -0.04991  -0.00720   0.00047  -0.00172  -0.00093
+   0.04513   0.00173   0.00036   0.00056  -0.00051  -0.00002   0.00008   0.00003
+   0.00113   0.00036   1.42417   0.03752   0.11776   0.05770  -0.00691  -0.00760
+  -0.04991   0.00056   0.03752   1.35855  -0.01971  -0.00692   0.06662   0.00458
+  -0.00720  -0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06095
+   0.00047  -0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+  -0.00172   0.00008  -0.00691   0.06662   0.00458  -0.00082   0.00390   0.00056
+  -0.00093   0.00003  -0.00760   0.00458   0.06095  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.61821   0.04513  -0.00113   0.04991   0.00720  -0.00047   0.00172   0.00093
+   0.04513   0.00173  -0.00036  -0.00056   0.00051   0.00002  -0.00008  -0.00003
+  -0.00113  -0.00036   1.42417   0.03752   0.11776   0.05770  -0.00691  -0.00760
+   0.04991  -0.00056   0.03752   1.35855  -0.01971  -0.00692   0.06662   0.00458
+   0.00720   0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06095
+  -0.00047   0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+   0.00172  -0.00008  -0.00691   0.06662   0.00458  -0.00082   0.00390   0.00056
+   0.00093  -0.00003  -0.00760   0.00458   0.06095  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.7746E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.3858E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  6  -11.525680423537    -1.457E-08 3.035E-08 4.176E-08
+ scprqt: <Vxc>= -4.9510687E-01 hartree
+ 
+ Pulay update with  5 previous iterations:
+ mixing of old trial potential : alpha(m:m-4)=   1.39     -0.493      0.107     -0.712E-03 -0.220E-02
+  rhotov : is_hybrid_ncpp= F
+  rhotov : n3xccc=       32768
+ scfcv_core: previous iteration took 00 [s]
+ 
+ PAW TEST:
+ ==== Non-zero Moments of (n1-tn1) ====
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8284095E-02 **    M=-1.3877788E-17
+   l,m= 2 0: M= 1.1508097E-18 **    M=-7.8332181E-19
+   l,m= 2 2: M= 5.1087848E-18 **    M= 7.8114172E-19
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8284095E-02 **    M=-2.0816682E-17
+   l,m= 2 0: M= 6.8974523E-19 **    M= 3.3583866E-19
+   l,m= 2 2: M= 4.3489101E-18 **    M= 9.3974867E-19
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17972   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469
+   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341
+   **************** Dij_hat *****************
+   0.22797  -0.82424  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -0.82424   3.00247   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.27207   0.00000   0.00000   0.99624  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.27207   0.00000  -0.00000   0.99624  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.27207  -0.00000  -0.00000   0.99624
+   0.00000  -0.00000   0.99624  -0.00000  -0.00000  -3.10712   0.00000   0.00000
+   0.00000  -0.00000  -0.00000   0.99624  -0.00000   0.00000  -3.10712   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000   0.99624   0.00000   0.00000  -3.10712
+   ***************** Dij_xc *****************
+  -0.05572   0.15061   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15061  -0.41131   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64886  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.03415   0.00000  -0.00000  -0.22979  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.03415  -0.00000  -0.00000  -0.22979
+   0.00000  -0.00000  -0.22979  -0.00000  -0.00000   2.94469   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.22979  -0.00000   0.00000   2.94469   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17972   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469
+   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341
+   **************** Dij_hat *****************
+   0.22797  -0.82424   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.82424   3.00247  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.27207   0.00000   0.00000   0.99624  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.27207   0.00000  -0.00000   0.99624  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.27207  -0.00000  -0.00000   0.99624
+  -0.00000   0.00000   0.99624  -0.00000  -0.00000  -3.10712   0.00000   0.00000
+  -0.00000   0.00000  -0.00000   0.99624  -0.00000   0.00000  -3.10712   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000   0.99624   0.00000   0.00000  -3.10712
+   ***************** Dij_xc *****************
+  -0.05572   0.15061   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15061  -0.41131   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64886   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.64886   4.11691  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.03415   0.00000   0.00000  -0.22979  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.03415   0.00000  -0.00000  -0.22979  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.03415  -0.00000  -0.00000  -0.22979
+  -0.00000   0.00000  -0.22979  -0.00000  -0.00000   2.94469   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.22979  -0.00000   0.00000   2.94469   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ Atom #  2
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ 
+ ITER STEP NUMBER     7
+ vtorho : nnsclo_now=1, note that nnsclo,dbl_nnsclo,istep=0 0 7
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  4.74E-14  2.15E-13  2.25E-13  6.03E-14  7.48E-14  1.91E-13  1.81E-13  6.27E-13
+ ene: -3.13E-01  2.28E-01  3.07E-01  3.40E-01  6.26E-01  7.55E-01  7.56E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =244
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.1251E-01  2.2788E-01  3.0746E-01  3.3952E-01  6.2587E-01  7.5478E-01
+  7.5633E-01  8.8449E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  1.92E-13  1.68E-13  9.33E-14  1.03E-13  5.66E-14  8.31E-14  2.29E-13  7.07E-13
+ ene: -1.59E-01 -4.65E-02  2.62E-01  2.84E-01  6.91E-01  7.71E-01  7.93E-01  9.63E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =248
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.5893E-01 -4.6466E-02  2.6175E-01  2.8381E-01  6.9054E-01  7.7055E-01
+  7.9331E-01  9.6304E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  1.25E-13  6.57E-14  2.07E-13  2.28E-13  7.09E-14  1.26E-13  2.12E-13  2.76E-13
+ ene: -2.30E-01  1.41E-01  2.22E-01  2.35E-01  6.02E-01  7.53E-01  8.82E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =252
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3022E-01  1.4053E-01  2.2239E-01  2.3495E-01  6.0159E-01  7.5287E-01
+  8.8215E-01  8.8440E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  1.41E-13  1.71E-13  1.73E-13  1.55E-13  1.29E-13  1.97E-13  1.79E-13  4.73E-13
+ ene: -1.91E-01  5.43E-02  1.84E-01  2.63E-01  7.03E-01  7.65E-01  8.68E-01  8.99E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =256
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.9134E-01  5.4324E-02  1.8381E-01  2.6337E-01  7.0294E-01  7.6461E-01
+  8.6785E-01  8.9877E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  1.23E-13  2.65E-13  1.97E-13  2.55E-15  2.91E-14  1.01E-13  2.79E-13  7.00E-13
+ ene: -2.71E-01  1.30E-01  2.54E-01  3.46E-01  7.09E-01  7.29E-01  7.65E-01  9.30E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =260
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.7124E-01  1.3018E-01  2.5350E-01  3.4567E-01  7.0895E-01  7.2943E-01
+  7.6499E-01  9.3022E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  8.45E-14  7.82E-14  2.09E-13  2.50E-14  1.28E-13  4.98E-13  2.27E-11  3.63E-09
+ ene: -1.22E-01 -1.02E-02  1.30E-01  2.59E-01  6.62E-01  8.42E-01  9.00E-01  9.51E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =264
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.2224E-01 -1.0226E-02  1.2997E-01  2.5885E-01  6.6221E-01  8.4188E-01
+  8.9990E-01  9.5144E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  2.22E-13  5.63E-14  1.47E-13  7.75E-14  6.32E-14  1.23E-13  5.65E-13  3.15E-13
+ ene: -1.13E-01  2.68E-02  1.43E-01  1.96E-01  5.94E-01  6.68E-01  9.82E-01  9.93E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =268
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.1251E-01  2.6817E-02  1.4299E-01  1.9570E-01  5.9389E-01  6.6788E-01
+  9.8229E-01  9.9259E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  6.17E-14  7.34E-14  1.74E-13  1.75E-13  1.53E-13  3.27E-13  3.69E-13  9.98E-12
+ ene: -8.43E-02  7.47E-03  1.04E-01  1.80E-01  6.87E-01  8.09E-01  8.73E-01  9.58E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =272
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -8.4349E-02  7.4729E-03  1.0426E-01  1.7953E-01  6.8676E-01  8.0861E-01
+  8.7256E-01  9.5761E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  1.62E-14  2.03E-13  7.68E-14  7.68E-14  7.10E-14  7.10E-14  1.90E-13  8.66E-14
+ ene: -3.55E-01  3.25E-01  3.89E-01  3.89E-01  6.48E-01  6.48E-01  6.64E-01  9.21E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =276
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.5451E-01  3.2514E-01  3.8904E-01  3.8904E-01  6.4797E-01  6.4797E-01
+  6.6423E-01  9.2100E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  6.72E-14  2.72E-13  2.81E-14  2.81E-14  3.74E-14  3.74E-14  1.42E-13  7.47E-13
+ ene: -2.31E-01  2.34E-02  3.20E-01  3.20E-01  7.18E-01  7.18E-01  7.37E-01  9.73E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =280
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3120E-01  2.3388E-02  3.2041E-01  3.2041E-01  7.1842E-01  7.1842E-01
+  7.3684E-01  9.7293E-01
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.61821   0.04513   0.00113  -0.04991  -0.00720   0.00047  -0.00172  -0.00093
+   0.04513   0.00173   0.00036   0.00056  -0.00051  -0.00002   0.00008   0.00003
+   0.00113   0.00036   1.42417   0.03752   0.11776   0.05770  -0.00691  -0.00760
+  -0.04991   0.00056   0.03752   1.35856  -0.01971  -0.00692   0.06662   0.00458
+  -0.00720  -0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06095
+   0.00047  -0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+  -0.00172   0.00008  -0.00691   0.06662   0.00458  -0.00082   0.00390   0.00056
+  -0.00093   0.00003  -0.00760   0.00458   0.06095  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.61821   0.04513  -0.00113   0.04991   0.00720  -0.00047   0.00172   0.00093
+   0.04513   0.00173  -0.00036  -0.00056   0.00051   0.00002  -0.00008  -0.00003
+  -0.00113  -0.00036   1.42417   0.03752   0.11776   0.05770  -0.00691  -0.00760
+   0.04991  -0.00056   0.03752   1.35856  -0.01971  -0.00692   0.06662   0.00458
+   0.00720   0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06095
+  -0.00047   0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+   0.00172  -0.00008  -0.00691   0.06662   0.00458  -0.00082   0.00390   0.00056
+   0.00093  -0.00003  -0.00760   0.00458   0.06095  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.7746E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.3858E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  7  -11.525680423600    -6.356E-11 3.635E-09 1.707E-09
+ scprqt: <Vxc>= -4.9510586E-01 hartree
+ 
+ Pulay update with  6 previous iterations:
+ mixing of old trial potential : alpha(m:m-4)=   1.08     -0.762E-01 -0.110E-01  0.479E-02  0.101E-03
+  rhotov : is_hybrid_ncpp= F
+  rhotov : n3xccc=       32768
+ scfcv_core: previous iteration took 00 [s]
+ 
+ PAW TEST:
+ ==== Non-zero Moments of (n1-tn1) ====
+ The moments of (n1-tn1-nhat1) must be very small...
+ 
+ Atom   1 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8283880E-02 **    M=-4.1633363E-17
+   l,m= 2 0: M= 1.1047762E-18 **    M= 1.6905427E-18
+   l,m= 2 2: M= 7.7973305E-20 **    M= 1.5143756E-19
+ 
+ Atom   2 (ispden=1):
+  ******* Moment of (n1-tn1)  ** Moment of (n1-tn1-nhat1)
+   l,m= 0 0: M= 5.8283880E-02 **    M=-3.4694470E-17
+   l,m= 2 0: M=-3.2119417E-18 **    M= 5.1725055E-19
+   l,m= 2 2: M=-4.2813229E-20 **    M= 7.5744890E-20
+ average electrostatic smooth potential [Ha] , [eV]      0.000000        0.000000
+ 
+ ==== Values of psp strength Dij (Hartree) ============
+ 
+ >>>>>>>>>> Atom   1:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17971   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469
+   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341
+   **************** Dij_hat *****************
+   0.22797  -0.82424  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -0.82424   3.00247   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.27207   0.00000   0.00000   0.99624  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.27207   0.00000  -0.00000   0.99624  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.27207  -0.00000  -0.00000   0.99624
+   0.00000  -0.00000   0.99624  -0.00000  -0.00000  -3.10712   0.00000   0.00000
+   0.00000  -0.00000  -0.00000   0.99624  -0.00000   0.00000  -3.10712   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000   0.99624   0.00000   0.00000  -3.10712
+   ***************** Dij_xc *****************
+  -0.05572   0.15061   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15061  -0.41131   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64886  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979  -0.00000  -0.00000
+  -0.00000   0.00000   0.00000  -0.03415   0.00000  -0.00000  -0.22979  -0.00000
+  -0.00000   0.00000   0.00000   0.00000  -0.03415  -0.00000  -0.00000  -0.22979
+   0.00000  -0.00000  -0.22979  -0.00000  -0.00000   2.94469   0.00000   0.00000
+   0.00000  -0.00000  -0.00000  -0.22979  -0.00000   0.00000   2.94469   0.00000
+   0.00000  -0.00000  -0.00000  -0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ >>>>>>>>>> Atom   2:
+   ************ Dij atomic (Dij0) ***********
+   0.42460  -1.01447   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.01447   1.70546   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.26133   0.00000   0.00000  -1.30244
+   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000   0.00000
+   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163   0.00000
+   0.00000   0.00000   0.00000   0.00000  -1.30244   0.00000   0.00000   6.28163
+   ************** Dij Hartree ***************
+  -0.00674   0.03926   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.03926  -0.17971   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.00521   0.00000   0.00000  -0.02469
+   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02469   0.00000   0.00000   0.13341
+   **************** Dij_hat *****************
+   0.22797  -0.82424   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -0.82424   3.00247  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.27207   0.00000   0.00000   0.99624  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.27207   0.00000  -0.00000   0.99624  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.27207  -0.00000  -0.00000   0.99624
+  -0.00000   0.00000   0.99624  -0.00000  -0.00000  -3.10712   0.00000   0.00000
+  -0.00000   0.00000  -0.00000   0.99624  -0.00000   0.00000  -3.10712   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000   0.99624   0.00000   0.00000  -3.10712
+   ***************** Dij_xc *****************
+  -0.05572   0.15061   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.15061  -0.41131   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.02861   0.00000   0.00000   0.10110
+   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.10110   0.00000   0.00000  -0.36323
+   **********    TOTAL Dij in Ha   **********
+   0.59010  -1.64886   0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+  -1.64886   4.11691  -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+   0.00000  -0.00000  -0.03415   0.00000   0.00000  -0.22979  -0.00000  -0.00000
+   0.00000  -0.00000   0.00000  -0.03415   0.00000  -0.00000  -0.22979  -0.00000
+   0.00000  -0.00000   0.00000   0.00000  -0.03415  -0.00000  -0.00000  -0.22979
+  -0.00000   0.00000  -0.22979  -0.00000  -0.00000   2.94469   0.00000   0.00000
+  -0.00000   0.00000  -0.00000  -0.22979  -0.00000   0.00000   2.94469   0.00000
+  -0.00000   0.00000  -0.00000  -0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ 
+ PAW TEST:
+ ========= Values of DIJ in symdij (Hartree) =========
+ 
+ Atom #  1
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ Atom #  2
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ 
+ ITER STEP NUMBER     8
+ vtorho : nnsclo_now=1, note that nnsclo,dbl_nnsclo,istep=0 0 8
+ non-scf iterations; kpt #     1  , k= ( -0.12500 -0.25000  0.00000  ), band residuals:
+ res:  4.62E-15  6.91E-15  4.97E-15  2.18E-15  2.92E-15  5.34E-15  4.21E-15  2.77E-15
+ ene: -3.13E-01  2.28E-01  3.07E-01  3.40E-01  6.26E-01  7.55E-01  7.56E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =284
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.1251E-01  2.2788E-01  3.0746E-01  3.3952E-01  6.2587E-01  7.5478E-01
+  7.5633E-01  8.8449E-01
+ non-scf iterations; kpt #     2  , k= ( -0.12500  0.50000  0.00000  ), band residuals:
+ res:  5.49E-15  1.11E-14  2.53E-15  1.73E-15  4.61E-15  1.64E-15  7.74E-15  2.37E-14
+ ene: -1.59E-01 -4.65E-02  2.62E-01  2.84E-01  6.91E-01  7.71E-01  7.93E-01  9.63E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =288
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.5893E-01 -4.6467E-02  2.6175E-01  2.8381E-01  6.9053E-01  7.7055E-01
+  7.9331E-01  9.6304E-01
+ non-scf iterations; kpt #     3  , k= ( -0.25000 -0.37500  0.00000  ), band residuals:
+ res:  7.31E-15  4.17E-15  6.77E-15  4.47E-15  4.89E-15  5.04E-15  4.87E-15  4.70E-15
+ ene: -2.30E-01  1.41E-01  2.22E-01  2.35E-01  6.02E-01  7.53E-01  8.82E-01  8.84E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =292
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3022E-01  1.4053E-01  2.2239E-01  2.3495E-01  6.0159E-01  7.5287E-01
+  8.8215E-01  8.8440E-01
+ non-scf iterations; kpt #     4  , k= ( -0.12500 -0.37500  0.12500  ), band residuals:
+ res:  6.61E-15  8.53E-15  5.33E-15  5.32E-15  5.32E-15  6.82E-15  6.53E-15  1.05E-14
+ ene: -1.91E-01  5.43E-02  1.84E-01  2.63E-01  7.03E-01  7.65E-01  8.68E-01  8.99E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =296
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.9134E-01  5.4323E-02  1.8381E-01  2.6337E-01  7.0294E-01  7.6461E-01
+  8.6785E-01  8.9877E-01
+ non-scf iterations; kpt #     5  , k= ( -0.12500  0.25000  0.00000  ), band residuals:
+ res:  7.27E-15  9.48E-15  6.26E-15  8.49E-17  3.38E-16  5.13E-15  8.32E-15  6.95E-15
+ ene: -2.71E-01  1.30E-01  2.54E-01  3.46E-01  7.09E-01  7.29E-01  7.65E-01  9.30E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =300
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.7124E-01  1.3017E-01  2.5350E-01  3.4567E-01  7.0894E-01  7.2943E-01
+  7.6499E-01  9.3022E-01
+ non-scf iterations; kpt #     6  , k= ( -0.25000  0.37500  0.00000  ), band residuals:
+ res:  4.30E-15  7.27E-15  6.87E-15  9.84E-16  6.18E-15  1.21E-15  7.48E-13  2.52E-10
+ ene: -1.22E-01 -1.02E-02  1.30E-01  2.59E-01  6.62E-01  8.42E-01  9.00E-01  9.51E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =304
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.2224E-01 -1.0227E-02  1.2997E-01  2.5885E-01  6.6221E-01  8.4188E-01
+  8.9990E-01  9.5144E-01
+ non-scf iterations; kpt #     7  , k= ( -0.37500  0.50000  0.00000  ), band residuals:
+ res:  9.98E-15  4.65E-15  5.80E-15  1.19E-15  5.87E-15  6.68E-15  9.91E-16  7.35E-15
+ ene: -1.13E-01  2.68E-02  1.43E-01  1.96E-01  5.94E-01  6.68E-01  9.82E-01  9.93E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =308
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -1.1251E-01  2.6817E-02  1.4299E-01  1.9570E-01  5.9388E-01  6.6788E-01
+  9.8229E-01  9.9259E-01
+ non-scf iterations; kpt #     8  , k= ( -0.25000  0.50000  0.12500  ), band residuals:
+ res:  4.84E-15  5.23E-15  7.88E-15  6.59E-15  7.07E-15  8.59E-15  1.69E-15  5.84E-13
+ ene: -8.43E-02  7.47E-03  1.04E-01  1.80E-01  6.87E-01  8.09E-01  8.73E-01  9.58E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =312
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -8.4350E-02  7.4726E-03  1.0426E-01  1.7953E-01  6.8676E-01  8.0861E-01
+  8.7256E-01  9.5761E-01
+ non-scf iterations; kpt #     9  , k= ( -0.12500  0.00000  0.00000  ), band residuals:
+ res:  2.10E-15  5.38E-15  1.85E-15  1.84E-15  2.10E-15  2.10E-15  5.04E-15  1.33E-15
+ ene: -3.55E-01  3.25E-01  3.89E-01  3.89E-01  6.48E-01  6.48E-01  6.64E-01  9.21E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =316
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -3.5451E-01  3.2514E-01  3.8904E-01  3.8904E-01  6.4797E-01  6.4797E-01
+  6.6423E-01  9.2100E-01
+ non-scf iterations; kpt #    10  , k= ( -0.37500  0.00000  0.00000  ), band residuals:
+ res:  5.83E-15  1.24E-14  9.87E-16  9.87E-16  9.13E-16  9.13E-16  8.26E-15  5.42E-15
+ ene: -2.31E-01  2.34E-02  3.20E-01  3.20E-01  7.18E-01  7.18E-01  7.37E-01  9.73E-01
+ vtowfk : number of one-way 3D ffts skipped in vtowfk until now =320
+     eigenvalues (hartree) for    8  bands
+              after    2 non-SCF iterations with    4 CG line minimizations
+ -2.3120E-01  2.3388E-02  3.2041E-01  3.2041E-01  7.1842E-01  7.1842E-01
+  7.3684E-01  9.7293E-01
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  1) ======
+   1.61821   0.04513   0.00113  -0.04991  -0.00720   0.00047  -0.00172  -0.00093
+   0.04513   0.00173   0.00036   0.00056  -0.00051  -0.00002   0.00008   0.00003
+   0.00113   0.00036   1.42417   0.03752   0.11776   0.05770  -0.00691  -0.00760
+  -0.04991   0.00056   0.03752   1.35856  -0.01971  -0.00692   0.06662   0.00458
+  -0.00720  -0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06095
+   0.00047  -0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+  -0.00172   0.00008  -0.00691   0.06662   0.00458  -0.00082   0.00390   0.00056
+  -0.00093   0.00003  -0.00760   0.00458   0.06095  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in pawmkrhoij (iatom=  2) ======
+   1.61821   0.04513  -0.00113   0.04991   0.00720  -0.00047   0.00172   0.00093
+   0.04513   0.00173  -0.00036  -0.00056   0.00051   0.00002  -0.00008  -0.00003
+  -0.00113  -0.00036   1.42417   0.03752   0.11776   0.05770  -0.00691  -0.00760
+   0.04991  -0.00056   0.03752   1.35856  -0.01971  -0.00692   0.06662   0.00458
+   0.00720   0.00051   0.11776  -0.01971   1.44564  -0.00759   0.00458   0.06095
+  -0.00047   0.00002   0.05770  -0.00692  -0.00759   0.00273  -0.00082  -0.00096
+   0.00172  -0.00008  -0.00691   0.06662   0.00458  -0.00082   0.00390   0.00056
+   0.00093  -0.00003  -0.00760   0.00458   0.06095  -0.00096   0.00056   0.00297
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  1) ======
+ 
+ *********** RHOIJ (atom   1) **********
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ 
+ PAW TEST:
+ ====== Values of RHOIJ in symrhoij (iatom=  2) ======
+ 
+ *********** RHOIJ (atom   2) **********
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ 
+ Total charge density [el/Bohr^3]
+      Maximum=    2.7746E-01  at reduced coord.    0.0625    0.0625    0.8125
+      Minimum=    1.3858E-02  at reduced coord.    0.5000    0.5000    0.5000
+   Integrated=    8.0000E+00
+ ETOT  8  -11.525680423600    -1.616E-13 2.524E-10 2.920E-12
+ scprqt: <Vxc>= -4.9510603E-01 hartree
+ 
+ At SCF step    8       nres2   =  2.92E-12 < tolvrs=  1.00E-10 =>converged.
+ 
+ Cartesian components of stress tensor (hartree/bohr^3)
+  sigma(1 1)=  4.20916693E-04  sigma(3 2)=  0.00000000E+00
+  sigma(2 2)=  4.20916693E-04  sigma(3 1)=  0.00000000E+00
+  sigma(3 3)=  4.20916693E-04  sigma(2 1)=  0.00000000E+00
+ 
+ fftdatar_write: About to write data to: tpaw1_1o_DEN with iomode IO_MODE_FORTRAN
+ IO operation completed. cpu_time:       0.0 [s], walltime:       0.0 [s]
+ 
+ PAW TEST:
+ ==== Compensation charge inside spheres ============
+ The following values must be close to each other ...
+ Compensation charge over spherical meshes =      0.413221948184052
+ Compensation charge over fine fft grid    =      0.413220372269609
+ 
+ ==== Results concerning PAW augmentation regions ====
+ 
+ Total pseudopotential strength Dij (hartree):
+ Atom #  1
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ Atom #  2
+   0.59010  -1.64886   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  -1.64886   4.11691   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.03415   0.00000   0.00000  -0.22979
+   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000   0.00000
+   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469   0.00000
+   0.00000   0.00000   0.00000   0.00000  -0.22979   0.00000   0.00000   2.94469
+ 
+ 
+ Augmentation waves occupancies Rhoij:
+ Atom #  1
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ Atom #  2
+   1.61821   0.04513   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.04513   0.00173   0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000   0.00000
+   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176   0.00000
+   0.00000   0.00000   0.00000   0.00000   1.40945   0.00000   0.00000   0.06176
+   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000   0.00000
+   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320   0.00000
+   0.00000   0.00000   0.00000   0.00000   0.06176   0.00000   0.00000   0.00320
+ 
+ 
+ 
+ === Content of the pawfgrtab datatype === 
+ 
+ 
+ > For atom number : 1
+    cplex= 1
+    # of spins components for density= 1
+    Type of atom= 1
+    1+ Max l in Gaunt coefficients= 3
+    Number of fine FFT points in PAW sphere= 6051
+ 
+    rfgd_allocated    :  1
+    gylm_allocated    :  0
+    gylmgr_allocated  :  0
+    gylmgr2_allocated :  0
+    nhatgr_allocated  :  0
+    nhatfrgr_allocated:  0
+    expiqr_allocated  :  0
+ 
+ 
+ > For atom number : 2
+    cplex= 1
+    # of spins components for density= 1
+    Type of atom= 1
+    1+ Max l in Gaunt coefficients= 3
+    Number of fine FFT points in PAW sphere= 6051
+ 
+    rfgd_allocated    :  1
+    gylm_allocated    :  0
+    gylmgr_allocated  :  0
+    gylmgr2_allocated :  0
+    nhatgr_allocated  :  0
+    nhatfrgr_allocated:  0
+    expiqr_allocated  :  0
+ 
+ 
+--- !WARNING
+src_file: m_paw_mkaewf.F90
+src_line: 304
+message: |
+    netcdf support must be enabled in order to output AE PAW wavefunction. 
+    No output will be produced, use --enable-netcdf at configure-time.
+...
+ 
+ 
+ ======================================================================================
+ 
+ == Start computation of Projected Local Orbitals Wannier functions ==   0
+ 
+ == Lower and upper values of the selected bands    1    8
+ == Number of atoms                                      2
+ == Atoms selected                                1 2
+ == Nb of angular momenta used for each atom      2 2
+ == Value of the angular momenta for atom 1 is :  0 1
+ == Value of the projectors      for atom 1 is :  1 2
+ == Value of the angular momenta for atom 2 is :  0 1
+ == Value of the projectors      for atom 2 is :  3 4
+ 
+ number of k-points used is nkpt =           10
+  warning: parallelised version                  10
+  weights k-points used is wtk = wtk
+ 
+  == Prepare data for projected local orbital wannier function calculation
+ 
+---------------------------------------------------------------
+ 
+  Print useful data (as a check)
+  - Overlap of KS wfc with atomic orbital inside sphere
+  - Eigenvalues
+  - Weights of k-points
+  - Number of spins 
+  - Number of states
+ 
+--- !ERROR
+src_file: m_plowannier.F90
+src_line: 986
+mpi_rank: 0
+message: |
+    The projector choice is not consistent with the orbital l
+...
+ 
+ 
+ abi_abort: decision taken to exit ...

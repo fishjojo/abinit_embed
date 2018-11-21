@@ -1,0 +1,11 @@
+prefix=/tigress/xingz/abinit-8.10.2/fallbacks/exports
+exec_prefix=${prefix}
+libdir=/tigress/xingz/abinit-8.10.2/fallbacks/exports/lib
+includedir=${prefix}/include
+
+Name: libxc
+Description: Library of exchange and correlation functionals to be used in DFT codes
+Requires: 
+Version: 3.0.0
+Libs: -L${libdir} -lxc
+Cflags: -I${includedir}

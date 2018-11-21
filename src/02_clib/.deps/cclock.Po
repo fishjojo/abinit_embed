@@ -1,0 +1,32 @@
+cclock.o: cclock.c /usr/include/stdc-predef.h ../../config.h /usr/include/time.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/include/stddef.h \
+ /usr/include/bits/time.h /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/xlocale.h
+
+/usr/include/stdc-predef.h:
+
+../../config.h:
+
+/usr/include/time.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/include/stddef.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/xlocale.h:

@@ -1,0 +1,33 @@
+#Dependencies (outside the directory) of the directory ./src/66_nonlocal
+#
+#COPYRIGHT
+#Copyright (C) 2010-2018 ABINIT group
+#This file is distributed under the terms of the
+#GNU General Public License, see ~abinit/COPYING
+#or http://www.gnu.org/copyleft/gpl.txt .
+#
+#THIS FILE IS GENERATED AUTOMATICALLY BY abilint.
+#To do that: config/scripts/abilint --dependencies . .
+
+include_dirs = [
+	"32_util",
+	"44_abitools",
+	"28_numeric_noabirule",
+	"44_abitypes_defs",
+	"42_libpaw",
+	"51_manage_mpi",
+	"42_nlstrain",
+	"16_hideleave",
+	"65_paw",
+	"56_recipspace",
+	"52_fft_mpi_noabirule",
+	"56_xc",
+	"27_toolbox_oop",
+	"49_gw_toolbox_oop",
+	"41_xc_lowlevel",
+	"41_geometry",
+	"18_timing",
+	"12_hide_mpi",
+	"10_defs",
+	"14_hidewrite",
+	"53_ffts"]
