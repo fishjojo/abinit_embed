@@ -1,5 +1,0 @@
-enable-mpi="yes"
-enable-openmp="yes"
-with_fft_flavor="fftw3"
-with_linalg_flavor="mkl"
-with_dft_flavor="libxc+atompaw" 
