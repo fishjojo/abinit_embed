@@ -463,7 +463,7 @@ subroutine dmfet_core(this)
 & this%nfftf,this%pawtab,this%pawrad,this%pawang,this%pawfgr,this%mpi_enreg,&
 & this%ylm,this%ylmgr,this%kg,this%cg,this%mcg,&
 & this%npwarr,mcprj,this%ecore,this%wvl,&
-& this%occ)
+& this%occ,0)
 
  call subscf_run(totscf_args,this%can2sub,this%dim_all)
 

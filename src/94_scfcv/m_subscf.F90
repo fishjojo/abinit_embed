@@ -32,6 +32,15 @@ module m_subscf
  use m_efield
  use m_gemm_nonlop
 
+ use m_ab7_mixing
+
+ use m_spacepar,         only : meanvalue_g
+ use m_scfcv_core,       only : etotfor
+ use m_rhotov,           only : rhotov
+ use m_common,           only : scprqt 
+ use m_newrho,           only : newrho
+ use m_cgtools,          only : sqnorm_v
+ use m_occ,              only : newocc
  use m_plowannier,       only : compute_oper_ks2sub
  use defs_wvltypes,      only : wvl_data
  use m_geometry,         only : metric,fixsym
@@ -57,7 +66,7 @@ module m_subscf
  use m_spacepar,         only : setsym
  use m_drivexc,          only : check_kxc
  use m_setvtr,           only : setvtr
- use m_mkrho,            only : initro,mkrho
+ use m_mkrho,            only : initro,mkrho,prtrhomxmn
  use m_hamiltonian,      only : init_hamiltonian,destroy_hamiltonian, &
 &                               load_spin_hamiltonian, load_k_hamiltonian,gs_hamiltonian_type
  use m_fock,             only : fock_type
@@ -70,7 +79,7 @@ module m_subscf
  use m_cgprj,            only : ctocprj
  use m_paw_occupancies,  only : pawmkrhoij
  use m_paw_mkrho,        only : pawmkrho
- use m_pawcprj,          only : pawcprj_type, pawcprj_alloc,pawcprj_getdim
+ use m_pawcprj,          only : pawcprj_type, pawcprj_alloc,pawcprj_getdim,pawcprj_free
 
  implicit none
 
@@ -108,6 +117,7 @@ module m_subscf
    real(dp), pointer :: ylm(:,:) => null()
    real(dp), pointer :: ylmgr(:,:,:) => null()
 
+   integer,pointer :: ireadwf => null()
    integer,pointer :: mcprj => null()
    integer,pointer :: nfftf => null()
    integer,pointer :: mcg => null()
@@ -154,7 +164,7 @@ contains
 !! SOURCE
 subroutine subscf_init(this,dtfil,dtset,psps,crystal,nfftf,pawtab,pawrad,pawang,pawfgr,mpi_enreg,&
 &                      ylm,ylmgr,kg,cg,mcg,npwarr,mcprj,ecore,wvl,&
-&                      occ)
+&                      occ,ireadwf)
 
 
 !This section has been created automatically by the script Abilint (TD).
@@ -184,6 +194,7 @@ subroutine subscf_init(this,dtfil,dtset,psps,crystal,nfftf,pawtab,pawrad,pawang,
  integer,intent(in),target :: nfftf,mcg,mcprj
  integer, intent(in),target :: npwarr(dtset%nkpt)
  real(dp), intent(in),target :: cg(2,mcg),ecore
+ integer, intent(in),target :: ireadwf
 
  write(std_out,*) "Entering subscf_init"
  !initialize pointers
@@ -203,6 +214,7 @@ subroutine subscf_init(this,dtfil,dtset,psps,crystal,nfftf,pawtab,pawrad,pawang,
 
  this%occ=>occ
 
+ this%ireadwf=>ireadwf
  this%nfftf=>nfftf
  this%mcprj=>mcprj
  this%mcg=>mcg
@@ -221,7 +233,13 @@ subroutine subscf_init(this,dtfil,dtset,psps,crystal,nfftf,pawtab,pawrad,pawang,
  this%pwind(:,:,:)=0
  this%pwnsfac(:,:)=zero
 
- ABI_DATATYPE_ALLOCATE(this%pawrhoij,(mpi_enreg%my_natom*psps%usepaw))
+ if (psps%usepaw==1) then
+   ABI_DATATYPE_ALLOCATE(this%pawrhoij,(mpi_enreg%my_natom*psps%usepaw))
+   call initrhoij(dtset%pawcpxocc,dtset%lexexch,&
+&   dtset%lpawu,mpi_enreg%my_natom,dtset%natom,dtset%nspden,dtset%nspinor,dtset%nsppol,&
+&   dtset%ntypat,this%pawrhoij,dtset%pawspnorb,pawtab,dtset%spinat,dtset%typat,&
+&   comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab)
+ end if
 
  ABI_ALLOCATE(this%rhor,(nfftf,dtset%nspden))
  ABI_ALLOCATE(this%rhog,(2,nfftf))
@@ -249,6 +267,13 @@ end subroutine subscf_init
 !!
 !! SOURCE
 subroutine subscf_destroy(this)
+
+
+!This section has been created automatically by the script Abilint (TD).
+!Do not modify the following lines by hand.
+#undef ABI_FUNC
+#define ABI_FUNC 'subscf_destroy'
+!End of the abilint section
 
  implicit none
 
@@ -317,13 +342,24 @@ end subroutine subscf_destroy
 !! SOURCE
 subroutine subscf_run(this,can2sub,dimsub)
 
+
+!This section has been created automatically by the script Abilint (TD).
+!Do not modify the following lines by hand.
+#undef ABI_FUNC
+#define ABI_FUNC 'subscf_run'
+!End of the abilint section
+
  implicit none
 
  type(subscf_type),intent(inout):: this
  integer, intent(in) :: dimsub
  complex(dpc), intent(in) :: can2sub(dimsub,dimsub)
+ integer :: initialized
 
- call subscf_core(this,this%dtset,this%crystal,this%psps,this%pawtab,this%pawrad,this%pawang,this%pawfgr,this%mpi_enreg,&
+ initialized = 0
+
+ call subscf_core(this,this%dtset,this%crystal,this%psps,this%pawtab,this%pawrad,this%pawang,this%pawfgr,this%pawrhoij,&
+&  this%mpi_enreg,initialized,&
 &  this%nfftf,this%ecore,this%rhog,this%rhor,can2sub,dimsub)
 
 
@@ -352,7 +388,7 @@ end subroutine subscf_run
 !! CHILDREN
 !!
 !! SOURCE
-subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_enreg,&
+subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,pawrhoij,mpi_enreg,initialized,&
 &                      nfftf,ecore,rhog,rhor,can2sub,dimsub)
 
 
@@ -374,6 +410,9 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
  type(pawang_type),intent(in) :: pawang
  type(pawfgr_type),intent(inout) :: pawfgr
  type(pawrad_type), intent(in) :: pawrad(psps%ntypat*psps%usepaw)
+ type(pawrhoij_type), intent(inout),target :: pawrhoij(mpi_enreg%my_natom*psps%usepaw)
+
+ integer,intent(inout) :: initialized,nfftf
 
  real(dp),intent(inout) :: rhog(2,nfftf)
  real(dp),intent(inout) :: rhor(nfftf,dtset%nspden)
@@ -381,36 +420,52 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
  integer, intent(in) :: dimsub
  complex(dpc), intent(in) :: can2sub(dimsub,dimsub)
 
- integer,intent(inout) :: nfftf
  real(dp),intent(in) :: ecore
 
- integer :: ii,jj
- integer :: cplex,mgfftf,ipositron,optene,optres,ngrvdw,nkxc
+ integer,parameter :: response=0
+ integer :: conv_retcode
+ integer :: ii,jj,iscf10,ispden,itypat,sz1,sz2
+ integer :: nfftot,nfftotf,quit,prtfor,prtxml
+ integer :: npwdiel,afford,dielstrt,choice,computed_forces,errid
+ integer :: initialized0,istep_mix,ispmix,nfftmix,nfftmix_per_nfft,npawmix
+ integer :: cplex,mgfftf,ipositron,optene,optres,ngrvdw,nkxc,dbl_nnsclo,denpot
  integer :: has_dijhat,has_dijnd,has_dijfock,has_dijU,has_vhartree
- integer :: iatom,istep,nstep,n1xccc,n3xccc,nzlmopt,istep_mix,option
+ integer :: iatom,istep,nstep,n1xccc,n3xccc,nzlmopt,option,optxc
  integer :: nhatgrdim,ider,idir,izero,ipert,moved_atm_inside,moved_rhor
  integer :: my_natom,usexcnhat,usefock,usecprj,forces_needed,stress_needed,use_hybcomp
  integer :: optcut,optgr0,optgr1,optgr2,optrad
  integer :: mband_cprj,my_nspinor,mcprj,ctocprj_choice,iorder_cprj
  real(dp) :: boxcut,compch_fft,compch_sph,gsqcut,ecut,ecutf,ucvol,ucvol_local
  real(dp) :: zion,vxcavg,hyb_mixing,hyb_mixing_sr
+ real(dp) :: etotal,deltae,elast,diffor,maxfor
+ real(dp) :: res2,residm
 
  logical :: dummy_nhatgr
+ logical :: reset_mixing=.false.
  logical,save :: tfw_activated=.false.
  character(len=1500) :: message
 
  type(energies_type) :: energies
+ 
+ type(ab7_mixing_object) :: mix
 
  !arrays
- integer :: ngfft(18),ngfftf(18),nfftot,nfftotf
+ integer :: ngfft(18),ngfftf(18),ngfftmix(18)
+ integer,allocatable :: kg_diel(:,:)
  integer,allocatable :: dimcprj(:),dimcprj_srt(:),indsym(:,:,:),symrec(:,:,:),irrzon(:,:,:)
  real(dp),allocatable :: kxc(:,:),nhat(:,:),nhatgr(:,:,:),ph1d(:,:),ph1df(:,:)
  integer,allocatable :: l_size_atm(:)
  real(dp),parameter :: k0(3)=(/zero,zero,zero/)
- real(dp) :: gmet(3,3),gprimd(3,3),rmet(3,3),strsxc(6),vpotzero(2)
+ real(dp) :: favg(3),gmet(3,3),gprimd(3,3),rmet(3,3),strsxc(6),vpotzero(2),red_ptot(3),tollist(12)
+ real(dp) :: vnew_mean(dtset%nspden), vres_mean(dtset%nspden)
+ real(dp),allocatable :: fcart(:,:),forold(:,:),fred(:,:),gresid(:,:)
  real(dp),allocatable :: vhartr(:),vpsp(:),vtrial(:,:),phnons(:,:,:),rhowfg(:,:),rhowfr(:,:)
  real(dp),allocatable :: vxc(:,:),vxc_hybcomp(:,:),vxctau(:,:,:),workr(:,:),xccc3d(:),ylmdiel(:,:)
  real(dp),allocatable :: grchempottn(:,:),grewtn(:,:),grhf(:,:),grnl(:),grvdw(:,:),grxc(:,:)
+
+ real(dp) :: dielar(7)
+ real(dp),allocatable :: dielinv(:,:,:,:,:),dtn_pc(:,:),nvresid(:,:),susmat(:,:,:,:,:),tauresid(:,:),synlgr(:,:)
+ real(dp),allocatable :: resid(:)
 
  type(paw_an_type),allocatable :: paw_an(:)
  type(paw_ij_type),allocatable :: paw_ij(:)
@@ -427,8 +482,16 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
  integer :: use_sc_dmft
  type(paw_dmft_type) :: paw_dmft
  real(dp) :: qphon(3),rhopsg_dummy(0,0),rhopsr_dummy(0,0),rhor_dummy(0,0)
+ type(efield_type) :: dtefield
 
  write(std_out,*) "Entering subscf_core"
+
+ conv_retcode = 0
+ initialized0 = initialized
+ quit = 0
+
+ dbl_nnsclo = 0
+ deltae=zero ; elast=zero 
 
  ABI_ALLOCATE(this%eig_sub,(dimsub))
  ABI_ALLOCATE(this%subham_sub,(dimsub,dimsub))
@@ -471,6 +534,14 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
   usecprj=1
  end if
 
+ write(std_out,*) "debug: dtset%iscf = ",dtset%iscf
+
+ iscf10=mod(dtset%iscf,10)
+ tollist(1)=dtset%tolmxf;tollist(2)=dtset%tolwfr
+ tollist(3)=dtset%toldff;tollist(4)=dtset%toldfe
+ tollist(6)=dtset%tolvrs;tollist(7)=dtset%tolrff
+ tollist(8)=dtset%vdw_df_threshold
+
  optres=merge(0,1,dtset%iscf<10)
 
  ABI_ALLOCATE(ph1d,(2,3*(2*dtset%mgfft+1)*dtset%natom))
@@ -507,6 +578,10 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
  ngrvdw=0
  ABI_ALLOCATE(grvdw,(3,ngrvdw))
 
+ ABI_ALLOCATE(grnl,(3*dtset%natom))
+ ABI_ALLOCATE(grxc,(3,dtset%natom))
+ ABI_ALLOCATE(synlgr,(3,dtset%natom))
+
  nkxc=0
  if (dtset%iscf>0.and.modulo(dtset%iprcel,100)>=61.and.(dtset%iprcel<71.or.dtset%iprcel>79)) nkxc=2*min(dtset%nspden,2)-1
  if (nkxc>0) then
@@ -518,6 +593,101 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
  n1xccc=0;if (psps%n1xccc/=0) n1xccc=psps%n1xccc
  n3xccc=0;if (psps%n1xccc/=0) n3xccc=nfftf
  ABI_ALLOCATE(xccc3d,(n3xccc))
+ write(std_out,*) "debug: n1xccc = ",n1xccc
+
+
+!Several parameters and arrays for the SCF mixing:
+!These arrays are needed only in the self-consistent case
+ if (dtset%iscf>=0) then
+   dielar(1)=dtset%diecut;dielar(2)=dtset%dielng
+   dielar(3)=dtset%diemac;dielar(4)=dtset%diemix
+   dielar(5)=dtset%diegap;dielar(6)=dtset%dielam
+   dielar(7)=dtset%diemix;if (dtset%iscf>=10) dielar(7)=dtset%diemixmag
+   ABI_ALLOCATE(nvresid,(nfftf,dtset%nspden))
+   ABI_ALLOCATE(tauresid,(nfftf,dtset%nspden*dtset%usekden))
+   if (nstep==0) then
+     nvresid=zero
+     tauresid=zero
+   end if
+   ABI_ALLOCATE(dtn_pc,(3,dtset%natom))
+!  The next arrays are needed if iscf==5 and ionmov==4,
+!  but for the time being, they are always allocated
+   ABI_ALLOCATE(grhf,(3,dtset%natom))
+!  Additional allocation for mixing within PAW
+   npawmix=0
+   if(psps%usepaw==1) then
+     do iatom=1,my_natom
+       itypat=pawrhoij(iatom)%itypat
+       pawrhoij(iatom)%use_rhoijres=1
+       sz1=pawrhoij(iatom)%cplex*pawtab(itypat)%lmn2_size
+       sz2=pawrhoij(iatom)%nspden
+       ABI_ALLOCATE(pawrhoij(iatom)%rhoijres,(sz1,sz2))
+       do ispden=1,pawrhoij(iatom)%nspden
+         pawrhoij(iatom)%rhoijres(:,ispden)=zero
+       end do
+       ABI_ALLOCATE(pawrhoij(iatom)%kpawmix,(pawtab(itypat)%lmnmix_sz))
+       pawrhoij(iatom)%lmnmix_sz=pawtab(itypat)%lmnmix_sz
+       pawrhoij(iatom)%kpawmix=pawtab(itypat)%kmix
+       npawmix=npawmix+pawrhoij(iatom)%nspden*pawtab(itypat)%lmnmix_sz*pawrhoij(iatom)%cplex
+     end do
+   end if
+   if (dtset%iscf > 0) then
+     denpot = AB7_MIXING_POTENTIAL
+     if (dtset%iscf > 10) denpot = AB7_MIXING_DENSITY
+     if (psps%usepaw==1.and.dtset%pawmixdg==0 .and. dtset%usewvl==0) then
+       ispmix=AB7_MIXING_FOURRIER_SPACE;nfftmix=dtset%nfft;ngfftmix(:)=ngfft(:)
+     else
+       ispmix=AB7_MIXING_REAL_SPACE;nfftmix=nfftf;ngfftmix(:)=ngfftf(:)
+     end if
+     !TRangel: added to avoid segfaults with Wavelets
+     nfftmix_per_nfft=0;if(nfftf>0) nfftmix_per_nfft=(1-nfftmix/nfftf)
+     call ab7_mixing_new(mix, iscf10, denpot, ispmix, nfftmix, dtset%nspden, npawmix, errid, message, dtset%npulayit)
+     if (errid /= AB7_NO_ERROR) then
+       MSG_ERROR(message)
+     end if
+     if (dtset%mffmem == 0) then
+       call ab7_mixing_use_disk_cache(mix, this%dtfil%fnametmp_fft)
+     end if
+!   else if (dtset%iscf==0.and.dtset%usewvl==1) then
+!     ispmix=AB7_MIXING_REAL_SPACE;nfftmix=nfftf;ngfftmix(:)=ngfftf(:)
+   end if
+ else
+   ABI_ALLOCATE(nvresid,(0,0))
+   ABI_ALLOCATE(tauresid,(0,0))
+   ABI_ALLOCATE(dtn_pc,(0,0))
+   ABI_ALLOCATE(grhf,(0,0))
+ end if ! iscf>0
+
+ dielstrt = 0
+
+ npwdiel = 1 
+ afford = 0
+ ABI_ALLOCATE(dielinv,(2,npwdiel*afford,dtset%nspden,npwdiel,dtset%nspden))
+ ABI_ALLOCATE(susmat,(2,npwdiel*afford,dtset%nspden,npwdiel,dtset%nspden))
+ ABI_ALLOCATE(kg_diel,(3,npwdiel))
+
+ computed_forces=0
+ choice=1 ; diffor=zero ; res2=zero
+ etotal = zero
+ !useless
+ maxfor=zero
+ ABI_ALLOCATE(fcart,(3,dtset%natom))
+ ABI_ALLOCATE(forold,(3,dtset%natom))
+ ABI_ALLOCATE(fred,(3,dtset%natom))
+ ABI_ALLOCATE(gresid,(3,dtset%natom))
+
+ fcart(:,:) = zero; forold(:,:) = zero; fred(:,:) = zero; gresid(:,:)=zero
+ !end useless
+
+ ABI_ALLOCATE(resid,(dtset%mband*dtset%nkpt*dtset%nsppol)) 
+ resid(:) = zero
+
+ call scprqt(choice,dtset%cpus,deltae,diffor,dtset,&
+& this%eig_sub,etotal,favg,fcart,energies%e_fermie,this%dtfil%fnameabo_app_eig,&
+& this%dtfil%filnam_ds(1),initialized0,dtset%iscf,istep,dtset%kptns,&
+& maxfor,moved_atm_inside,mpi_enreg,dtset%nband,dtset%nkpt,nstep,&
+& this%occ,optres,prtfor,prtxml,quit,res2,resid,residm,response,tollist,&
+& psps%usepaw,vxcavg,dtset%wtk,crystal%xred,conv_retcode)
 
 
  !symmetry related stuffs
@@ -560,7 +730,7 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 
 
  if(psps%usepaw==1) then
-   ABI_ALLOCATE(nhat,(this%nfftf,dtset%nspden*psps%usepaw))
+   ABI_ALLOCATE(nhat,(nfftf,dtset%nspden*psps%usepaw))
    if (nstep==0) nhat=zero
    ABI_DATATYPE_ALLOCATE(pawfgrtab,(my_natom))
    if (my_natom>0) then
@@ -614,8 +784,8 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 
 
  !prepare initial density
- write(std_out,*) "debug: dtfil%ireadwf,dtfil%ireadden:"
- write(std_out,*) this%dtfil%ireadwf, this%dtfil%ireadden
+ !write(std_out,*) "debug: dtfil%ireadwf,dtfil%ireadden:"
+ !write(std_out,*) this%dtfil%ireadwf, this%dtfil%ireadden
 
  use_sc_dmft=dtset%usedmft
  if(dtset%paral_kgb>0) use_sc_dmft=0
@@ -623,7 +793,7 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 & dtset%nband,dtset%nkpt,dtset%nspden, &
 & dtset%nspinor,dtset%nsppol,this%occ,dtset%usedmft,paw_dmft,use_sc_dmft,dtset%dmft_solv,mpi_enreg)
 
- if(this%dtfil%ireadwf/=0)then
+ if(this%ireadwf==1)then
 !  Obtain the charge density from wfs that were read previously
 !  Be careful: in PAW, rho does not include the compensation
 !  density (to be added in scfcv.F90) !
@@ -638,7 +808,7 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
      call mkrho(this%cg,dtset,gprimd,irrzon,this%kg,this%mcg,&
 &      mpi_enreg,this%npwarr,this%occ,paw_dmft,phnons,rhog,rhor,crystal%rprimd,1,ucvol,this%wvl%den,this%wvl%wfs)
    end if
- else if(this%dtfil%ireadwf==0)then
+ else if(this%ireadwf==0)then
    call initro(crystal%atindx,dtset%densty,gmet,gsqcut,psps%usepaw,&
 &     mgfftf,mpi_enreg,psps%mqgrid_vl,dtset%natom,crystal%nattyp,nfftf,&
 &     ngfftf,dtset%nspden,psps%ntypat,dtset%paral_kgb,psps,pawtab,ph1df,&
@@ -646,11 +816,8 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 &     dtset%ziontypat,dtset%znucl)
  endif
 
+if(this%ireadwf==1)then
  if (psps%usepaw==1) then
-   call initrhoij(dtset%pawcpxocc,dtset%lexexch,&
-&   dtset%lpawu,mpi_enreg%my_natom,dtset%natom,dtset%nspden,dtset%nspinor,dtset%nsppol,&
-&   dtset%ntypat,this%pawrhoij,dtset%pawspnorb,pawtab,dtset%spinat,dtset%typat,&
-&   comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab)
 
    ABI_ALLOCATE(dimcprj,(dtset%natom))
    ABI_ALLOCATE(dimcprj_srt,(dtset%natom))
@@ -658,7 +825,8 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
    call pawcprj_getdim(dimcprj,dtset%natom,crystal%nattyp,dtset%ntypat,dtset%typat,pawtab,'R')
 
    my_nspinor=1
-   mband_cprj=dtset%mband/mpi_enreg%nproc_band
+   mband_cprj=dtset%mband
+   if (dtset%paral_kgb/=0) mband_cprj=mband_cprj/mpi_enreg%nproc_band
    mcprj=my_nspinor*mband_cprj*dtset%mkmem*dtset%nsppol
    ABI_DATATYPE_ALLOCATE(cprj_local,(dtset%natom,mcprj))
    ctocprj_choice = 1
@@ -674,13 +842,14 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 &   dtset%ntypat,dtset%paral_kgb,ph1d,psps,rmet,dtset%typat,&
 &   ucvol,this%dtfil%unpaw,crystal%xred,this%ylm,this%ylmgr)
 
-   pawrhoij_unsym=>this%pawrhoij
+   pawrhoij_unsym=>pawrhoij
  
    call pawmkrhoij(crystal%atindx,crystal%atindx1,cprj,dimcprj_srt,dtset%istwfk,dtset%kptopt,&
 &   dtset%mband,mband_cprj,mcprj,dtset%mkmem,mpi_enreg,dtset%natom,dtset%nband,dtset%nkpt,&
 &   dtset%nspinor,dtset%nsppol,this%occ,dtset%paral_kgb,paw_dmft,dtset%pawprtvol,pawrhoij_unsym,&
 &   this%dtfil%unpaw,dtset%usewvl,dtset%wtk)
  end if
+endif
 
  !scf iteration
  do istep=1,nstep
@@ -721,15 +890,17 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 &        comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab,&
 &        comm_fft=mpi_enreg%comm_fft,distribfft=mpi_enreg%distribfft)
 
+       if(this%ireadwf==1)then
 !      Compute n_tild + n_hat
        qphon(:)=zero
        call pawmkrho(1,compch_fft,cplex,gprimd,idir,indsym,ipert,mpi_enreg,&
 &        my_natom,dtset%natom,dtset%nspden,dtset%nsym,dtset%ntypat,dtset%paral_kgb,pawang,pawfgr,pawfgrtab,&
-&        dtset%pawprtvol,this%pawrhoij,pawrhoij_unsym,pawtab,qphon,rhowfg,rhowfr,rhor,crystal%rprimd,dtset%symafm,&
+&        dtset%pawprtvol,pawrhoij,pawrhoij_unsym,pawtab,qphon,rhowfg,rhowfr,rhor,crystal%rprimd,dtset%symafm,&
 &        symrec,dtset%typat,ucvol,dtset%usewvl,crystal%xred,rhog=rhog,pawnhat=nhat)
+       endif
      end if
-     write(std_out,*) "debug: compch_fft = ", compch_fft
-     write(std_out,*) "debug: maxval(nhat) = ", maxval(nhat)
+     !write(std_out,*) "debug: compch_fft = ", compch_fft
+     !write(std_out,*) "debug: maxval(nhat) = ", maxval(nhat)
      
      moved_rhor = 0
 
@@ -740,30 +911,26 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 !    and eventually add it to density from WFs
      nhatgrdim=0
      dummy_nhatgr = .False.
-!    This is executed only in the positron case.
-!     if (psps%usepaw==1.and.(dtset%positron>=0.or.ipositron/=1) &
-!&     .and.(usexcnhat==0 &
-!&     .or.(dtset%xclevel==2.and.(this%dtfil%ireadwf/=0.or.this%dtfil%ireadden/=0)) &
-!&     .or.(this%dtfil%ireadwf/=0.and.this%dtfil%ireadden==0))) then
-!       nhatgrdim=0;if (dtset%xclevel==2) nhatgrdim=usexcnhat*dtset%pawnhatxc
-!       ider=2*nhatgrdim;izero=0
-!       if (nhatgrdim>0)   then
-!         ABI_ALLOCATE(nhatgr,(cplex*nfftf,dtset%nspden,3*nhatgrdim))
-!       else
-!         ABI_ALLOCATE(nhatgr,(0,0,0))
-!         dummy_nhatgr = .True.
-!       end if
-!       call pawmknhat(compch_fft,cplex,ider,idir,ipert,izero,gprimd,my_natom,dtset%natom,&
-!&       nfftf,ngfftf,nhatgrdim,dtset%nspden,psps%ntypat,pawang,pawfgrtab,&
-!&       nhatgr,nhat,this%pawrhoij,this%pawrhoij,pawtab,k0,crystal%rprimd,ucvol_local,dtset%usewvl,crystal%xred,&
-!&       comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab,&
-!&       comm_fft=mpi_enreg%comm_fft,paral_kgb=dtset%paral_kgb,me_g0=mpi_enreg%me_g0,&
-!&       distribfft=mpi_enreg%distribfft,mpi_comm_wvl=mpi_enreg%comm_wvl)
+     if (psps%usepaw==1.and.this%ireadwf==0.and.usexcnhat==0) then
+       nhatgrdim=0;if (dtset%xclevel==2) nhatgrdim=usexcnhat*dtset%pawnhatxc
+       ider=2*nhatgrdim;izero=0
+       if (nhatgrdim>0)   then
+         ABI_ALLOCATE(nhatgr,(cplex*nfftf,dtset%nspden,3*nhatgrdim))
+       else
+         ABI_ALLOCATE(nhatgr,(0,0,0))
+         dummy_nhatgr = .True.
+       end if
+       call pawmknhat(compch_fft,cplex,ider,idir,ipert,izero,gprimd,my_natom,dtset%natom,&
+&       nfftf,ngfftf,nhatgrdim,dtset%nspden,psps%ntypat,pawang,pawfgrtab,&
+&       nhatgr,nhat,pawrhoij,pawrhoij,pawtab,k0,crystal%rprimd,ucvol_local,dtset%usewvl,crystal%xred,&
+&       comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab,&
+&       comm_fft=mpi_enreg%comm_fft,paral_kgb=dtset%paral_kgb,me_g0=mpi_enreg%me_g0,&
+&       distribfft=mpi_enreg%distribfft,mpi_comm_wvl=mpi_enreg%comm_wvl)
 !       if (this%dtfil%ireadwf/=0.and.this%dtfil%ireadden==0) then
 !         rhor(:,:)=rhor(:,:)+nhat(:,:)
 !         call fourdp(1,rhog,rhor(:,1),-1,mpi_enreg,nfftf,ngfftf,dtset%paral_kgb,0)
 !       end if
-!     end if
+     end if
 
      optene = 4 * optres
      if(dtset%iscf==-3) optene=4
@@ -815,14 +982,14 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
      option=0;if (dtset%iscf>0.and.dtset%iscf<10.and.nstep>0) option=1
      call pawdenpot(compch_sph,energies%e_paw,energies%e_pawdc,ipert,dtset%ixc,my_natom,dtset%natom,&
 &     dtset%nspden,psps%ntypat,dtset%nucdipmom,nzlmopt,option,paw_an,paw_an,paw_ij,pawang,dtset%pawprtvol,pawrad,&
-&     this%pawrhoij,dtset%pawspnorb,pawtab,dtset%pawxcdev,dtset%spnorbscl,dtset%xclevel,dtset%xc_denpos,ucvol,psps%znuclpsp,&
+&     pawrhoij,dtset%pawspnorb,pawtab,dtset%pawxcdev,dtset%spnorbscl,dtset%xclevel,dtset%xc_denpos,ucvol,psps%znuclpsp,&
 &     comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab,&
 &     hyb_mixing=hyb_mixing,hyb_mixing_sr=hyb_mixing_sr,&
 &     electronpositron=this%electronpositron,vpotzero=vpotzero)
 
      write(std_out,*) "debug: compch_sph = ",compch_sph
      !do iatom=1,my_natom
-     !   write(std_out,*) this%pawrhoij(iatom)%rhoijp(:,:)
+     !   write(std_out,*) pawrhoij(iatom)%rhoijp(:,:)
      !enddo
 
 !    Correct the average potential with the calculated constant vpotzero
@@ -844,7 +1011,7 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
 
      call pawdij(cplex,dtset%enunit,gprimd,ipert,my_natom,dtset%natom,nfftf,nfftotf,&
 &     dtset%nspden,psps%ntypat,paw_an,paw_ij,pawang,pawfgrtab,dtset%pawprtvol,&
-&     pawrad,this%pawrhoij,dtset%pawspnorb,pawtab,dtset%pawxcdev,k0,dtset%spnorbscl,&
+&     pawrad,pawrhoij,dtset%pawspnorb,pawtab,dtset%pawxcdev,k0,dtset%spnorbscl,&
 &     ucvol_local,dtset%charge,vtrial,vxc,crystal%xred,&
 &     comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab,&
 &     mpi_comm_grid=mpi_enreg%comm_fft,&
@@ -869,20 +1036,130 @@ subroutine subscf_core(this,dtset,crystal,psps,pawtab,pawrad,pawang,pawfgr,mpi_e
      call wrtout(std_out,message,'COLL')
    end if
 
-   call subscf_vtorho(this,dtset,psps,crystal,mpi_enreg,istep,pawfgr,paw_ij,&
-&    this%kg,this%ylm,this%ylmgr,vtrial,energies,ph1d,fock,&
-&    my_natom,dtset%natom,psps%ntypat,0,nfftf,gmet,gprimd,rmet,&
-&    can2sub,dimsub)
+
+   call subscf_vtorho(this,dtset,psps,crystal,mpi_enreg,this%dtfil,istep,compch_fft,&
+&    pawtab,pawfgr,pawfgrtab,pawang,paw_ij,pawrhoij,rhog,rhor,nhat,nvresid,optres,res2,tauresid,&
+&    this%kg,this%ylm,this%ylmgr,vtrial,energies,ph1d,fock,my_natom,dtset%natom,psps%ntypat,0,nfftf,&
+&    gmet,gprimd,indsym,symrec,irrzon,phnons,rmet,ucvol,paw_dmft,this%wvl,can2sub,dimsub)
 
 
    if (dtset%iscf>=10) then
-     !compute total nenergy
-     !check convergence
-     !mix density
+     optene = 1  ! use double counting scheme (default)
+     if (dtset%iscf==22) optene = -1
+
+!    Add the Fock contribution to E_xc and E_xcdc if required
+     if (usefock==1) then
+       energies%e_fockdc=two*energies%e_fock
+     end if
+
+!    if the mixing is the ODA mixing, compute energy and new density here
+     if (dtset%iscf==22) then
+        MSG_ERROR('NYI')
+!       call odamix(deltae,dtset,&
+!&       elast,energies,etotal,gprimd,gsqcut,kxc,mpi_enreg,&
+!&       my_natom,nfftf,ngfftf,nhat,nkxc,psps%ntypat,nvresid,n3xccc,optres,&
+!&       paw_ij,paw_an,pawang,pawfgrtab,pawrad,pawrhoij,pawtab,&
+!&       red_ptot,psps,rhog,rhor,rprimd,strsxc,ucvol,psps%usepaw,&
+!&       usexcnhat,vhartr,vpsp,vtrial,vxc,vxcavg,xccc3d,xred,&
+!&       taug=taug,taur=taur,vxctau=vxctau,add_tfw=tfw_activated)
+     end if
+!    If the density mixing is required, compute the total energy here
+! TODO: add taur taug tauresid if needed
+     call etotfor(crystal%atindx1,deltae,diffor,dtefield,dtset,&
+&     elast,this%electronpositron,energies,&
+&     etotal,favg,fcart,fock,forold,fred,gmet,grchempottn,gresid,grewtn,grhf,grnl,grvdw,&
+&     grxc,gsqcut,indsym,kxc,maxfor,mgfftf,mpi_enreg,my_natom,&
+&     crystal%nattyp,nfftf,ngfftf,ngrvdw,nhat,nkxc,psps%ntypat,nvresid,n1xccc,n3xccc,&
+&     optene,computed_forces,optres,pawang,pawfgrtab,pawrad,pawrhoij,pawtab,&
+&     ph1df,red_ptot,psps,rhog,rhor,rmet,crystal%rprimd,symrec,synlgr,ucvol,&
+&     psps%usepaw,vhartr,vpsp,vxc,this%wvl%descr,this%wvl%den,xccc3d,crystal%xred)
    endif
 
-   !rhotov
-   exit
+   if (dtset%iscf>=10) then
+!    Check exit criteria
+     choice=2
+     call scprqt(choice,dtset%cpus,deltae,diffor,dtset,&
+&     this%eig_sub,etotal,favg,fcart,energies%e_fermie,this%dtfil%fnameabo_app_eig,&
+&     this%dtfil%filnam_ds(1),initialized0,dtset%iscf,istep,dtset%kptns,&
+&     maxfor,moved_atm_inside,mpi_enreg,dtset%nband,dtset%nkpt,nstep,&
+&     this%occ,optres,prtfor,prtxml,quit,res2,resid,residm,response,tollist,&
+&     psps%usepaw,vxcavg,dtset%wtk,crystal%xred,conv_retcode,&
+&     electronpositron=this%electronpositron,fock=fock)
+
+!    Check if we need to exit the loop
+     if (istep==nstep) quit=1
+!     quit_sum=quit
+!     call xmpi_sum(quit_sum,spaceComm,ierr)
+!     if (quit_sum>0) quit=1
+
+!    If criteria in scprqt say to quit, then exit the loop over istep.
+     if (quit==1) exit
+   end if
+
+   if (dtset%iscf>=10 .and.dtset%iscf/=22) then
+     call newrho(crystal%atindx,dbl_nnsclo,dielar,dielinv,dielstrt,dtn_pc,&
+&     dtset,etotal,fcart,pawfgr%fintocoa,&
+&     gmet,grhf,gsqcut,initialized,ispmix,istep_mix,kg_diel,kxc,&
+&     mgfftf,mix,pawfgr%coatofin,moved_atm_inside,mpi_enreg,my_natom,crystal%nattyp,nfftf,&
+&     nfftmix,nfftmix_per_nfft,ngfftf,ngfftmix,nkxc,npawmix,npwdiel,nvresid,psps%ntypat,&
+&     n1xccc,pawrhoij,pawtab,ph1df,psps,rhog,rhor,&
+&     crystal%rprimd,susmat,psps%usepaw,vtrial,this%wvl%descr,this%wvl%den,crystal%xred,&
+&     taug=this%taug,taur=this%taur,tauresid=tauresid)
+   end if 
+
+   optxc = 1
+
+   if (dtset%iscf/=22) then
+!    PAW: eventually recompute compensation density (and gradients)
+     nhatgrdim=0
+     if ( allocated(nhatgr) ) then
+       ABI_DEALLOCATE(nhatgr)
+     end if
+     if (psps%usepaw==1) then
+       ider=-1;if (dtset%iscf>=10.and.((dtset%xclevel==2.and.dtset%pawnhatxc>0).or.usexcnhat==0)) ider=0
+       if (dtset%xclevel==2.and.dtset%pawnhatxc>0.and.usexcnhat>0) ider=ider+2
+       if (ipositron==1) ider=-1
+       if (ider>0) then
+         nhatgrdim=1
+         ABI_ALLOCATE(nhatgr,(nfftf,dtset%nspden,3))
+       else
+         ABI_ALLOCATE(nhatgr,(0,0,0))
+       end if
+       if (ider>=0) then
+         izero=0
+         call pawmknhat(compch_fft,cplex,ider,idir,ipert,izero,gprimd,my_natom,dtset%natom,nfftf,ngfftf,&
+&         nhatgrdim,dtset%nspden,psps%ntypat,pawang,pawfgrtab,nhatgr,nhat,&
+&         pawrhoij,pawrhoij,pawtab,k0,crystal%rprimd,ucvol_local,dtset%usewvl,crystal%xred,&
+&         comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab,&
+&         comm_fft=mpi_enreg%comm_fft,paral_kgb=dtset%paral_kgb,me_g0=mpi_enreg%me_g0,&
+&         distribfft=mpi_enreg%distribfft,mpi_comm_wvl=mpi_enreg%comm_wvl)
+       end if
+     else
+       ABI_ALLOCATE(nhatgr,(0,0,0))
+     end if
+!    Compute new potential from the trial density
+
+     optene=2*optres;if(psps%usepaw==1) optene=2
+
+! TODO: check if tauresid is needed here too for potential residual in the future for MGGA potential mixing
+     call rhotov(dtset,energies,gprimd,gsqcut,istep,kxc,mpi_enreg,nfftf,ngfftf, &
+&     nhat,nhatgr,nhatgrdim,nkxc,nvresid,n3xccc,optene,optres,optxc,&
+&     rhog,rhor,crystal%rprimd,strsxc,ucvol_local,psps%usepaw,usexcnhat,&
+&     vhartr,vnew_mean,vpsp,vres_mean,res2,vtrial,vxcavg,vxc,this%wvl,xccc3d,crystal%xred,&
+&     electronpositron=this%electronpositron,taug=this%taug,taur=this%taur,vxctau=vxctau,&
+&     vxc_hybcomp=vxc_hybcomp,add_tfw=tfw_activated)
+
+   end if
+
+   initialized = 1
+
+
+   istep_mix=istep_mix+1
+   if (reset_mixing) then
+     istep_mix=1;reset_mixing=.false.
+   end if
+
+
  enddo
 
  call destroy_sc_dmft(paw_dmft)
@@ -915,9 +1192,10 @@ end subroutine subscf_core
 !! CHILDREN
 !!
 !! SOURCE
-subroutine subscf_vtorho(this,dtset,psps,crystal,mpi_enreg,istep,pawfgr,paw_ij,&
+subroutine subscf_vtorho(this,dtset,psps,crystal,mpi_enreg,dtfil,istep,compch_fft,&
+& pawtab,pawfgr,pawfgrtab,pawang,paw_ij,pawrhoij,rhog,rhor,nhat,nvresid,optres,nres2,tauresid,&
 & kg,ylm,ylmgr,vtrial,energies,ph1d,fock,my_natom,natom,ntypat,optforces,nfftf,&
-& gmet,gprimd,rmet,can2sub,dimsub)
+& gmet,gprimd,indsym,symrec,irrzon,phnons,rmet,ucvol,paw_dmft,wvl,can2sub,dimsub)
 
 
 !This section has been created automatically by the script Abilint (TD).
@@ -932,47 +1210,113 @@ subroutine subscf_vtorho(this,dtset,psps,crystal,mpi_enreg,istep,pawfgr,paw_ij,&
  type(dataset_type),intent(in) :: dtset
  type(pseudopotential_type),intent(in) :: psps
  type(crystal_t),intent(in) :: crystal
- type(MPI_type),intent(in) :: mpi_enreg
+ type(MPI_type),intent(inout) :: mpi_enreg
  type(energies_type), intent(inout) :: energies
  type(fock_type),pointer, intent(inout) :: fock
 
- type(pawfgr_type), intent(in) :: pawfgr
- type(paw_ij_type),intent(inout) :: paw_ij(my_natom*psps%usepaw)
-
- integer, intent(in) :: istep,my_natom,natom,ntypat,nfftf,optforces
+ integer, intent(in) :: istep,my_natom,natom,ntypat,nfftf,optforces,optres
  integer, intent(in) :: kg(3,dtset%mpw*dtset%mkmem)
- real(dp), intent(inout) :: vtrial(nfftf,dtset%nspden)
+ integer, intent(in) :: symrec(3,3,dtset%nsym)
+ real(dp), intent(inout) :: vtrial(nfftf,dtset%nspden), compch_fft, nres2
  real(dp), intent(in) :: ph1d(2,3*(2*dtset%mgfft+1)*natom)
  real(dp), intent(in) :: ylm(dtset%mpw*dtset%mkmem,psps%mpsang*psps%mpsang*psps%useylm)
  real(dp), intent(in) :: ylmgr(dtset%mpw*dtset%mkmem,3,psps%mpsang*psps%mpsang*psps%useylm)
  real(dp), intent(in) :: gmet(3,3),gprimd(3,3),rmet(3,3)
+ real(dp), intent(inout) :: rhog(2,nfftf),rhor(nfftf,dtset%nspden)
+ real(dp), intent(out) :: nhat(nfftf,dtset%nspden*psps%usepaw)
+ real(dp), intent(out) :: nvresid(nfftf,dtset%nspden),tauresid(nfftf,dtset%nspden*dtset%usekden)
+ type(datafiles_type), intent(in) :: dtfil
+
+ type(pawtab_type),intent(in) :: pawtab(ntypat*psps%usepaw)
+ type(pawang_type), intent(in) :: pawang
+ type(pawfgr_type), intent(in) :: pawfgr
+ type(pawfgrtab_type),intent(inout) :: pawfgrtab(my_natom*psps%usepaw)
+ type(paw_ij_type),intent(inout) :: paw_ij(my_natom*psps%usepaw)
+ type(pawrhoij_type),target,intent(inout) :: pawrhoij(my_natom*psps%usepaw)
 
  integer, intent(in) :: dimsub
+ integer, intent(in) :: irrzon(dtset%nfft**(1-1/dtset%nsym),2,(dtset%nspden/dtset%nsppol)-3*(dtset%nspden/4))
+ integer, intent(in) :: indsym(4,dtset%nsym,natom)
+ real(dp), intent(in) :: ucvol
+ real(dp), intent(in) :: phnons(2,dtset%nfft**(1-1/dtset%nsym),(dtset%nspden/dtset%nsppol)-3*(dtset%nspden/4))
  complex(dpc), intent(in) :: can2sub(dimsub,dimsub)
+ type(paw_dmft_type),intent(inout) :: paw_dmft
+ type(wvl_data), intent(inout) :: wvl
 
- integer :: usecprj_local,istwf_k
+ integer :: usecprj_local,istwf_k,cplex,ipert
  integer :: isppol,ikg,ilm,nkpg,dimffnl,ider,idir
  integer :: ikpt_loc,ikpt,nkpt1,nband_k,my_ikpt
  integer :: n1,n2,n3,n4,n5,n6,npw_k
+ integer :: iband,ii,iscf
+ integer :: mband_cprj,mcprj_tmp,my_nspinor
+ integer,parameter :: tim_mkrho=2
+ real(dp) :: ar
+
 
  !arrays
  integer,allocatable :: kg_k(:,:)
- real(dp) :: rhodum(1),kpoint(3)
+ real(dp) :: rhodum(1),kpoint(3),ylmgr_dum(0,0,0),qpt(3)
  real(dp), allocatable :: ylm_k(:,:),kinpw(:),kpg_k(:,:),subham(:)
  type(gs_hamiltonian_type) :: gs_hamk
  real(dp),allocatable :: cgrvtrial(:,:),vlocal(:,:,:,:),ffnl(:,:,:,:),ph3d(:,:,:),zshift(:)
+ real(dp),allocatable :: dens_mat_real(:,:), cg_new(:,:), tmp_real(:,:),tmp_img(:,:)
+ real(dp),allocatable :: rhowfg(:,:),rhowfr(:,:)
+ complex(dpc),allocatable :: dens_mat(:,:),tmp(:,:)
+
+ type(pawcprj_type),allocatable :: cprj_tmp(:,:)
+ type(pawrhoij_type),pointer :: pawrhoij_unsym(:) 
 
  !useless
  integer :: mcgq,mkgq
- real(dp),allocatable :: cgq(:,:), pwnsfacq(:,:)
-
+ real(dp),allocatable :: cgq(:,:), pwnsfacq(:,:), doccde(:)
 
  n1=dtset%ngfft(1) ; n2=dtset%ngfft(2) ; n3=dtset%ngfft(3)
  n4=dtset%ngfft(4) ; n5=dtset%ngfft(5) ; n6=dtset%ngfft(6)
 
+ my_nspinor=max(1,dtset%nspinor/mpi_enreg%nproc_spinor)
+ compch_fft=-1.d5
+
+ mband_cprj=dtset%mband
+ if (dtset%paral_kgb/=0) mband_cprj=mband_cprj/mpi_enreg%nproc_band
+
  usecprj_local=0;if (psps%usepaw==1) usecprj_local=1
 
- call init_hamiltonian(gs_hamk,psps,this%pawtab,dtset%nspinor,dtset%nsppol,dtset%nspden,natom,&
+ iscf = dtset%iscf
+! if(.not. wvlbigdft) then
+   energies%e_eigenvalues = zero
+   energies%e_kinetic     = zero
+   energies%e_nonlocalpsp = zero
+!   if (usefock) then
+!     energies%e_fock=zero
+!     energies%e_fockdc=zero
+!   end if
+!   grnl(:)=zero
+!   resid(:) = zero ! JWZ 13 May 2010. resid and eigen need to be fully zeroed each time before use
+!   eigen(:) = zero
+!   bdtot_index=0
+!   ibg=0;icg=0
+!   mbdkpsp=dtset%mband*dtset%nkpt*dtset%nsppol
+! end if
+
+
+ if(iscf>=0 .or. iscf==-3) then
+   if (optres==1) then
+     nvresid=rhor
+     tauresid=this%taur
+   end if
+!  NC and plane waves
+   if (psps%usepaw==0 .and. dtset%usewvl==0) then
+     rhor=zero
+!    PAW
+   elseif(psps%usepaw==1) then
+     ABI_ALLOCATE(rhowfr,(dtset%nfft,dtset%nspden))
+     ABI_ALLOCATE(rhowfg,(2,dtset%nfft))
+     rhowfr(:,:)=zero
+   end if
+ end if
+
+
+ call init_hamiltonian(gs_hamk,psps,pawtab,dtset%nspinor,dtset%nsppol,dtset%nspden,natom,&
 & dtset%typat,crystal%xred,dtset%nfft,dtset%mgfft,dtset%ngfft,crystal%rprimd,dtset%nloalg,&
 & paw_ij=paw_ij,ph1d=ph1d,usecprj=usecprj_local,electronpositron=this%electronpositron,fock=fock,&
 & comm_atom=mpi_enreg%comm_atom,mpi_atmtab=mpi_enreg%my_atmtab,mpi_spintab=mpi_enreg%my_isppoltab,&
@@ -1087,9 +1431,166 @@ subroutine subscf_vtorho(this,dtset,psps,crystal,mpi_enreg,istep,pawfgr,paw_ij,&
      call subscf_mkham(this,dtset,mpi_enreg,gs_hamk,isppol,ikpt,nband_k,&
 &      cgq,pwnsfacq,mcgq,mkgq,zshift,can2sub,dimsub)
 
+
+
+     ABI_DEALLOCATE(ffnl)
+     ABI_DEALLOCATE(kg_k)
+     ABI_DEALLOCATE(kpg_k)
+     ABI_DEALLOCATE(ylm_k)
+     ABI_DEALLOCATE(ph3d)
+     ABI_DEALLOCATE(cgq)
+     ABI_DEALLOCATE(pwnsfacq)
+     ABI_DEALLOCATE(zshift)
+
    enddo
  enddo
 
+ ABI_DEALLOCATE(vlocal)
+
+ ABI_ALLOCATE(doccde,(dtset%mband*dtset%nkpt*dtset%nsppol))
+ doccde(:)=zero
+
+ call newocc(doccde,this%eig_sub,energies%entropy,energies%e_fermie,dtset%spinmagntarget,&
+& dtset%mband,dtset%nband,dtset%nelect,dtset%nkpt,dtset%nspinor,&
+& dtset%nsppol,this%occ,dtset%occopt,dtset%prtvol,dtset%stmbias,dtset%tphysel,dtset%tsmear,dtset%wtk)
+
+ ABI_DEALLOCATE(doccde)
+
+
+ ABI_ALLOCATE(dens_mat,(dimsub,dimsub))
+ ABI_ALLOCATE(dens_mat_real,(dimsub,dimsub))
+ dens_mat = czero
+ do ii=1,dimsub
+   dens_mat(ii,ii) = cmplx(this%occ(ii),0.0,kind=dp)
+ enddo
+
+ ABI_ALLOCATE(tmp,(dimsub,dimsub))
+ tmp = czero
+ call zgemm('N','C',dimsub,dimsub,dimsub,cone,dens_mat,dimsub,this%subham_sub,dimsub,czero,tmp,dimsub)
+ dens_mat = czero
+ call zgemm('N','N',dimsub,dimsub,dimsub,cone,this%subham_sub,dimsub,tmp,dimsub,czero,dens_mat,dimsub)
+
+
+ dens_mat_real = real(dens_mat,kind=dp)
+! do ii=1,dimsub
+!   write(std_out,*) dens_mat_real(ii,:)
+! enddo
+
+ ABI_DEALLOCATE(dens_mat)
+ ABI_DEALLOCATE(dens_mat_real)
+
+
+ ABI_ALLOCATE(cg_new,(2,this%mcg))
+ tmp = czero
+ call zgemm('N','N',dimsub,dimsub,dimsub,cone,can2sub,dimsub,this%subham_sub,dimsub,czero,tmp,dimsub)
+ ABI_ALLOCATE(tmp_real,(dimsub,dimsub))
+ ABI_ALLOCATE(tmp_img,(dimsub,dimsub))
+ tmp_real = real(tmp,kind=dp)
+ tmp_img = aimag(tmp)
+
+ !write(std_out,*) "debug: U*C:"
+ !do ii=1,dimsub
+ !  write(std_out,*) tmp(ii,:)
+ !enddo
+
+ ABI_DEALLOCATE(tmp) 
+ call dgemm('N','N',dtset%mpw,dimsub,dimsub,one,this%cg(1,:),dtset%mpw,tmp_real,dimsub,zero,cg_new(1,:),dtset%mpw)
+ call dgemm('N','N',dtset%mpw,dimsub,dimsub,-1.0_dp,this%cg(2,:),dtset%mpw,tmp_img,dimsub,one,cg_new(1,:),dtset%mpw)
+ call dgemm('N','N',dtset%mpw,dimsub,dimsub,one,this%cg(1,:),dtset%mpw,tmp_img,dimsub,zero,cg_new(2,:),dtset%mpw)
+ call dgemm('N','N',dtset%mpw,dimsub,dimsub,one,this%cg(2,:),dtset%mpw,tmp_real,dimsub,one,cg_new(2,:),dtset%mpw)
+
+ ABI_DEALLOCATE(tmp_real)
+ ABI_DEALLOCATE(tmp_img)
+
+ !FIXME
+ !compute kinetic energy
+ if(iscf>0 .or. iscf==-3)then
+   do iband=1,dimsub
+     if(abs(this%occ(iband))>tol8) then
+       call meanvalue_g(ar,kinpw,0,istwf_k,mpi_enreg,npw_k,my_nspinor,&
+&       cg_new(:,1+(iband-1)*npw_k*my_nspinor:iband*npw_k*my_nspinor),&
+&       cg_new(:,1+(iband-1)*npw_k*my_nspinor:iband*npw_k*my_nspinor),0)
+
+       energies%e_kinetic = energies%e_kinetic + this%occ(iband)*ar
+       energies%e_eigenvalues = energies%e_eigenvalues + this%occ(iband)*this%eig_sub(iband)
+     endif
+   end do
+ endif
+
+
+ call mkrho(cg_new,dtset,gprimd,irrzon,kg,this%mcg,mpi_enreg,this%npwarr,this%occ,paw_dmft,phnons,&
+& rhowfg,rhowfr,crystal%rprimd,tim_mkrho,ucvol,wvl%den,wvl%wfs)
+
+ if (iscf>0.or.iscf==-3) then
+!  PAW: Build new rhoij quantities from new occ then symetrize them
+!  Compute and add the compensation density to rhowfr to get the total density
+   if (psps%usepaw==1) then
+!     if (paral_atom) then
+!       ABI_DATATYPE_ALLOCATE(pawrhoij_unsym,(natom))
+!       nspden_rhoij=pawrhoij_get_nspden(dtset%nspden,dtset%nspinor,dtset%pawspnorb)
+!       call pawrhoij_alloc(pawrhoij_unsym,dtset%pawcpxocc,nspden_rhoij,dtset%nspinor,&
+!&       dtset%nsppol,dtset%typat,pawtab=pawtab,use_rhoijp=0)
+!     else
+       pawrhoij_unsym => pawrhoij
+!     end if
+     usecprj_local = 0 !have cg_new, need cprj
+     if (usecprj_local==1) then
+!       call pawmkrhoij(atindx,atindx1,cprj,gs_hamk%dimcprj,dtset%istwfk,dtset%kptopt,dtset%mband,mband_cprj,&
+!&       mcprj_local,dtset%mkmem,mpi_enreg,natom,dtset%nband,dtset%nkpt,dtset%nspinor,dtset%nsppol,&
+!&       occ,dtset%paral_kgb,paw_dmft,dtset%pawprtvol,pawrhoij_unsym,dtfil%unpaw,&
+!&       dtset%usewvl,dtset%wtk)
+     else
+       mcprj_tmp=my_nspinor*mband_cprj*dtset%mkmem*dtset%nsppol
+       ABI_DATATYPE_ALLOCATE(cprj_tmp,(natom,mcprj_tmp))
+       call pawcprj_alloc(cprj_tmp,0,gs_hamk%dimcprj)
+       call ctocprj(crystal%atindx,cg_new,1,cprj_tmp,gmet,gprimd,0,0,0,dtset%istwfk,kg,dtset%kptns,&
+&       this%mcg,mcprj_tmp,dtset%mgfft,dtset%mkmem,mpi_enreg,psps%mpsang,dtset%mpw,&
+&       dtset%natom,crystal%nattyp,dtset%nband,dtset%natom,dtset%ngfft,dtset%nkpt,dtset%nloalg,&
+&       this%npwarr,dtset%nspinor,dtset%nsppol,ntypat,dtset%paral_kgb,ph1d,psps,rmet,dtset%typat,&
+&       ucvol,dtfil%unpaw,crystal%xred,ylm,ylmgr_dum)
+       call pawmkrhoij(crystal%atindx,crystal%atindx1,cprj_tmp,gs_hamk%dimcprj,dtset%istwfk,dtset%kptopt,&
+&       dtset%mband,mband_cprj,mcprj_tmp,dtset%mkmem,mpi_enreg,natom,dtset%nband,dtset%nkpt,&
+&       dtset%nspinor,dtset%nsppol,this%occ,dtset%paral_kgb,paw_dmft,dtset%pawprtvol,pawrhoij_unsym,&
+&       dtfil%unpaw,dtset%usewvl,dtset%wtk)
+       call pawcprj_free(cprj_tmp)
+       ABI_DATATYPE_DEALLOCATE(cprj_tmp)
+     end if
+!    Build symetrized packed rhoij and compensated pseudo density
+     cplex=1;ipert=0;idir=0;qpt(:)=zero
+     if(dtset%usewvl==0) then
+       call pawmkrho(1,compch_fft,cplex,gprimd,idir,indsym,ipert,mpi_enreg,&
+&       my_natom,natom,dtset%nspden,dtset%nsym,ntypat,dtset%paral_kgb,pawang,pawfgr,pawfgrtab,&
+&       dtset%pawprtvol,pawrhoij,pawrhoij_unsym,pawtab,qpt,rhowfg,rhowfr,rhor,crystal%rprimd,dtset%symafm,&
+&       symrec,dtset%typat,ucvol,dtset%usewvl,crystal%xred,pawnhat=nhat,rhog=rhog)
+     endif
+   endif
+
+!  Find and print minimum and maximum total electron density and locations
+!  Compute density residual (if required) and its squared norm
+   if (iscf>=0) then
+     if (psps%usepaw==0) then
+       call prtrhomxmn(std_out,mpi_enreg,dtset%nfft,dtset%ngfft,dtset%nspden,1,rhor,ucvol=ucvol)
+     else
+       call prtrhomxmn(std_out,mpi_enreg,nfftf,pawfgr%ngfft,dtset%nspden,1,rhor,ucvol=ucvol)
+     end if
+     if (optres==1) then
+       nvresid=rhor-nvresid
+       call sqnorm_v(1,nfftf,nres2,dtset%nspden,optres,nvresid,mpi_comm_sphgrid=mpi_enreg%comm_fft)
+       tauresid=this%taur-tauresid
+     end if
+   end if
+
+ endif
+
+ if(psps%usepaw==1.and.(iscf>=0.or.iscf==-3))  then
+   ABI_DEALLOCATE(rhowfr)
+   ABI_DEALLOCATE(rhowfg)
+ endif
+
+ ABI_DEALLOCATE(kinpw)
+ ABI_DEALLOCATE(cg_new)
+
+ call destroy_hamiltonian(gs_hamk)
 
 end subroutine subscf_vtorho
 
@@ -1207,7 +1708,9 @@ subroutine subscf_mkham(this,dtset,mpi_enreg,gs_hamk,isppol,ikpt,nband_k,&
  ABI_ALLOCATE(zwork,(lwork))
  call zheev('v','u',dimsub,this%subham_sub,dimsub,this%eig_sub,zwork,lwork,rwork,info)
  write(std_out,*) "debug: eig_sub"
- write(std_out,*) this%eig_sub(:)
+ do iband=1,dimsub
+   write(std_out,'(f20.15)') this%eig_sub(iband)
+ enddo
 
 
  ABI_DEALLOCATE(subham)
